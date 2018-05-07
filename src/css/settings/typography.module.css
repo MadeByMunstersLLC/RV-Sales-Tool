@@ -1,0 +1,26 @@
+/* // Typography Settings Stylesheet
+// ======================================== */
+
+:root {
+  /* Font Family */
+  --unity-font-family:    'Source Sans Pro', 'Hevetica', sans-serif;
+
+  /* Font Sizes */
+  --unity-font-10:        10px;
+  --unity-font-12:        12px;
+  --unity-font-14:        14px;
+  --unity-font-16:        16px;
+  --unity-font-18:        18px;
+  --unity-font-24:        24px;
+  --unity-font-32:        32px;
+
+  --unity-font-base:      var(--unity-font-14);
+
+  /* Font Weights */
+  --unity-font-regular:   400;
+  --unity-font-bold:      700;
+
+  /* Line Height */
+  --unity-line-height:    1.5;
+
+}

@@ -1,0 +1,21 @@
+/* // Layout Global Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+html,
+body {
+  background-color: var(--unity-s-gray-alt-1);
+}
+
+body {
+  font-family: var(--unity-font-family);
+  font-size: var(--unity-font-16);
+  font-weight: var(--unity-font-regular);
+  margin: var(--unity-spacer-0);
+  padding: var(--unity-spacer-0);
+}

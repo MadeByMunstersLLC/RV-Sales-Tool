@@ -1,0 +1,48 @@
+/* // Colors Settings Stylesheet
+// ======================================== */
+
+:root {
+
+  /* Branding */
+    /* Blue */
+    --unity-b-blue-base:        #0072FF;
+
+    /* Green */
+    --unity-b-green-base:       #20CD8E;
+    --unity-b-green-light:      #C7F2E3;
+
+    /* Orange */
+    --unity-b-orange-base:      #FF8C00;
+
+    /* Red */
+    --unity-b-red-base:         #FF5F5F;
+    --unity-b-red-light:        #FFF3F3;
+
+  /* Structure */
+    /* Blue */
+    --unity-s-blue-base:        #263149;
+    --unity-s-blue-dark:        #20293E;
+
+    /* Gray */
+    --unity-s-gray-alt-1:       #FBFCFD;
+    --unity-s-gray-alt-2:       #FAFAFB;
+    --unity-s-gray-light:       #EFF2F5;
+    --unity-s-gray-medium:      #D4D7DF;
+    --unity-s-gray-dark:        #9496A2;
+
+    /* White */
+    --unity-s-gray-base:        #FFFFFF;
+
+  /* Typography */
+    /* Black */
+    --unity-t-black-base:       #32363D;
+
+    /* Gray */
+    --unity-t-gray-base:        #DFDFDF;
+    --unity-t-gray-light:       #F0F0F0;
+
+    /* White */
+    --unity-t-white-base:       #FFFFFF;
+
+
+}

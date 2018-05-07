@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import styles from './styles/Button.module.css';
+import styles from '../../css/components/Button.module.css';
 
 export const Button = ({
   buttonText
