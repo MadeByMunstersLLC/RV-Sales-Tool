@@ -1,0 +1,46 @@
+/* // Avatar Component Stylesheet
+// ======================================== */
+
+/* TODO:
+  • Confirm flex on parent works
+  • Change text size based on avatar size
+*/
+
+/* Imports */
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+
+/* Structure */
+.avatar {
+  align-items: center;
+  background-color: var(--unity-b-blue-base);
+  border-radius: 30em;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  color: var(--unity-t-white-base);
+  font-weight: var(--unity-font-bold);
+}
+
+/* Sizes */
+.avatar-xsm {
+  height: 24px;
+  width: 24px;
+}
+
+.avatar-sm {
+  height: 32px;
+  width: 32px;
+}
+
+.avatar-md {
+  height: 40px;
+  width: 40px;
+}
+
+.avatar-lg {
+  height: 96px;
+  width: 96px;
+}

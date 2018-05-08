@@ -1,0 +1,15 @@
+/* // Sidebar Navigation Module Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/colors.module.css);
+
+/* Structure */
+.sidebar {
+  background-color: var(--unity-s-blue-base);
+  left: 0;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 250px;
+}

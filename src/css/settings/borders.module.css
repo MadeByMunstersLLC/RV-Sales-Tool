@@ -1,0 +1,11 @@
+/* // Borders Settings Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(./colors.module.css);
+
+:root {
+
+  /* Base */
+  --unity-border-base:      1px solid var(--unity-s-gray-medium);
+}

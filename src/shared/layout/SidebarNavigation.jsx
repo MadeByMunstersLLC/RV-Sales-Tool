@@ -1,11 +1,12 @@
 import React from 'react';
 
-import styles from '../../css/modules/SidebarNavigation.module.css';
+import layout from '../../css/global/layout.module.css';
+import sidebarStyles from '../../css/modules/sidebar-navigation.module.css';
 
 export const SidebarNavigation = ({
     children
   }) => (
-  <nav className={`${styles.sidebar}`}>
+  <nav className={`${sidebarStyles.sidebar} ${layout.page__sidebar}`}>
     {children}
   </nav>
 )

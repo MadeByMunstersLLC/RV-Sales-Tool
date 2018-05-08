@@ -3,13 +3,14 @@
 
 /* Imports */
 @import url(../settings/colors.module.css);
+@import url(../settings/layout.module.css);
 @import url(../settings/typography.module.css);
 @import url(../settings/spacers.module.css);
 
 /* Structure */
 html,
 body {
-  background-color: var(--unity-s-gray-alt-1);
+  background-color: var(--unity-s-gray-light);
 }
 
 body {
@@ -17,5 +18,26 @@ body {
   font-size: var(--unity-font-16);
   font-weight: var(--unity-font-regular);
   margin: var(--unity-spacer-0);
+  overflow-x: hidden;
   padding: var(--unity-spacer-0);
+}
+
+.page__body {
+  margin-left: var(--unity-sidebar-width);
+  padding: var(--unity-spacer-16);
+  position: relative;
+  top: 73px;
+  width: calc(100% - (var(--unity-sidebar-width) + var(--unity-spacer-32)));
+}
+
+.page__content {
+  margin-top: 70px;
+}
+
+.page__sidebar {
+  left: 0;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: var(--unity-sidebar-width);
 }

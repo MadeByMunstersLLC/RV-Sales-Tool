@@ -51,6 +51,17 @@ p {
   line-height: var(--unity-line-height);
 }
 
+a {
+  color: var(--unity-b-blue-base);
+  font-size: inherit;
+  text-decoration: none;
+  transition: opacity 0.35s ease;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
 small,
 .text--small {
   font-family: var(--unity-font-family);
