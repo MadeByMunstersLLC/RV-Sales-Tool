@@ -1,0 +1,44 @@
+/* // Dashboard Page Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: var(--unity-spacer-24);
+}
+
+.item {
+  background-color: var(--unity-t-white-base);
+  border: var(--unity-border-base);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 300px;
+  padding: var(--unity-spacer-16);
+}
+
+/* Item Sizes */
+.item-sm {
+  grid-column-end: span 1;
+  grid-row-end: span 1;
+}
+
+.item-md {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+  height: 624px;
+}
+
+.item-lg {
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+  height: 624px;
+}

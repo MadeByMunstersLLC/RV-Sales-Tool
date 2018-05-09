@@ -8,6 +8,10 @@
 @import url(../settings/spacers.module.css);
 
 /* Structure */
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   background-color: var(--unity-s-gray-light);
@@ -18,10 +22,18 @@ body {
   font-size: var(--unity-font-16);
   font-weight: var(--unity-font-regular);
   margin: var(--unity-spacer-0);
-  overflow-x: hidden;
+  overflow: hidden;
   padding: var(--unity-spacer-0);
 }
 
+/* Clearfix */
+.clearfix::after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+
+/* Page Layout */
 .page__body {
   margin-left: var(--unity-sidebar-width);
   padding: var(--unity-spacer-16);
@@ -31,7 +43,11 @@ body {
 }
 
 .page__content {
-  margin-top: 70px;
+  height: calc(100vh - 184px);
+  padding-top: 70px;
+  padding-bottom: var(--unity-spacer-24);
+  overflow-x: auto;
+  overflow-y: scroll;
 }
 
 .page__sidebar {
