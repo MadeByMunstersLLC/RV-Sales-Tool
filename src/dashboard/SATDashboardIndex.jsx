@@ -2,11 +2,56 @@ import React, { Component, Fragment } from 'react';
 
 import dashboardStyles from '../css/pages/dashboard.module.css';
 
+import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
+
 import SATDashboardItem from './SATDashboardItem.jsx';
 import PageContent from '../shared/layout/PageContent.jsx';
 import PageHeader from '../shared/layout/PageHeader.jsx';
 
+const SortableItem = SortableElement(({value}) =>
+  <SATDashboardItem dashboardItemSize={value.size}>
+    <p>Dashboard Widget</p>
+  </SATDashboardItem>
+);
+
+const SortableList = SortableContainer(({items}) => {
+  return (
+    <div className={`${dashboardStyles.list}`}>
+      {items.map((value, index) => (
+        <SortableItem key={`item-${index}`} index={index} value={value} />
+      ))}
+    </div>
+  );
+});
+
 class SATDashboardIndex extends Component {
+  state = {
+    items: [
+      {
+        title: '1',
+        size: 'sm'
+      },
+      {
+        title: '2',
+        size: 'md'
+      },
+      {
+        title: '3',
+        size: 'sm'
+      },
+      {
+        title: '4',
+        size: 'sm'
+      },
+    ],
+  };
+
+  onSortEnd = ({oldIndex, newIndex}) => {
+    this.setState({
+      items: arrayMove(this.state.items, oldIndex, newIndex),
+    });
+  };
+
   render() {
 
     return (
@@ -16,23 +61,7 @@ class SATDashboardIndex extends Component {
           pageTitleIconLeft="dashboard"
           pageTitleIconRight="apps" />
         <PageContent>
-          <div className={`${dashboardStyles.list}`}>
-            <SATDashboardItem dashboardItemSize="md">
-              <p>Dashboard Widget 2</p>
-            </SATDashboardItem>
-            <SATDashboardItem>
-              <p>Dashboard Widget 1</p>
-            </SATDashboardItem>
-            <SATDashboardItem>
-              <p>Dashboard Widget 5</p>
-            </SATDashboardItem>
-            <SATDashboardItem>
-              <p>Dashboard Widget 3</p>
-            </SATDashboardItem>
-            <SATDashboardItem>
-              <p>Dashboard Widget 4</p>
-            </SATDashboardItem>
-          </div>
+          <SortableList items={this.state.items} onSortEnd={this.onSortEnd} axis="xy" />
         </PageContent>
       </Fragment>
     );
