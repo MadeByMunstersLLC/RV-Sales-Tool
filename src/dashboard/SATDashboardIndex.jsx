@@ -11,7 +11,6 @@ class SATDashboardIndex extends Component {
         <PageHeader
           pageTitleLeft="Dashboard"
           pageTitleIconLeft="dashboard"
-          pageTitleRight="Customize"
           pageTitleIconRight="apps" />
         <PageContent>
           <h1>Dashboard</h1>
