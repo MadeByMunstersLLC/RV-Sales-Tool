@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import dashboardStyles from '../css/pages/dashboard.module.css';
 
-import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
+import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
 
 import SATDashboardItem from './SATDashboardItem.jsx';
 import PageContent from '../shared/layout/PageContent.jsx';
@@ -59,7 +59,7 @@ class SATDashboardIndex extends Component {
         <PageHeader
           pageTitleLeft="Dashboard"
           pageTitleIconLeft="dashboard"
-          pageTitleIconRight="apps" />
+          pageTitleIconRight="settings" />
         <PageContent>
           <SortableList items={this.state.items} onSortEnd={this.onSortEnd} axis="xy" />
         </PageContent>
