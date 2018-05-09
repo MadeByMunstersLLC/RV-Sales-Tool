@@ -1,0 +1,29 @@
+/* // Card Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.card {
+  background-color: var(--unity-t-white-base);
+  border: var(--unity-border-base);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* Sizes */
+.card-sm {
+  padding: var(--unity-spacer-8);
+}
+
+.card-md {
+  padding: var(--unity-spacer-16);
+}
+
+.card-lg {
+  padding: var(--unity-spacer-24);
+}
