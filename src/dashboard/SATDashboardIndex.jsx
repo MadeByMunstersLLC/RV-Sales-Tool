@@ -4,9 +4,9 @@ import dashboardStyles from '../css/pages/dashboard.module.css';
 
 import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
 
-import SATDashboardItem from './SATDashboardItem.jsx';
-import PageContent from '../shared/layout/PageContent.jsx';
-import PageHeader from '../shared/layout/PageHeader.jsx';
+import SATDashboardItem from './SATDashboardItem';
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
 
 const SortableItem = SortableElement(({value}) =>
   <SATDashboardItem dashboardItemSize={value.size}>
@@ -42,6 +42,14 @@ class SATDashboardIndex extends Component {
       {
         title: '4',
         size: 'sm'
+      },
+      {
+        title: '5',
+        size: 'sm'
+      },
+      {
+        title: '6',
+        size: 'lg'
       },
     ],
   };
