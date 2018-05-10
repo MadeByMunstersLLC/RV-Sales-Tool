@@ -8,7 +8,9 @@ import {
   SidebarNavigationFooter,
   SidebarNavigationHeader,
   SidebarNavigationList,
-  SidebarNavigationLink } from './shared/layout/sidebar-navigation';
+  SidebarNavigationLink,
+  SidebarNavigationToggleLink,
+  SidebarNavigationSubmenuLink } from './shared/layout/sidebar-navigation';
 import SATDashboardIndex from './dashboard/SATDashboardIndex';
 import SATAgentProfileIndex from './profile/SATAgentProfileIndex';
 import TopbarNavigation from './shared/layout/TopbarNavigation';
@@ -44,10 +46,29 @@ const App = () => (
             sidebarNavLinkText="Agent Profile"
             sidebarNavLinkUrl="/agent_profile"
             sidebarNavLinkIcon="headset_mic" />
+          <SidebarNavigationToggleLink
+            sidebarNavLinkText="Additional Resources"
+            sidebarNavLinkIcon="info">
+            <SidebarNavigationSubmenuLink
+              submenuLinkText="Workday"
+              submenuLinkUrl="http://google.com "/>
+            <SidebarNavigationSubmenuLink
+              submenuLinkText="Reactor"
+              submenuLinkUrl="http://google.com "/>
+            <SidebarNavigationSubmenuLink
+              submenuLinkText="Employee Profile"
+              submenuLinkUrl="http://google.com "/>
+            <SidebarNavigationSubmenuLink
+              submenuLinkText="RV System Status"
+              submenuLinkUrl="http://google.com "/>
+            <SidebarNavigationSubmenuLink
+              submenuLinkText="Points of Contact"
+              submenuLinkUrl="http://google.com "/>
+          </SidebarNavigationToggleLink>
         </SidebarNavigationList>
         <SidebarNavigationFooter />
       </SidebarNavigation>
-      <TopbarNavigation />
+      <TopbarNavigation items={mockNotificationItems} />
       <section className={`${layout.page__body}`}>
         <Switch>
           <Route
@@ -68,3 +89,36 @@ const App = () => (
 );
 
 export default App;
+
+const mockNotificationItems = [
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur',
+    description: 'Proin lorem sapien, tempus ullamcorper eget …',
+    unread: true
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur',
+    description: 'Proin lorem sapien, tempus ullamcorper eget …',
+    unread: false
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur',
+    description: 'Proin lorem sapien, tempus ullamcorper eget …',
+    unread: false
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur',
+    description: 'Proin lorem sapien, tempus ullamcorper eget …',
+    unread: false
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur',
+    description: 'Maximus ut odio. Fusce ac varius leo.',
+    unread: false
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur',
+    description: 'Celerisque nec sapien. Donec ex lorem …',
+    unread: false
+  }
+];

@@ -11,4 +11,4 @@ export const SidebarNavigation = ({
   </nav>
 )
 
-export default SidebarNavigation
+export default SidebarNavigation;

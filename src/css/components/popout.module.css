@@ -1,0 +1,74 @@
+/* // Popout Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.popout_header {
+
+}
+
+.popout {
+  composes: card from "../components/card.module.css";
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  transition: opacity 0.35s ease;
+  visibility: hidden;
+}
+
+/* Popout Active */
+input[type=checkbox]:checked ~ .popout {
+  opacity: 1;
+  visibility: visible;
+  z-index: 99999;
+}
+
+/* Container */
+.popout_container {
+  position: relative;
+}
+
+/* Trigger */
+.popout_trigger {
+  cursor: pointer;
+  display: block;
+}
+
+/* Header */
+.popout_header {
+  border-bottom: var(--unity-border-base);
+  padding: var(--unity-spacer-8) var(--unity-spacer-16);
+}
+
+/* Body */
+.popout_body {
+  padding: var(--unity-spacer-16);
+}
+
+/* Hidden Input */
+.input {
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
+}
+
+/* List & Item */
+.popout_item:not(:last-child) {
+  border-bottom: var(--unity-border-base);
+  cursor: pointer;
+  margin-bottom: var(--unity-spacer-8);
+  padding-bottom: var(--unity-spacer-8);
+}
+
+.popout_item_icon::before {
+  background-color: var(--unity-b-green-base);
+  border-radius: 30em;
+  content: " ";
+  display: inline-block;
+  height: 8px;
+  margin-right: var(--unity-spacer-8);
+  width: 8px;
+}

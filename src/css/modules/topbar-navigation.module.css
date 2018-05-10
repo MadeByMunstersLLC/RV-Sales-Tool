@@ -11,30 +11,35 @@
   background-color: var(--unity-s-gray-alt-1);
   border-bottom: var(--unity-border-base);
   left: 0;
-  overflow: auto;
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 999;
 
   /* Drag Window Around */
   -webkit-user-select: none;
   -webkit-app-region: drag;
 }
 
-.topbar__list.right {
+.topbar__nav.right {
   float: right;
 }
 
-.topbar__list ul {
+.topbar__nav .topbar__list {
   display: flex;
 }
 
-.topbar__list li {
+.topbar__item {
   align-items: center;
   display: inline-flex;
 }
 
-.topbar__list li:not(:last-child) {
+.topbar__item:not(:last-child) {
   margin-right: var(--unity-spacer-16);
+}
+
+.popout {
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 300px;
 }

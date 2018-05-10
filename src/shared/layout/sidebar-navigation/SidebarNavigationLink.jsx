@@ -10,7 +10,7 @@ export const SidebarNavigationLink = ({
     sidebarNavLinkIcon,
     sidebarNavLinkUrl
   }) => (
-    <li>
+    <li className={`${sidebarStyles.item}`}>
       <NavLink
         to={sidebarNavLinkUrl}
         className={`${sidebarStyles.link}`}
@@ -25,4 +25,4 @@ export const SidebarNavigationLink = ({
     </li>
 )
 
-export default SidebarNavigationLink
+export default SidebarNavigationLink;

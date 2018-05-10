@@ -17,4 +17,4 @@ export const SidebarNavigationHeader = ({
   </header>
 )
 
-export default SidebarNavigationHeader
+export default SidebarNavigationHeader;
