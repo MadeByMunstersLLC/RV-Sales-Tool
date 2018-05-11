@@ -6,10 +6,6 @@
 @import url(../settings/spacers.module.css);
 
 /* Structure */
-.popout_header {
-
-}
-
 .popout {
   composes: card from "../components/card.module.css";
   opacity: 0;

@@ -11,6 +11,7 @@ import {
   PopoutTrigger } from '../../shared/popout/';
 
 import layout from '../../css/global/layout.module.css';
+import typographyStyles from '../../css/global/typography.module.css';
 import popoutStyles from '../../css/components/popout.module.css';
 import topbarStyles from '../../css/modules/topbar-navigation.module.css';
 
@@ -22,7 +23,7 @@ const NotificationList = ({items}) => {
           key={index}
           className={`${popoutStyles.popout_item}`}>
           <h5 className={`${item.unread ? `${popoutStyles.popout_item_icon}` : '' }`}>{item.title}</h5>
-          <p>{item.description}</p>
+          <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
         </li>
       )}
     </ul>

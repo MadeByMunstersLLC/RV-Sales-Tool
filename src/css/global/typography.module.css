@@ -63,16 +63,21 @@ a:hover {
 }
 
 small,
-.text--small {
+.text_small {
   font-family: var(--unity-font-family);
   font-size: var(--unity-font-base);
   font-weight: var(--unity-font-regular);
   font-size: var(--unity-font-12);
 }
 
-.text--tiny {
+.text_tiny {
   font-family: var(--unity-font-family);
   font-size: var(--unity-font-base);
   font-weight: var(--unity-font-regular);
   font-size: var(--unity-font-10);
+}
+
+/* Text Colors */
+.text_gray {
+  color: var(--unity-t-gray-dark);
 }
