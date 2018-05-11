@@ -50,6 +50,11 @@ body {
   overflow-y: scroll;
 }
 
+.tabs__offset {
+  height: calc(100vh - 234px);
+  padding-top: 120px;
+}
+
 .page__sidebar {
   left: 0;
   height: 100vh;

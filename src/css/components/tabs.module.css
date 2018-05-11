@@ -1,0 +1,39 @@
+/* // Tabs Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.tabs {
+  background-color: var(--unity-s-gray-alt-2);
+  border-bottom: var(--unity-border-base);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tabs__offset {
+  top: 56px;
+}  /* NOTE: Creates offset when page header present */
+
+.tab {
+  border-right: var(--unity-border-base);
+  display: inline-block;
+  font-weight: var(--unity-font-bold);
+}
+
+.tab__link {
+  color: var(--unity-t-gray-dark);
+  display: block;
+  padding: var(--unity-spacer-16) var(--unity-spacer-32);
+}
+
+.tab__link.tab__active {
+  border-top: var(--unity-tab-border);
+  background-color: var(--unity-t-white-base);
+  color: var(--unity-b-blue-base);
+}

@@ -8,4 +8,7 @@
 
   /* Base */
   --unity-border-base:      1px solid var(--unity-s-gray-medium);
+
+  /* Tabs */
+  --unity-tab-border:       2px solid var(--unity-b-blue-base);
 }

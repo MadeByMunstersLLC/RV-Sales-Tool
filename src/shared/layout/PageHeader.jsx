@@ -17,7 +17,7 @@ export const PageHeader = ({
     </div>
     <div className={`${styles.header__right}`}>
       <MaterialIcon icon={pageTitleIconRight} color="#DFDFDF" />
-      <a href="#">{pageTitleRight}</a>
+      <span>{pageTitleRight}</span>
     </div>
   </header>
 )

@@ -1,11 +1,12 @@
 import React from 'react';
 
-import layout from '../../css/global/layout.module.css';
+import layoutStyles from '../../css/global/layout.module.css';
 
 export const PageContent = ({
+    pageContentTabs = false,
     children
   }) => (
-  <div className={`${layout.page__content}`}>
+  <div className={`${layoutStyles.page__content} ${pageContentTabs ? `${layoutStyles.tabs__offset}` : ''}`}>
     {children}
   </div>
 )

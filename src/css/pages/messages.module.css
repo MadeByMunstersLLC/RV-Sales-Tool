@@ -1,0 +1,44 @@
+/* // Messages Page Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.container {
+  position: relative;
+}
+
+.aside {
+  border-right: var(--unity-border-base);
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 284px;
+}
+
+.aside__header {
+  border-bottom: var(--unity-border-base);
+  padding: var(--unity-spacer-16);
+}
+
+.list {
+  cursor: pointer;
+  height: calc(100vh - 320px);
+  overflow-x: auto;
+  overflow-y: scroll;
+  padding: var(--unity-spacer-16);
+}
+
+.item:not(:last-child) {
+  border-bottom: var(--unity-border-base);
+}
+
+.item:hover {
+  background-color: var(--unity-s-blue-light);
+}

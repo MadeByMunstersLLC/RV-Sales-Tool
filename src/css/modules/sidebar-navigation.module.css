@@ -15,6 +15,10 @@
   background-color: var(--unity-s-blue-dark);
   padding: var(--unity-spacer-24);
   text-align: center;
+
+  /* Drag Window Around */
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
 }
 
 .sidebar__header .title {

@@ -1,0 +1,29 @@
+/* // Chip Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.chip {
+  display: flex;
+}
+
+.chip__left,
+.chip__right {
+  display: inline-block;
+  float: left;
+}
+
+.chip__left {
+  margin-right: var(--unity-spacer-8);
+}
+
+.chip__text {
+  color: var(--unity-t-gray-dark);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
+}
