@@ -6,7 +6,7 @@ export const PopoutBody = ({
     popoutBodyClasses,
     children
   }) => (
-  <div className={`${popoutStyles.popout_body} ${popoutBodyClasses}`}>
+  <div className={`${popoutStyles.popout__body} ${popoutBodyClasses}`}>
     {children}
   </div>
 )

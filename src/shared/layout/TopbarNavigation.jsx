@@ -17,12 +17,12 @@ import topbarStyles from '../../css/modules/topbar-navigation.module.css';
 
 const NotificationList = ({items}) => {
   return (
-    <ul className={`${popoutStyles.popout_list}`}>
+    <ul className={`${popoutStyles.popout__list}`}>
       {items.map((item, index) =>
         <li
           key={index}
-          className={`${popoutStyles.popout_item}`}>
-          <h5 className={`${item.unread ? `${popoutStyles.popout_item_icon}` : '' }`}>{item.title}</h5>
+          className={`${popoutStyles.popout__item}`}>
+          <h5 className={`${item.unread ? `${popoutStyles.icon}` : '' }`}>{item.title}</h5>
           <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
         </li>
       )}

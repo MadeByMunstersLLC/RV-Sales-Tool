@@ -11,27 +11,27 @@
 }
 
 /* Header */
-.header {
+.sidebar__header {
   background-color: var(--unity-s-blue-dark);
   padding: var(--unity-spacer-24);
   text-align: center;
 }
 
-.header .title {
+.sidebar__header .title {
   color: var(--unity-t-white-base);
 }
 
 /* Link List */
-.list {
+.sidebar__list {
   height: calc(100vh - 156px);
   overflow-y: scroll;
 }
 
-.item {
+.sidebar__item {
   display: block;
 }
 
-.link {
+.sidebar__link {
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -40,8 +40,8 @@
   padding: var(--unity-spacer-16);
 }
 
-.link .text,
-.link .icon i {
+.sidebar__link .text,
+.sidebar__link .icon i {
   color: var(--unity-t-gray-dark);
   vertical-align: middle;
 }
@@ -51,14 +51,14 @@
 }
 
 /* Active State */
-.link.active {
+.sidebar__link.active {
   background-color: var(--unity-b-blue-base);
 }
 
-.link.active .text,
-.link.active .icon i,
-.link.open .text,
-.link.open .icon i {
+.sidebar__link.active .text,
+.sidebar__link.active .icon i,
+.sidebar__link.open .text,
+.sidebar__link.open .icon i {
   color: var(--unity-t-white-base);
 }
 
@@ -72,30 +72,30 @@
 }
 
 /* Submenu */
-.submenu {
+.sidebar__submenu {
   background-color: var(--unity-s-blue-dark);
   overflow: hidden;
   height: 0;
 }
 
-.submenu_link {
+.sidebar__submenu .link {
   color: var(--unity-t-white-base);
   display: block;
   padding: var(--unity-spacer-8) 0;
 }
 
 /* Submenu Active */
-.submenu.open {
+.sidebar__submenu.open {
   height: auto;
   padding: 0 var(--unity-spacer-64) var(--unity-spacer-16);
 }
 
-.link.open {
+.sidebar__link.open {
   background-color: var(--unity-s-blue-dark);
 }
 
 /* Footer */
-.footer {
+.sidebar__footer {
   background-color: var(--unity-s-blue-dark);
   bottom: 0;
   left: 0;
@@ -104,13 +104,13 @@
   right: 0;
 }
 
-.footer .trigger {
+.sidebar__footer .trigger {
   color: var(--unity-t-white-base);
   font-weight: var(--unity-font-bold);
   cursor: pointer;
 }
 
-.footer .trigger i {
+.sidebar__footer .trigger i {
   margin-right: var(--unity-spacer-8);
   vertical-align: middle;
 }

@@ -23,24 +23,24 @@ input[type=checkbox]:checked ~ .popout {
 }
 
 /* Container */
-.popout_container {
+.popout__container {
   position: relative;
 }
 
 /* Trigger */
-.popout_trigger {
+.popout__trigger {
   cursor: pointer;
   display: block;
 }
 
 /* Header */
-.popout_header {
+.popout__header {
   border-bottom: var(--unity-border-base);
   padding: var(--unity-spacer-8) var(--unity-spacer-16);
 }
 
 /* Body */
-.popout_body {
+.popout__body {
   padding: var(--unity-spacer-16);
 }
 
@@ -52,14 +52,14 @@ input[type=checkbox]:checked ~ .popout {
 }
 
 /* List & Item */
-.popout_item:not(:last-child) {
+.popout__item:not(:last-child) {
   border-bottom: var(--unity-border-base);
   cursor: pointer;
   margin-bottom: var(--unity-spacer-8);
   padding-bottom: var(--unity-spacer-8);
 }
 
-.popout_item_icon::before {
+.popout__item .icon::before {
   background-color: var(--unity-b-green-base);
   border-radius: 30em;
   content: " ";

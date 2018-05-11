@@ -5,7 +5,7 @@ import popoutStyles from '../../css/components/popout.module.css';
 export const PopoutContainer = ({
     children
   }) => (
-  <div className={`${popoutStyles.popout_container}`}>
+  <div className={`${popoutStyles.popout__container}`}>
     {children}
   </div>
 )

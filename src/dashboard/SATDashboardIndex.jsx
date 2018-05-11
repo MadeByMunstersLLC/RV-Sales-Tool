@@ -49,7 +49,7 @@ class SATDashboardIndex extends Component {
       },
       {
         title: '6',
-        size: 'lg'
+        size: 'sm'
       },
     ],
   };
