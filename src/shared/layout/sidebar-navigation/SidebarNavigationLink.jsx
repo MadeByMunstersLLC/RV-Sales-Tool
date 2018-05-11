@@ -10,10 +10,10 @@ export const SidebarNavigationLink = ({
     sidebarNavLinkIcon,
     sidebarNavLinkUrl
   }) => (
-    <li className={`${sidebarStyles.item}`}>
+    <li className={`${sidebarStyles.sidebar__item}`}>
       <NavLink
         to={sidebarNavLinkUrl}
-        className={`${sidebarStyles.link}`}
+        className={`${sidebarStyles.sidebar__link}`}
         activeClassName={`${sidebarStyles.active}`}>
         <span className={`${sidebarStyles.icon}`}>
           <MaterialIcon icon={sidebarNavLinkIcon} />

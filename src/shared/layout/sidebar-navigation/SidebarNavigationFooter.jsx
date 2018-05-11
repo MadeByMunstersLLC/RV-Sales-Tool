@@ -5,7 +5,7 @@ import sidebarStyles from '../../../css/modules/sidebar-navigation.module.css';
 export const SidebarNavigationFooter = ({
     children
   }) => (
-  <footer className={`${sidebarStyles.footer}`}>
+  <footer className={`${sidebarStyles.sidebar__footer}`}>
     <a href="#" className={`${sidebarStyles.trigger}`}>
       Minimize
     </a>

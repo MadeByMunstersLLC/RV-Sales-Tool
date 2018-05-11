@@ -25,10 +25,10 @@ export class SidebarNavigationToggleLink extends Component {
   render() {
     return (
       <li
-        className={`${sidebarStyles.item}`}
+        className={`${sidebarStyles.sidebar__item}`}
         onClick={this.menuToggle}
         open={this.state.open}>
-        <div className={`${sidebarStyles.link} ${this.state.open ? `${sidebarStyles.open}` : `${sidebarStyles.closed}`}`}>
+        <div className={`${sidebarStyles.sidebar__link} ${this.state.open ? `${sidebarStyles.open}` : `${sidebarStyles.closed}`}`}>
           <span className={`${sidebarStyles.icon}`}>
             <MaterialIcon icon={this.props.sidebarNavLinkIcon} />
           </span>
@@ -39,7 +39,7 @@ export class SidebarNavigationToggleLink extends Component {
             <MaterialIcon icon="arrow_drop_down" />
           </span>
         </div>
-        <ul className={`${sidebarStyles.submenu} ${this.state.open ? `${sidebarStyles.open}` : `${sidebarStyles.closed}`}`}
+        <ul className={`${sidebarStyles.sidebar__submenu} ${this.state.open ? `${sidebarStyles.open}` : `${sidebarStyles.closed}`}`}
           open={this.state.open}>
           {this.props.children}
         </ul>

@@ -6,7 +6,7 @@ export const SidebarNavigationHeader = ({
     sidebarNavLogo,
     sidebarNavTitle
   }) => (
-  <header className={`${sidebarStyles.header}`}>
+  <header className={`${sidebarStyles.sidebar__header}`}>
     {sidebarNavLogo ? (
       <img
         src={sidebarNavLogo}

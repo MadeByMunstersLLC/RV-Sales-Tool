@@ -1,15 +1,18 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import styles from '../css/pages/dashboard.module.css';
+import cardStyles from '../css/components/card.module.css';
+
+import dashboardStyles from '../css/pages/dashboard.module.css';
 
 export const DashboardItem = ({
   dashboardItemSize = 'sm',
   children
 }: DashboardItemProps) => {
   const dashboardItemClasses: string = classNames({
-    [`${styles.item}`]: true,
-    [`${styles.item}-${dashboardItemSize}`]: true,
+    [`${dashboardStyles.item}`]: true,
+    [`${dashboardStyles.item}-${dashboardItemSize}`]: true,
+    [`${cardStyles.card}`]: true
   });
 
   return (

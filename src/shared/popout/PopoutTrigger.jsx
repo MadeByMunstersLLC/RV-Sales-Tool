@@ -8,7 +8,7 @@ export const PopoutTrigger = ({
   <Fragment>
     <label
       htmlFor="popout"
-      className={`${popoutStyles.popout_trigger}`}>{children}</label>
+      className={`${popoutStyles.popout__trigger}`}>{children}</label>
     <input
       type="checkbox"
       id="popout"

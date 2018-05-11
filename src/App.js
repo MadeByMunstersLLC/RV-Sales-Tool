@@ -12,6 +12,7 @@ import {
   SidebarNavigationToggleLink,
   SidebarNavigationSubmenuLink } from './shared/layout/sidebar-navigation';
 import SATDashboardIndex from './dashboard/SATDashboardIndex';
+import SATMessagesIndex from './messages/SATMessagesIndex';
 import SATAgentProfileIndex from './profile/SATAgentProfileIndex';
 import TopbarNavigation from './shared/layout/TopbarNavigation';
 
@@ -68,7 +69,8 @@ const App = () => (
         </SidebarNavigationList>
         <SidebarNavigationFooter />
       </SidebarNavigation>
-      <TopbarNavigation items={mockNotificationItems} />
+      <TopbarNavigation
+        items={mockNotificationItems} />
       <section className={`${layout.page__body}`}>
         <Switch>
           <Route
@@ -79,6 +81,9 @@ const App = () => (
           <Route
             path="/dashboard"
             component={SATDashboardIndex} />
+          <Route
+            path="/messages"
+            component={SATMessagesIndex} />
           <Route
             path="/agent_profile"
             component={SATAgentProfileIndex} />

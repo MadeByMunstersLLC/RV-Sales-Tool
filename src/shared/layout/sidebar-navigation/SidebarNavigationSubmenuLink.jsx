@@ -6,10 +6,10 @@ export const SidebarNavigationSubmenuLink = ({
     submenuLinkText,
     submenuNavLinkUrl
   }) => (
-    <li className={`${sidebarStyles.item}`}>
+    <li className={`${sidebarStyles.sidebar__item}`}>
       <a
-        href={submenuNavLinkUrl}
-        className={`${sidebarStyles.submenu_link}`}>
+        href={`${submenuNavLinkUrl}`}
+        className={`${sidebarStyles.link}`}>
         {submenuLinkText}
       </a>
     </li>

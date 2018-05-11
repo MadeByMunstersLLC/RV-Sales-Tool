@@ -15,11 +15,6 @@
 }
 
 .item {
-  background-color: var(--unity-t-white-base);
-  border: var(--unity-border-base);
-  border-radius: 2px;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.03);
-  box-sizing: border-box;
   display: inline-flex;
   height: 300px;
   padding: var(--unity-spacer-16);
