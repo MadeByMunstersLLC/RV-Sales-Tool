@@ -10,12 +10,6 @@ import SATMessagesList from '../shared/SATMessagesList';
 import cardStyles from '../../css/components/card.module.css';
 import messageStyles from '../../css/pages/messages.module.css';
 
-const NoContent = (() =>
-  <PageBlankState
-    blankStateIcon="mail"
-    blankStateText="Your messages" />
-);
-
 const Content = (({match, data}) => {
   var message = data.find(m => m.id == match.params.id);
   var messageData;
@@ -53,8 +47,12 @@ class SATMailIndex extends Component {
             <Route
               exact
               path="/messages/mail/"
-              component={NoContent}
-              params={mockMessageItems} />
+              render={ () =>
+                <PageBlankState
+                  blankStateIcon="mail"
+                  blankStateText="Your messages" />
+              }
+            />
             <Route
               path="/messages/mail/:id"
               render={ (props) =>
