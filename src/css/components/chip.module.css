@@ -8,6 +8,7 @@
 /* Structure */
 .chip {
   display: flex;
+  overflow: hidden;
 }
 
 .chip__left,

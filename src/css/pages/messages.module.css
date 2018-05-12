@@ -1,6 +1,10 @@
 /* // Messages Page Stylesheet
 // ======================================== */
 
+/* TODO:
+  • Refactor Aside Item Styles to be component
+*/
+
 /* Imports */
 @import url(../settings/borders.module.css);
 @import url(../settings/colors.module.css);
@@ -12,6 +16,7 @@
   position: relative;
 }
 
+/* Aside */
 .aside {
   border-right: var(--unity-border-base);
   bottom: 0;
@@ -35,10 +40,60 @@
   padding: var(--unity-spacer-16);
 }
 
-.item:not(:last-child) {
+.item__container {
   border-bottom: var(--unity-border-base);
+  padding: var(--unity-spacer-8) var(--unity-spacer-0);
+  position: relative;
+}
+
+.item__container:first-child {
+  padding-top: var(--unity-spacer-0);
+}
+
+.item__container:last-child {
+  border-bottom: none;
+}
+
+.item {
+  padding: var(--unity-spacer-4);
+  transition: all 0.35s ease;
 }
 
 .item:hover {
   background-color: var(--unity-s-blue-light);
+  border-radius: 2px;
+}
+
+.item__actions {
+  opacity: 0;
+  position: absolute;
+  right: var(--unity-spacer-8);
+  top: var(--unity-spacer-24);
+  visibility: hidden;
+  transition: all 0.35s ease;
+}
+
+.item:hover .item__actions {
+  opacity: 1;
+  top: var(--unity-spacer-16);
+  visibility: visible;
+}
+
+.item__action {
+  background-color: var(--unity-s-blue-medium);
+  border-radius: 2px;
+  display: inline-block;
+  padding: var(--unity-spacer-4);
+}
+
+.item__action:first-child {
+  margin-right: var(--unity-spacer-8);
+}
+
+/* Content */
+.content {
+  display: grid;
+  height: calc(100% - 32px);
+  margin-left: 284px; /* Should be size of sidebar */
+  padding: var(--unity-spacer-16);
 }

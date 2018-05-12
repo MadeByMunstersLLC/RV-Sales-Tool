@@ -1,22 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Avatar } from '../../shared/avatar';
 import { Chip } from '../../shared/chip';
+import MaterialIcon from 'material-icons-react';
 
-import chipStyles from '../../css/components/chip.module.css';
 import messageStyles from '../../css/pages/messages.module.css';
 
 export const SATMessagesItem = ({
-  item,
-  index
+  item
 }) => (
-  <li
-    className={`${messageStyles.item}`}
-    key={index}>
-    <Chip
-      chipAvatarText={item.author}
-      chipTitle={item.author}
-      chipText={item.text} />
+  <li className={`${messageStyles.item__container}`}>
+    <div className={`${messageStyles.item}`}>
+      <Chip
+        chipAvatarText={item.author}
+        chipTitle={item.author}
+        chipText={item.text} />
+      <ul className={`${messageStyles.item__actions}`}>
+        <li className={`${messageStyles.item__action}`}>
+          <MaterialIcon icon="archive" color="#6D727B" size="16px" />
+        </li>
+        <li className={`${messageStyles.item__action}`}>
+          <MaterialIcon icon="delete" color="#6D727B" size="16px" />
+        </li>
+      </ul>
+    </div>
   </li>
 )
 

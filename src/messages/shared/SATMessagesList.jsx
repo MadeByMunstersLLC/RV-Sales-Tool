@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import SATMessagesItem from '../shared/SATMessagesItem';
 
@@ -13,7 +13,7 @@ export const SATMessagesList = ({
     {items.map((item, index) =>
       <SATMessagesItem
         item={item}
-        index={index} />
+        key={index} />
     )}
   </ul>
 )
