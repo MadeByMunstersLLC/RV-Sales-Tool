@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Redirect, Switch } from "react-router-dom";
 
 import PageBlankState from '../../shared/layout/PageBlankState';
 import SATMessagesAside from '../shared/SATMessagesAside';
@@ -8,6 +9,33 @@ import SATMessagesList from '../shared/SATMessagesList';
 
 import cardStyles from '../../css/components/card.module.css';
 import messageStyles from '../../css/pages/messages.module.css';
+
+const NoContent = (() =>
+  <PageBlankState
+    blankStateIcon="mail"
+    blankStateText="Your messages" />
+);
+
+const Content = (({match, data}) => {
+  var message = data.find(m => m.id == match.params.id);
+  var messageData;
+
+  if(message)
+    messageData =
+    <div>
+      <h3> {message.author} </h3>
+    </div>;
+  else
+    messageData = <h2> Sorry. Message doesnt exist </h2>;
+
+  return (
+    <div>
+      <div>
+         {messageData}
+      </div>
+    </div>
+  );
+});
 
 class SATMailIndex extends Component {
 
@@ -21,9 +49,19 @@ class SATMailIndex extends Component {
             items={mockMessageItems} />
         </SATMessagesAside>
         <SATMessagesContent>
-          <PageBlankState
-            blankStateIcon="mail"
-            blankStateText="Your messages" />
+          <Switch>
+            <Route
+              exact
+              path="/messages/mail/"
+              component={NoContent}
+              params={mockMessageItems} />
+            <Route
+              path="/messages/mail/:id"
+              render={ (props) =>
+                <Content data={mockMessageItems} {...props} />
+              }
+            />
+          </Switch>
         </SATMessagesContent>
       </div>
     );

@@ -22,8 +22,10 @@ const NotificationList = ({items}) => {
         <li
           key={index}
           className={`${popoutStyles.popout__item}`}>
-          <h5 className={`${item.unread ? `${popoutStyles.icon}` : '' }`}>{item.title}</h5>
-          <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
+          <div className={`${popoutStyles.popout__text}`}>
+            <h5 className={`${item.unread ? `${popoutStyles.icon}` : '' }`}>{item.title}</h5>
+            <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
+          </div>
         </li>
       )}
     </ul>
