@@ -21,6 +21,8 @@
   /* Structure */
     /* Blue */
     --unity-s-blue-base:        #263149;
+    --unity-s-blue-light:       #F0F4FF;
+    --unity-s-blue-medium:      #DFE4F5;
     --unity-s-blue-dark:        #20293E;
 
     /* Gray */
@@ -44,6 +46,5 @@
 
     /* White */
     --unity-t-white-base:       #FFFFFF;
-
 
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import Avatar from '../../shared/avatar/Avatar.jsx';
+import { Avatar } from '../../shared/avatar';
 import {
   Popout,
   PopoutBody,
@@ -22,8 +22,10 @@ const NotificationList = ({items}) => {
         <li
           key={index}
           className={`${popoutStyles.popout__item}`}>
-          <h5 className={`${item.unread ? `${popoutStyles.icon}` : '' }`}>{item.title}</h5>
-          <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
+          <div className={`${popoutStyles.popout__text}`}>
+            <h5 className={`${item.unread ? `${popoutStyles.icon}` : '' }`}>{item.title}</h5>
+            <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
+          </div>
         </li>
       )}
     </ul>
@@ -31,7 +33,7 @@ const NotificationList = ({items}) => {
 };
 
 export const TopbarNavigation = ({items = []}) => (
-  <header className={`${topbarStyles.topbar} ${layout.page__body}`}>
+  <header role="banner" className={`${topbarStyles.topbar} ${layout.page__body}`}>
     <nav className={`${topbarStyles.topbar__nav} ${topbarStyles.right}`}>
       <ul className={`${topbarStyles.topbar__list}`}>
         <li className={`${topbarStyles.topbar__item}`}>

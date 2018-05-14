@@ -6,7 +6,7 @@ export const SidebarNavigationFooter = ({
     children
   }) => (
   <footer className={`${sidebarStyles.sidebar__footer}`}>
-    <a href="#" className={`${sidebarStyles.trigger}`}>
+    <a className={`${sidebarStyles.trigger}`}>
       Minimize
     </a>
   </footer>

@@ -1,6 +1,11 @@
 /* // Popout Component Stylesheet
 // ======================================== */
 
+/* TODO:
+  • Refactor item interactions to be more global
+  • Refactor hidden input to be more global
+*/
+
 /* Imports */
 @import url(../settings/borders.module.css);
 @import url(../settings/spacers.module.css);
@@ -8,18 +13,20 @@
 /* Structure */
 .popout {
   composes: card from "../components/card.module.css";
+  margin-top: var(--unity-spacer-24);
   opacity: 0;
   position: absolute;
   right: 0;
-  transition: opacity 0.35s ease;
+  transition: all 0.35s ease;
   visibility: hidden;
+  z-index: 99999;
 }
 
 /* Popout Active */
 input[type=checkbox]:checked ~ .popout {
+  margin-top: var(--unity-spacer-0);
   opacity: 1;
   visibility: visible;
-  z-index: 99999;
 }
 
 /* Container */
@@ -52,11 +59,11 @@ input[type=checkbox]:checked ~ .popout {
 }
 
 /* List & Item */
-.popout__item:not(:last-child) {
+.popout__item {
   border-bottom: var(--unity-border-base);
   cursor: pointer;
-  margin-bottom: var(--unity-spacer-8);
-  padding-bottom: var(--unity-spacer-8);
+  padding: var(--unity-spacer-8) var(--unity-spacer-0);
+  position: relative;
 }
 
 .popout__item .icon::before {
@@ -67,4 +74,23 @@ input[type=checkbox]:checked ~ .popout {
   height: 8px;
   margin-right: var(--unity-spacer-8);
   width: 8px;
+}
+
+.popout__item:first-child {
+  padding-top: var(--unity-spacer-0);
+}
+
+.popout__item:last-child {
+  border-bottom: none;
+  padding-bottom: var(--unity-spacer-0);
+}
+
+.popout__text {
+  padding: var(--unity-spacer-4);
+  transition: all 0.35s ease;
+}
+
+.popout__text:hover {
+  background-color: var(--unity-s-blue-light);
+  border-radius: 2px;
 }

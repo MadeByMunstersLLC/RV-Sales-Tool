@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
+import { Route, Redirect, Switch } from "react-router-dom";
 
+import SATBroadcastIndex from './broadcast/SATBroadcastIndex';
+import SATMailIndex from './mail/SATMailIndex';
 import PageContent from '../shared/layout/PageContent';
 import PageHeader from '../shared/layout/PageHeader';
-
-import cardStyles from '../css/components/card.module.css';
+import { Tabs, Tab } from '../shared/tabs/';
 
 class SATMessagesIndex extends Component {
 
@@ -14,10 +16,29 @@ class SATMessagesIndex extends Component {
         <PageHeader
           pageTitleLeft="Messages"
           pageTitleIconLeft="email" />
-        <PageContent>
-          <div className={`${cardStyles.card} ${cardStyles.full}`}>
-            <h1>Messages</h1>
-          </div>
+        <Tabs tabsPageHeader="true">
+          <Tab
+            tabText="Messages"
+            tabUrl="/messages/mail" />
+          <Tab
+            tabText="Broadcasts"
+            tabUrl="/messages/broadcasts" />
+        </Tabs>
+        <PageContent
+          pageContentTabs="true">
+          <Switch>
+            <Route
+              exact
+              path="/messages">
+              <Redirect to="/messages/mail" />
+            </Route>
+            <Route
+              path="/messages/mail"
+              component={SATMailIndex} />
+            <Route
+              path="/messages/broadcasts"
+              component={SATBroadcastIndex} />
+            </Switch>
         </PageContent>
       </Fragment>
     );

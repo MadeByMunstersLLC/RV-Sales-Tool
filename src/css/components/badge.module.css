@@ -1,0 +1,38 @@
+/* // Badge Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+
+/* Structure */
+.badge {
+  background-color: var(--unity-b-blue-base);
+  border-radius: 2px;
+  display: inline-block;
+  padding: var(--unity-spacer-4);
+  text-align: center;
+}
+
+.badge__text {
+  color: var(--unity-t-white-base);
+  font-size: var(--unity-font-10);
+  font-weight: var(--unity-font-bold);
+}
+
+/* Types */
+.primary {
+  background-color: var(--unity-b-blue-base);
+}
+
+.success {
+  background-color: var(--unity-b-green-base);
+}
+
+.caution {
+  background-color: var(--unity-b-orange-base);
+}
+
+.danger {
+  background-color: var(--unity-b-red-base);
+}
