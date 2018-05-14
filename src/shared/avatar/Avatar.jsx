@@ -24,12 +24,14 @@ function abbreviateText(name) {
 export const Avatar = ({
   avatarImage,
   avatarText,
+  avatarExtraClasses,
   size = 'md',
   children
 }: AvatarProps) => {
   const avatarClasses: string = classNames({
     [`${styles.avatar}`]: true,
     [`${styles.avatar}-${size}`]: true,
+    [`${avatarExtraClasses}`]: true,
   });
 
   const textClasses = classNames({

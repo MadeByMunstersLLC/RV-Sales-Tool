@@ -11,4 +11,7 @@
 
   /* Tabs */
   --unity-tab-border:       2px solid var(--unity-b-blue-base);
+
+  /* Radius */
+  --unity-radius-base:      2px;
 }

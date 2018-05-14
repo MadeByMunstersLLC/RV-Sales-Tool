@@ -7,6 +7,7 @@
 
 /* Structure */
 .chip {
+  align-items: center;
   display: flex;
   overflow: hidden;
 }
@@ -19,6 +20,10 @@
 
 .chip__left {
   margin-right: var(--unity-spacer-8);
+}
+
+.chip__right {
+  width: 100%;
 }
 
 .chip__text {
