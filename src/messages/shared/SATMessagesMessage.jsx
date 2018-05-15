@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 
-import { Avatar } from '../../shared/avatar';
-import { Chip } from '../../shared/chip';
+import { Avatar } from 'shared/avatar';
+import { Chip } from 'shared/chip';
 import MaterialIcon from 'material-icons-react';
 
-import SATMessagesMessageFooter from '../shared/SATMessagesMessageFooter';
-import SATMessagesMessageHeader from '../shared/SATMessagesMessageHeader';
+import SATMessagesMessageFooter from 'messages/shared/SATMessagesMessageFooter';
+import SATMessagesMessageHeader from 'messages/shared/SATMessagesMessageHeader';
 
-import messageStyles from '../../css/pages/messages.module.css';
+import messageStyles from 'css/pages/messages.module.css';
 
 class SATMessagesMessage extends Component {
 

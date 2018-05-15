@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import styles from '../../css/components/avatar.module.css';
+import styles from 'css/components/avatar.module.css';
 
 function abbreviateText(name) {
   let result = '??';

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import SATMessagesItem from '../shared/SATMessagesItem';
+import SATMessagesItem from 'messages/shared/SATMessagesItem';
 
-import messageStyles from '../../css/pages/messages.module.css';
+import messageStyles from 'css/pages/messages.module.css';
 
 export const SATMessagesList = ({
     messageRoute,

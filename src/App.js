@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 
-import layout from './css/global/layout.module.css';
+import layout from 'css/global/layout.module.css';
 
 import {
   SidebarNavigation,
@@ -10,11 +10,11 @@ import {
   SidebarNavigationList,
   SidebarNavigationLink,
   SidebarNavigationToggleLink,
-  SidebarNavigationSubmenuLink } from './shared/layout/sidebar-navigation';
-import SATDashboardIndex from './dashboard/SATDashboardIndex';
-import SATMessagesIndex from './messages/SATMessagesIndex';
-import SATAgentProfileIndex from './profile/SATAgentProfileIndex';
-import TopbarNavigation from './shared/layout/TopbarNavigation';
+  SidebarNavigationSubmenuLink } from 'shared/layout/sidebar-navigation';
+import SATDashboardIndex from 'dashboard/SATDashboardIndex';
+import SATMessagesIndex from 'messages/SATMessagesIndex';
+import SATAgentProfileIndex from 'profile/SATAgentProfileIndex';
+import TopbarNavigation from 'shared/layout/TopbarNavigation';
 
 const App = () => (
   <Router>

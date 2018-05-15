@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { NavLink, Route, Switch } from "react-router-dom";
 
-import PageBlankState from '../../shared/layout/PageBlankState';
-import SATMailCreate from './SATMailCreate';
-import SATMessagesAside from '../shared/SATMessagesAside';
-import SATMessagesAsideHeader from '../shared/SATMessagesAsideHeader';
-import SATMessagesContent from '../shared/SATMessagesContent';
-import SATMessagesList from '../shared/SATMessagesList';
-import SATMessagesMessage from '../shared/SATMessagesMessage';
+import { Card } from 'rv-unity-react';
 
-import cardStyles from '../../css/components/card.module.css';
-import messageStyles from '../../css/pages/messages.module.css';
+import PageBlankState from 'shared/layout/PageBlankState';
+import SATMailCreate from 'messages/mail/SATMailCreate';
+import SATMessagesAside from 'messages/shared/SATMessagesAside';
+import SATMessagesAsideHeader from 'messages/shared/SATMessagesAsideHeader';
+import SATMessagesContent from 'messages/shared/SATMessagesContent';
+import SATMessagesList from 'messages/shared/SATMessagesList';
+import SATMessagesMessage from 'messages/shared/SATMessagesMessage';
+
+import cardStyles from 'css/components/card.module.css';
+import messageStyles from 'css/pages/messages.module.css';
 
 class SATMailIndex extends Component {
 

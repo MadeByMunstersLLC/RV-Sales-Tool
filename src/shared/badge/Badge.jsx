@@ -1,6 +1,6 @@
 import React from 'react';
 
-import badgeStyles from '../../css/components/badge.module.css';
+import badgeStyles from 'css/components/badge.module.css';
 
 export const Badge = ({
   badgeText,

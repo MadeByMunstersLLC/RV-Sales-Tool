@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
-import tabStyles from '../../css/components/tabs.module.css';
+import tabStyles from 'css/components/tabs.module.css';
 
 export const Tab = ({
     tabText,

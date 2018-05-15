@@ -2,7 +2,7 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import layoutStyles from '../../css/global/layout.module.css';
+import layoutStyles from 'css/global/layout.module.css';
 
 export const PageBlankState = ({
   blankStateIcon,

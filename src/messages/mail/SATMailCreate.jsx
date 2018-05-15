@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 
 import Autosuggest from 'react-autosuggest';
 
-import { Popout } from '../../shared/popout';
+import SATMessagesMessageFooter from 'messages/shared/SATMessagesMessageFooter';
+import SATMessagesMessageHeader from 'messages/shared/SATMessagesMessageHeader';
 
-import SATMessagesMessageFooter from '../shared/SATMessagesMessageFooter';
-import SATMessagesMessageHeader from '../shared/SATMessagesMessageHeader';
-
-import typeaheadStyles from '../../css/components/typeahead.module.css';
+import typeaheadStyles from 'css/components/typeahead.module.css';
 
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();

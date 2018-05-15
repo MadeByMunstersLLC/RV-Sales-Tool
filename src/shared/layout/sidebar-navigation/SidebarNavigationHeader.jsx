@@ -1,6 +1,6 @@
 import React from 'react';
 
-import sidebarStyles from '../../../css/modules/sidebar-navigation.module.css';
+import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
 
 export const SidebarNavigationHeader = ({
     sidebarNavLogo,

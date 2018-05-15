@@ -2,7 +2,7 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import { Avatar } from '../../shared/avatar';
+import { Avatar } from 'shared/avatar';
 import {
   Popout,
   PopoutBody,

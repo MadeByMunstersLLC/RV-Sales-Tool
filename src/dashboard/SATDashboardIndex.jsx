@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 
-import dashboardStyles from '../css/pages/dashboard.module.css';
-
 import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
 
-import SATDashboardItem from './SATDashboardItem';
-import PageContent from '../shared/layout/PageContent';
-import PageHeader from '../shared/layout/PageHeader';
+import SATDashboardItem from 'dashboard/SATDashboardItem';
+import PageContent from 'shared/layout/PageContent';
+import PageHeader from 'shared/layout/PageHeader';
+
+import dashboardStyles from 'css/pages/dashboard.module.css';
 
 const SortableItem = SortableElement(({value}) =>
   <SATDashboardItem dashboardItemSize={value.size}>
