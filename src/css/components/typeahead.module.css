@@ -1,0 +1,73 @@
+/* // Typeahead Component Stylesheet
+// ======================================== */
+
+/* TODO:
+  • Remove input specific styles to use Unity Form styles */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+
+/* Structure */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  border: var(--unity-border-base);
+  border-radius: var(--unity-radius-base);
+  box-sizing: border-box;
+  font-family: var(--unity-font-base);
+  font-size: var(--unity-font-14);
+  padding: var(--unity-spacer-16) var(--unity-spacer-8);
+  transition: border 0.35s ease;
+  width: 100%;
+}
+
+input:hover {
+  border-color: var(--unity-s-gray-dark);
+}
+
+input:active,
+input:focus {
+  border-color: var(--unity-s-black-base);
+  outline: none;
+}
+
+.suggestionsContainer {
+  composes: card from './card.module.css';
+  composes: md from './card.module.css';
+  left: var(--unity-spacer-0);
+  opacity: 0;
+  position: absolute;
+  right: var(--unity-spacer-0);
+  top: 100%;
+  transition: all 0.35s ease;
+  visibility: hidden;
+}
+
+.suggestionsContainerOpen {
+  top: calc(100% + 8px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.suggestion p {
+  color: var(--unity-t-gray-dark);
+  font-size: var(--unity-font-14);
+}
+
+.suggestion:not(:last-child) p {
+  border-bottom: var(--unity-border-base);
+  margin-bottom: var(--unity-spacer-8);
+  padding-bottom: var(--unity-spacer-8);
+}
+
+.suggestionHighlighted p {
+  color: var(--unity-t-black-base);
+  cursor: pointer;
+}
