@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Route, Switch } from "react-router-dom";
 
-import { Card } from 'rv-unity-react';
-
 import PageBlankState from 'shared/layout/PageBlankState';
 import SATMailCreate from 'messages/mail/SATMailCreate';
 import SATMessagesAside from 'messages/shared/SATMessagesAside';
