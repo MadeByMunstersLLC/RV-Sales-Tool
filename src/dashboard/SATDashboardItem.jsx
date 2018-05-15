@@ -1,9 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import cardStyles from '../css/components/card.module.css';
-
-import dashboardStyles from '../css/pages/dashboard.module.css';
+import cardStyles from 'css/components/card.module.css';
+import dashboardStyles from 'css/pages/dashboard.module.css';
 
 export const DashboardItem = ({
   dashboardItemSize = 'sm',

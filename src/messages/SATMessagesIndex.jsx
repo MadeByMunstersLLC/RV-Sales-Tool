@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import SATBroadcastIndex from './broadcast/SATBroadcastIndex';
-import SATMailIndex from './mail/SATMailIndex';
-import PageContent from '../shared/layout/PageContent';
-import PageHeader from '../shared/layout/PageHeader';
-import { Tabs, Tab } from '../shared/tabs/';
+import PageContent from 'shared/layout/PageContent';
+import PageHeader from 'shared/layout/PageHeader';
+import { Tabs, Tab } from 'shared/tabs/';
+
+import SATBroadcastIndex from 'messages/broadcast/SATBroadcastIndex';
+import SATMailIndex from 'messages/mail/SATMailIndex';
 
 class SATMessagesIndex extends Component {
 
