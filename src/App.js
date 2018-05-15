@@ -11,6 +11,7 @@ import {
   SidebarNavigationLink,
   SidebarNavigationToggleLink,
   SidebarNavigationSubmenuLink } from 'shared/layout/sidebar-navigation';
+import SATCalendarIndex from 'calendar/SATCalendarIndex';
 import SATDashboardIndex from 'dashboard/SATDashboardIndex';
 import SATMessagesIndex from 'messages/SATMessagesIndex';
 import SATAgentProfileIndex from 'profile/SATAgentProfileIndex';
@@ -84,6 +85,9 @@ const App = () => (
           <Route
             path="/messages"
             component={SATMessagesIndex} />
+          <Route
+            path="/calendar"
+            component={SATCalendarIndex} />
           <Route
             path="/agent_profile"
             component={SATAgentProfileIndex} />
