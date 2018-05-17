@@ -11,9 +11,11 @@ import {
   SidebarNavigationLink,
   SidebarNavigationToggleLink,
   SidebarNavigationSubmenuLink } from 'shared/layout/sidebar-navigation';
+import SATAgentProfileIndex from 'profile/SATAgentProfileIndex';
+import SATCalendarIndex from 'calendar/SATCalendarIndex';
 import SATDashboardIndex from 'dashboard/SATDashboardIndex';
 import SATMessagesIndex from 'messages/SATMessagesIndex';
-import SATAgentProfileIndex from 'profile/SATAgentProfileIndex';
+import SATReportsIndex from 'reports/SATReportsIndex';
 import TopbarNavigation from 'shared/layout/TopbarNavigation';
 
 const App = () => (
@@ -85,6 +87,12 @@ const App = () => (
             path="/messages"
             component={SATMessagesIndex} />
           <Route
+            path="/calendar"
+            component={SATCalendarIndex} />
+          <Route
+            path="/reports"
+            component={SATReportsIndex} />
+          <Route
             path="/agent_profile"
             component={SATAgentProfileIndex} />
         </Switch>
@@ -99,31 +107,37 @@ const mockNotificationItems = [
   {
     title: 'Lorem ipsum dolor sit amet, consectetur',
     description: 'Proin lorem sapien, tempus ullamcorper eget …',
-    unread: true
+    unread: true,
+    route: '/messages/mail/1'
   },
   {
     title: 'Lorem ipsum dolor sit amet, consectetur',
     description: 'Proin lorem sapien, tempus ullamcorper eget …',
-    unread: false
+    unread: false,
+    route: '/messages/broadcasts/1'
   },
   {
     title: 'Lorem ipsum dolor sit amet, consectetur',
     description: 'Proin lorem sapien, tempus ullamcorper eget …',
-    unread: false
+    unread: false,
+    route: '/messages/mail/3'
   },
   {
     title: 'Lorem ipsum dolor sit amet, consectetur',
     description: 'Proin lorem sapien, tempus ullamcorper eget …',
-    unread: false
+    unread: false,
+    route: '/messages/mail/2'
   },
   {
     title: 'Lorem ipsum dolor sit amet, consectetur',
     description: 'Maximus ut odio. Fusce ac varius leo.',
-    unread: false
+    unread: false,
+    route: '/messages/broadcasts/2'
   },
   {
     title: 'Lorem ipsum dolor sit amet, consectetur',
     description: 'Celerisque nec sapien. Donec ex lorem …',
-    unread: false
+    unread: false,
+    route: '/messages/broadcasts/3'
   }
 ];

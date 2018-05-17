@@ -64,6 +64,7 @@ export default SATMailIndex;
 const mockMessageItems = [
   {
     id: '1',
+    updated_at: '22 mins ago',
     message_title: 'Caitlyn Zahn',
     broadcast: false,
     messages: [
@@ -77,6 +78,7 @@ const mockMessageItems = [
   },
   {
     id: '2',
+    updated_at: '1 day ago',
     message_title: 'Clay Carpenter',
     broadcast: false,
     messages: [
@@ -114,6 +116,7 @@ const mockMessageItems = [
   },
   {
     id: '3',
+    updated_at: '1 day ago',
     message_title: 'Bonnie Adams',
     broadcast: false,
     messages: [

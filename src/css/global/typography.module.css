@@ -81,3 +81,11 @@ small,
 .text_gray {
   color: var(--unity-t-gray-dark);
 }
+
+/* Label */
+label {
+  font-size: var(--unity-font-12);
+  font-weight: var(--unity-font-bold);
+  display: inline-block;
+  margin-bottom: var(--unity-spacer-4);
+}

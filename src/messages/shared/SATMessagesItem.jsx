@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Badge } from 'shared/badge';
 import { Chip } from 'shared/chip';
 import MaterialIcon from 'material-icons-react';
 
@@ -15,24 +14,23 @@ export const SATMessagesItem = ({
     <NavLink
       to={'/messages/' + `${messageRoute}` + '/' + `${item.id}`}
       activeClassName={`${messageStyles.active}`}>
-      {item.broadcast ? (
-        <Badge
-          badgeType={item.broadcastColor}
-          badgeText={item.broadcastCategory}
-        />
-      ) : ( '' )}
       <div
         className={`${messageStyles.item}`}>
         {!item.broadcast ? (
-          <Chip
-            chipAvatarText={item.message_title}
-            chipTitle={item.message_title}
-            chipText={item.messages[0].body}
-          />
+          <div>
+            <Chip
+              chipAvatarText={item.message_title}
+              chipTitle={item.message_title}
+              chipText={item.messages[0].body}
+            />
+            <time className={`${messageStyles.time}`}>{item.updated_at}</time>
+          </div>
         ) : (
           <div className={`${messageStyles.item__text}`}>
             <h5>{item.message_title}</h5>
+            {/* This is needs to pull the last message sent */}
             <p>{item.messages[0].body}</p>
+            <time className={`${messageStyles.time}`}>{item.updated_at}</time>
           </div>
         )}
         <ul className={`${messageStyles.item__actions}`}>

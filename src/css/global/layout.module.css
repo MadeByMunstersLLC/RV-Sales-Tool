@@ -15,6 +15,7 @@
 html,
 body {
   background-color: var(--unity-s-gray-light);
+  height: 100%;
 }
 
 body {

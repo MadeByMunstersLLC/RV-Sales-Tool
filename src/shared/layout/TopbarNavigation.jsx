@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 import MaterialIcon from 'material-icons-react';
 
@@ -22,10 +23,13 @@ const NotificationList = ({items}) => {
         <li
           key={index}
           className={`${popoutStyles.popout__item}`}>
-          <div className={`${popoutStyles.popout__text}`}>
-            <h5 className={`${item.unread ? `${popoutStyles.icon}` : '' }`}>{item.title}</h5>
-            <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
-          </div>
+          <NavLink
+            to={item.route}>
+            <div className={`${popoutStyles.popout__text}`}>
+              <h5 className={`${item.unread ? `${popoutStyles.icon}` : '' }`}>{item.title}</h5>
+              <p className={`${typographyStyles.text_gray}`}>{item.description}</p>
+            </div>
+          </NavLink>
         </li>
       )}
     </ul>
