@@ -92,7 +92,7 @@
 
 /* Body Week Border Resets */
 .rbc-time-view {
-  border: var(--unity-border-base);
+  border: var(--unity-border-base) !important;
 }
 
 .rbc-time-header.rbc-overflowing {
@@ -220,4 +220,61 @@
   height: 2px;
   left: 70px !important; /* Offset time row */
   width: 100% !important;
+}
+
+/* Popout */
+.calendar__popout {
+  border: none;
+  border-top-left-radius: var(--unity-spacer-0);
+  border-top-right-radius: var(--unity-spacer-0);
+  left: var(--unity-spacer-0);
+  margin: var(--unity-spacer-0) auto;
+  position: fixed;
+  right: var(--unity-spacer-0);
+  top: var(--unity-spacer-0);
+  width: 400px;
+}
+
+.calendar__popout.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.calendar__popout .header {
+  align-items: center;
+  background-color: var(--unity-b-blue-base);
+  display: flex;
+  padding: var(--unity-spacer-16);
+}
+
+.calendar__popout .header__title {
+  color: var(--unity-t-white-base);
+}
+
+.calendar__popout .header__action {
+  cursor: pointer;
+  line-height: 0;
+  margin-left: auto;
+}
+
+.calendar__popout .body {
+  padding: var(--unity-spacer-16);
+}
+
+.calendar__popout__overlay {
+  background-color: var(--unity-s-blue-base);
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: fixed;
+  opacity: 0.5;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Modal */
+.closed {
+  display: none;
 }
