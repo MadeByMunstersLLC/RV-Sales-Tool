@@ -56,6 +56,7 @@ export default SATBroadcastIndex;
 const mockBroadcastsItems = [
   {
     id: '1',
+    updated_at: '22 mins ago',
     message_title: 'Lorem ipsum dolor sit amet dolor sit amet',
     broadcast: true,
     broadcastCategory: 'Contest',
@@ -69,6 +70,7 @@ const mockBroadcastsItems = [
   },
   {
     id: '2',
+    updated_at: '3 days ago',
     message_title: 'Lorem ipsum amet dolor sit amet',
     broadcast: true,
     broadcastCategory: 'Contest',
@@ -82,13 +84,14 @@ const mockBroadcastsItems = [
   },
   {
     id: '3',
+    updated_at: '4 days ago',
     message_title: 'Lorem ipsum dolor sit amet ipsum dolor',
     broadcast: true,
     broadcastCategory: 'Meeting request',
     broadcastColor: 'caution',
     messages: [
       {
-        created_at: '1 day ago',
+        created_at: '4 days ago',
         body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur mi massa, at faucibus orci sagittis sit amet. Vestibulum blandit lacus eu lorem ullamcorper, at sagittis urna molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur mi massa, at faucibus orci sagittis sit amet. Vestibulum blandit lacus eu lorem ullamcorper, at sagittis urna molestie.'
       }
     ],

@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
 
 import { Avatar } from 'shared/avatar';
+import { Badge } from 'shared/badge';
 import { Chip } from 'shared/chip';
 import MaterialIcon from 'material-icons-react';
 
+import PageBlankState from 'shared/layout/PageBlankState';
 import SATMessagesMessageFooter from 'messages/shared/SATMessagesMessageFooter';
 import SATMessagesMessageHeader from 'messages/shared/SATMessagesMessageHeader';
 
@@ -35,7 +37,15 @@ class SATMessagesMessage extends Component {
                 chipTitle={message.message_title}
               />
             ) : (
-              <h5>{message.message_title}</h5>
+              <h5>
+                <span className={`${messageStyles.badge}`}>
+                  <Badge
+                    badgeType={message.broadcastColor}
+                    badgeText={message.broadcastCategory}
+                  />
+                </span>
+                {message.message_title}
+              </h5>
             )}
           </div>
           <div className={`${messageStyles.right}`}>
@@ -83,7 +93,12 @@ class SATMessagesMessage extends Component {
         ) : ( '' )}
       </div>
     } else {
-      messageData = <h2> Sorry. That message could not be found.</h2>;
+      messageData =
+        <PageBlankState
+          blankStateIcon="help"
+          blankStateText="Hmmm? We can't find that message."
+        />
+      ;
     }
 
     return (

@@ -198,7 +198,7 @@
 }
 
 .rbc-event.rbc-selected {
-  background-color: var(--unity-b-green-base);
+  background-color: var(--unity-b-blue-base);
 }
 
 .rbc-day-slot .rbc-event {
@@ -206,7 +206,7 @@
 }
 
 .rbc-day-slot .rbc-event.rbc-selected {
-  border-color: var(--unity-b-green-base);
+  border-color: var(--unity-b-blue-base);
 }
 
 .rbc-event-content {
