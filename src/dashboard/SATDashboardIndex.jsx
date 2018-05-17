@@ -68,7 +68,8 @@ class SATDashboardIndex extends Component {
           pageTitleLeft="Dashboard"
           pageTitleIconLeft="dashboard"
           pageTitleIconRight="view_compact" />
-        <PageContent>
+        <PageContent
+          pageContentScroll={true}>
           <SortableList items={this.state.items} onSortEnd={this.onSortEnd} axis="xy" />
         </PageContent>
       </Fragment>

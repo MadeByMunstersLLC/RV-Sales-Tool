@@ -197,6 +197,10 @@
 }
 
 /* Event */
+.rbc-event-label {
+  display: none;
+}
+
 .rbc-event {
   background-color: transparent;
 }
@@ -219,6 +223,7 @@
   color: var(--unity-t-white-base);
   font-size: var(--unity-font-14);
   padding: var(--unity-spacer-0) var(--unity-spacer-4);
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

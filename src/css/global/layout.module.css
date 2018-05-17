@@ -47,6 +47,9 @@ body {
   height: calc(100vh - 184px);
   padding-top: 70px;
   padding-bottom: var(--unity-spacer-24);
+}
+
+.page__content__scroll {
   overflow-x: hidden;
   overflow-y: scroll;
 }
