@@ -12,11 +12,11 @@ export const PageHeader = ({
   }) => (
   <header className={`${styles.header}`}>
     <div className={`${styles.header__left}`}>
-      <MaterialIcon icon={pageTitleIconLeft} color="#DFDFDF" />
+      <MaterialIcon icon={pageTitleIconLeft} color="#9496A2" />
       <p>{pageTitleLeft}</p>
     </div>
     <div className={`${styles.header__right}`}>
-      <MaterialIcon icon={pageTitleIconRight} color="#DFDFDF" />
+      <MaterialIcon icon={pageTitleIconRight} color="#0072FF" />
       <span>{pageTitleRight}</span>
     </div>
   </header>
