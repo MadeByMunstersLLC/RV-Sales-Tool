@@ -1,0 +1,32 @@
+/* // Alerts Settings Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(./colors.module.css);
+
+:root {
+
+  /* Alerts */
+  --unity-alert-caution:    var(--unity-b-orange-base);
+  --unity-alert-danger:     var(--unity-b-red-base);
+  --unity-alert-primary:    var(--unity-b-blue-base);
+  --unity-alert-success:    var(--unity-b-green-base);
+
+}
+
+/* Alert Types */
+.caution {
+  background-color: var(--unity-alert-caution);
+}
+
+.danger {
+  background-color: var(--unity-alert-danger);
+}
+
+.primary {
+  background-color: var(--unity-alert-primary);
+}
+
+.success {
+  background-color: var(--unity-alert-success);
+}

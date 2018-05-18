@@ -27,7 +27,7 @@ export const Avatar = ({
   avatarExtraClasses,
   size = 'md',
   children
-}: AvatarProps) => {
+}) => {
   const avatarClasses: string = classNames({
     [`${styles.avatar}`]: true,
     [`${styles.avatar}-${size}`]: true,

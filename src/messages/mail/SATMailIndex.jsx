@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { NavLink, Route, Switch } from "react-router-dom";
 
+import { Alert } from 'shared/alert/';
 import PageBlankState from 'shared/layout/PageBlankState';
 import SATMailCreate from 'messages/mail/SATMailCreate';
 import SATMessagesAside from 'messages/shared/SATMessagesAside';
@@ -12,24 +13,38 @@ import SATMessagesMessage from 'messages/shared/SATMessagesMessage';
 import cardStyles from 'css/components/card.module.css';
 import messageStyles from 'css/pages/messages.module.css';
 
+// TODO:
+  // • Alerts should probable have a default timeout in the component
+
 class SATMailIndex extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      messages: mockMessageItems,
-    };
+  state = {
+    messages: mockMessageItems,
+    deleteAlert: false,
   }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    if (this.state.deleteAlert !== prevState.deleteAlert) {
+      this.removeDeleteAlert = setTimeout(() => {
+        this.setState({
+          deleteAlert: false
+        });
+      }, 6000);
+    }
+  };
 
   removeMessage(id) {
     const newState = this.state;
-    const index = newState.messages.findIndex(a => a.id === id);
+    const index = newState.messages.findIndex(m => m.id === id);
 
     if (index === -1) return;
     newState.messages.splice(index, 1);
 
-    this.setState(newState);
+    this.setState({
+      newState,
+      deleteAlert: true
+    });
   };
 
   render() {
@@ -37,45 +52,58 @@ class SATMailIndex extends Component {
     const { messages } = this.state;
 
     return (
-      <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
-        <SATMessagesAside>
-          <SATMessagesAsideHeader>
-            <NavLink
-              to="/messages/mail/create">
-              <button>New Message</button>
-            </NavLink>
-          </SATMessagesAsideHeader>
-          <SATMessagesList
-            messageRoute="mail"
-            removeMessage={this.removeMessage.bind(this)}
-            items={messages} />
-        </SATMessagesAside>
-        <SATMessagesContent>
-          <Switch>
-            <Route
-              exact
-              path="/messages/mail/"
-              render={ () =>
-                <PageBlankState
-                  blankStateIcon="mail"
-                  blankStateText="Your messages" />
-              }
+      <Fragment>
+        { this.state.deleteAlert &&
+          <Alert
+            alertText="You have successfully deleted a message."
+            alertIcon="info"
+            alertType={1}
+          />
+        }
+        <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
+          <SATMessagesAside>
+            <SATMessagesAsideHeader>
+              <NavLink
+                to="/messages/mail/create">
+                <button>New Message</button>
+              </NavLink>
+            </SATMessagesAsideHeader>
+            <SATMessagesList
+              messageRoute="mail"
+              removeMessage={this.removeMessage.bind(this)}
+              items={messages}
             />
-            <Route
-              path="/messages/mail/create"
-              component={SATMailCreate}
-            />
-            <Route
-              path="/messages/mail/:id"
-              render={ (props) =>
-                <SATMessagesMessage
-                  messagesReadOnly={false}
-                  data={mockMessageItems} {...props} />
-              }
-            />
-          </Switch>
-        </SATMessagesContent>
-      </div>
+          </SATMessagesAside>
+          <SATMessagesContent>
+            <Switch>
+              <Route
+                exact
+                path="/messages/mail/"
+                render={ () =>
+                  <PageBlankState
+                    blankStateIcon="mail"
+                    blankStateText="Your messages"
+                  />
+                }
+              />
+              <Route
+                path="/messages/mail/create"
+                component={SATMailCreate}
+              />
+              <Route
+                path="/messages/mail/:id"
+                render={ (props) =>
+                  <SATMessagesMessage
+                    messagesReadOnly={false}
+                    data={mockMessageItems}
+                    {...props}
+                  />
+                }
+              />
+            </Switch>
+          </SATMessagesContent>
+        </div>
+      </Fragment>
     );
   }
 }
