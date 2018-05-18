@@ -6,7 +6,8 @@ import messageStyles from 'css/pages/messages.module.css';
 
 export const SATMessagesList = ({
     messageRoute,
-    items
+    removeMessage,
+    items,
   }) => (
   <ul
     className={`${messageStyles.list}`}
@@ -14,8 +15,10 @@ export const SATMessagesList = ({
     {items.map((item, index) =>
       <SATMessagesItem
         messageRoute={messageRoute}
+        removeMessage={removeMessage}
         item={item}
-        key={index} />
+        key={index}
+      />
     )}
   </ul>
 )

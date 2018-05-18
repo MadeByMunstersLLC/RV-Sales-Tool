@@ -14,7 +14,27 @@ import messageStyles from 'css/pages/messages.module.css';
 
 class SATMailIndex extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      messages: mockMessageItems,
+    };
+  }
+
+  removeMessage(id) {
+    const newState = this.state;
+    const index = newState.messages.findIndex(a => a.id === id);
+
+    if (index === -1) return;
+    newState.messages.splice(index, 1);
+
+    this.setState(newState);
+  };
+
   render() {
+
+    const { messages } = this.state;
 
     return (
       <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
@@ -27,7 +47,8 @@ class SATMailIndex extends Component {
           </SATMessagesAsideHeader>
           <SATMessagesList
             messageRoute="mail"
-            items={mockMessageItems} />
+            removeMessage={this.removeMessage.bind(this)}
+            items={messages} />
         </SATMessagesAside>
         <SATMessagesContent>
           <Switch>

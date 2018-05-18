@@ -6,8 +6,14 @@ import MaterialIcon from 'material-icons-react';
 
 import messageStyles from 'css/pages/messages.module.css';
 
+// TODO:
+  // • Need to wire up actions
+    // • Delete removes from system
+    // • Archive removes from all, but keeps on file in archived filter
+
 export const SATMessagesItem = ({
   messageRoute,
+  removeMessage,
   item
 }) => (
   <li className={`${messageStyles.item__container}`}>
@@ -37,7 +43,10 @@ export const SATMessagesItem = ({
           <li className={`${messageStyles.item__action}`}>
             <MaterialIcon icon="archive" color="#6D727B" size="16px" />
           </li>
-          <li className={`${messageStyles.item__action}`}>
+          <li
+            className={`${messageStyles.item__action}`}
+            onClick={() => removeMessage(item.id)}
+          >
             <MaterialIcon icon="delete" color="#6D727B" size="16px" />
           </li>
         </ul>
