@@ -60,7 +60,7 @@ const mockBroadcastsItems = [
     message_title: 'Lorem ipsum dolor sit amet dolor sit amet',
     broadcast: true,
     broadcastCategory: 'Contest',
-    broadcastColor: 'primary',
+    broadcastColor: 0,
     messages: [
       {
         created_at: '22 mins ago',
@@ -74,7 +74,7 @@ const mockBroadcastsItems = [
     message_title: 'Lorem ipsum amet dolor sit amet',
     broadcast: true,
     broadcastCategory: 'Contest',
-    broadcastColor: 'primary',
+    broadcastColor: 0,
     messages: [
       {
         created_at: '3 day ago',
@@ -88,7 +88,7 @@ const mockBroadcastsItems = [
     message_title: 'Lorem ipsum dolor sit amet ipsum dolor',
     broadcast: true,
     broadcastCategory: 'Meeting request',
-    broadcastColor: 'caution',
+    broadcastColor: 3,
     messages: [
       {
         created_at: '4 days ago',

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
 import Calendar from 'react-big-calendar';
-import MaterialIcon from 'material-icons-react';
 import moment from 'moment';
 
 import { Popout } from 'shared/popout';
