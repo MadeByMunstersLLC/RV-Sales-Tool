@@ -79,7 +79,7 @@ class SATCalendarIndex extends Component {
         <PageContent>
           <Calendar
             selectable
-            events={events}
+            events={mockCalendarEvents}
             defaultDate={new Date()}
             scrollToTime={new Date()}
             onSelectEvent={(event) => {
@@ -107,7 +107,7 @@ class SATCalendarIndex extends Component {
 
 export default SATCalendarIndex;
 
-const events = [
+const mockCalendarEvents = [
   {
     id: 0,
     title: 'All Day Event very long title',

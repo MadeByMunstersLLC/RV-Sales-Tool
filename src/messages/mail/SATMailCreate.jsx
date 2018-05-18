@@ -11,7 +11,7 @@ const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : recipients.filter(lang =>
+  return inputLength === 0 ? [] : mockRecipients.filter(lang =>
     lang.name.toLowerCase().slice(0, inputLength) === inputValue
   );
 };
@@ -86,7 +86,7 @@ export default SATMailCreate;
 
 
 // Mock recipient Array
-const recipients = [
+const mockRecipients = [
   {
     name: 'Clay Carpenter',
     email: 'clay.carpenter@email.com'
