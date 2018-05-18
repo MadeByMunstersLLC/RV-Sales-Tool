@@ -244,6 +244,11 @@
   background-color: var(--unity-b-red-base);
 }
 
+.rbc-show-more {
+  font-size: var(--unity-font-12);
+  padding-left: var(--unity-spacer-4);
+}
+
 /* Time Indicator */
 .rbc-current-time-indicator {
   background-color: var(--unity-b-red-base);

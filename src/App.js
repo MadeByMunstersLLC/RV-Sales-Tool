@@ -16,6 +16,7 @@ import SATCalendarIndex from 'calendar/SATCalendarIndex';
 import SATDashboardIndex from 'dashboard/SATDashboardIndex';
 import SATMessagesIndex from 'messages/SATMessagesIndex';
 import SATReportsIndex from 'reports/SATReportsIndex';
+import SATSupportIndex from 'support/SATSupportIndex';
 import TopbarNavigation from 'shared/layout/TopbarNavigation';
 
 const App = () => (
@@ -43,7 +44,7 @@ const App = () => (
             sidebarNavLinkIcon="assessment" />
           <SidebarNavigationLink
             sidebarNavLinkText="Support Documents"
-            sidebarNavLinkUrl="/support_documents"
+            sidebarNavLinkUrl="/support"
             sidebarNavLinkIcon="folder" />
           <SidebarNavigationLink
             sidebarNavLinkText="Agent Profile"
@@ -92,6 +93,9 @@ const App = () => (
           <Route
             path="/reports"
             component={SATReportsIndex} />
+          <Route
+            path="/support"
+            component={SATSupportIndex} />
           <Route
             path="/agent_profile"
             component={SATAgentProfileIndex} />
