@@ -1,4 +1,5 @@
 const electron = require('electron');
+const { shell } = require('electron');
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
@@ -13,16 +14,27 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 1400, height: 1000, titleBarStyle: 'hiddenInset', frame: false});
+    mainWindow = new BrowserWindow({
+      width: 1400,
+      height: 1000,
+      titleBarStyle: 'hiddenInset',
+      frame: false,
+      webPreferences: {
+        nodeIntegration: false,
+        preload: __dirname + '/preload.js'
+      }
+    });
 
     // and load the index.html of the app.
     const startUrl = process.env.ELECTRON_START_URL || url.format({
-            pathname: path.join(__dirname, '/../build/index.html'),
-            protocol: 'file:',
-            slashes: true
-        });
+      pathname: path.join(__dirname, '/../build/index.html'),
+      protocol: 'file:',
+      slashes: true
+    });
+
     mainWindow.loadURL(startUrl);
     // Open the DevTools.
+
     mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
