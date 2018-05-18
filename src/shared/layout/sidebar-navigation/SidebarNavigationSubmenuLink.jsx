@@ -1,12 +1,8 @@
 import React from 'react';
 
-import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
+import { ExternalAppLink } from 'shared/misc';
 
-const clickHandle = (e, props) => {
-  e.stopPropagation();
-  e.preventDefault();
-  window.shell.openExternal(props)
-}
+import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
 
 export const SidebarNavigationSubmenuLink = ({
     submenuLinkText,
@@ -17,9 +13,11 @@ export const SidebarNavigationSubmenuLink = ({
       <li className={`${sidebarStyles.sidebar__item}`}>
         {window.shell ?
           <a
-            onClick={(e) => clickHandle(e, submenuLinkUrl)}
             className={`${sidebarStyles.link}`}>
-            {submenuLinkText}
+            <ExternalAppLink
+              linkUrl={submenuLinkUrl}>
+              {submenuLinkText}
+            </ExternalAppLink>
           </a>
         :
           <a
