@@ -15,6 +15,9 @@ import messageStyles from 'css/pages/messages.module.css';
 
 // TODO:
   // • Alerts should probable have a default timeout in the component
+  // • Alert is currently being positioned with negative margin should
+    // probably fix so it can be used in other areas
+  // • Redirect URL on delete to mail route
 
 class SATMailIndex extends Component {
 
@@ -34,7 +37,10 @@ class SATMailIndex extends Component {
     }
   };
 
-  removeMessage(id) {
+  removeMessage(e, id) {
+    e.stopPropagation();
+    e.preventDefault();
+
     const newState = this.state;
     const index = newState.messages.findIndex(m => m.id === id);
 
@@ -46,6 +52,13 @@ class SATMailIndex extends Component {
       deleteAlert: true
     });
   };
+
+  archiveMessage(e, item) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    console.log(item);
+  }
 
   render() {
 
@@ -71,6 +84,7 @@ class SATMailIndex extends Component {
             <SATMessagesList
               messageRoute="mail"
               removeMessage={this.removeMessage.bind(this)}
+              archiveMessage={this.archiveMessage.bind(this)}
               items={messages}
             />
           </SATMessagesAside>
@@ -96,6 +110,8 @@ class SATMailIndex extends Component {
                   <SATMessagesMessage
                     messagesReadOnly={false}
                     data={mockMessageItems}
+                    removeMessage={this.removeMessage.bind(this)}
+                    archiveMessage={this.archiveMessage.bind(this)}
                     {...props}
                   />
                 }
@@ -116,6 +132,8 @@ const mockMessageItems = [
     updated_at: '22 mins ago',
     message_title: 'Caitlyn Zahn',
     broadcast: false,
+    unread: true,
+    archived: false,
     messages: [
       {
         created_at: '22 mins ago',
@@ -130,6 +148,8 @@ const mockMessageItems = [
     updated_at: '1 day ago',
     message_title: 'Clay Carpenter',
     broadcast: false,
+    unread: false,
+    archived: false,
     messages: [
       {
         created_at: '3 day ago',
@@ -168,6 +188,8 @@ const mockMessageItems = [
     updated_at: '1 day ago',
     message_title: 'Bonnie Adams',
     broadcast: false,
+    unread: false,
+    archived: false,
     messages: [
       {
         created_at: '1 day ago',

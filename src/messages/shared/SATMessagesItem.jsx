@@ -13,6 +13,7 @@ import messageStyles from 'css/pages/messages.module.css';
 
 export const SATMessagesItem = ({
   messageRoute,
+  archiveMessage,
   removeMessage,
   item
 }) => (
@@ -40,12 +41,15 @@ export const SATMessagesItem = ({
           </div>
         )}
         <ul className={`${messageStyles.item__actions}`}>
-          <li className={`${messageStyles.item__action}`}>
+          <li
+            className={`${messageStyles.item__action}`}
+            onClick={(e) => archiveMessage(e, item)}
+          >
             <MaterialIcon icon="archive" color="#6D727B" size="16px" />
           </li>
           <li
             className={`${messageStyles.item__action}`}
-            onClick={() => removeMessage(item.id)}
+            onClick={(e) => removeMessage(e, item.id)}
           >
             <MaterialIcon icon="delete" color="#6D727B" size="16px" />
           </li>
