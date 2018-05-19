@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route, Switch } from "react-router-dom";
 
+import { Alert } from 'shared/alert/';
 import PageBlankState from 'shared/layout/PageBlankState';
 import SATMessagesAside from 'messages/shared/SATMessagesAside';
 import SATMessagesAsideHeader from 'messages/shared/SATMessagesAsideHeader';
@@ -29,7 +30,10 @@ class SATBroadcastIndex extends Component {
     }
   };
 
-  removeMessage(id) {
+  removeMessage(e, id) {
+    e.stopPropagation();
+    e.preventDefault();
+
     const newState = this.state;
     const index = newState.messages.findIndex(m => m.id === id);
 
@@ -42,52 +46,64 @@ class SATBroadcastIndex extends Component {
     });
   };
 
-  archiveMessage(id) {
+  archiveMessage(e, id) {
+    e.stopPropagation();
+    e.preventDefault();
+
     console.log(id);
   }
 
   render() {
 
     return (
-      <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
-        <SATMessagesAside>
-          <SATMessagesAsideHeader>
-            <input type="search" placeholder="Search for a message" />
-          </SATMessagesAsideHeader>
-          <SATMessagesList
-            messageRoute="broadcasts"
-            removeMessage={this.removeMessage.bind(this)}
-            archiveMessage={this.archiveMessage.bind(this)}
-            items={mockBroadcastsItems}
+      <Fragment>
+        { this.state.deleteAlert &&
+          <Alert
+            alertText="You have successfully deleted a message."
+            alertIcon="info"
+            alertType={1}
           />
-        </SATMessagesAside>
-        <SATMessagesContent>
-          <Switch>
-            <Route
-              exact
-              path="/messages/broadcasts/"
-              render={ () =>
-                <PageBlankState
-                  blankStateIcon="warning"
-                  blankStateText="Your broadcast messages"
-                />
-              }
+        }
+        <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
+          <SATMessagesAside>
+            <SATMessagesAsideHeader>
+              <input type="search" placeholder="Search for a message" />
+            </SATMessagesAsideHeader>
+            <SATMessagesList
+              messageRoute="broadcasts"
+              removeMessage={this.removeMessage.bind(this)}
+              archiveMessage={this.archiveMessage.bind(this)}
+              items={mockBroadcastsItems}
             />
-            <Route
-              path="/messages/broadcasts/:id"
-              render={ (props) =>
-                <SATMessagesMessage
-                  messagesReadOnly={true}
-                  removeMessage={this.removeMessage.bind(this)}
-                  archiveMessage={this.archiveMessage.bind(this)}
-                  data={mockBroadcastsItems}
-                  {...props}
-                />
-              }
-            />
-          </Switch>
-        </SATMessagesContent>
-      </div>
+          </SATMessagesAside>
+          <SATMessagesContent>
+            <Switch>
+              <Route
+                exact
+                path="/messages/broadcasts/"
+                render={ () =>
+                  <PageBlankState
+                    blankStateIcon="warning"
+                    blankStateText="Your broadcast messages"
+                  />
+                }
+              />
+              <Route
+                path="/messages/broadcasts/:id"
+                render={ (props) =>
+                  <SATMessagesMessage
+                    messagesReadOnly={true}
+                    removeMessage={this.removeMessage.bind(this)}
+                    archiveMessage={this.archiveMessage.bind(this)}
+                    data={mockBroadcastsItems}
+                    {...props}
+                  />
+                }
+              />
+            </Switch>
+          </SATMessagesContent>
+        </div>
+      </Fragment>
     );
   }
 }

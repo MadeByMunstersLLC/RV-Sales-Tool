@@ -202,7 +202,10 @@
 }
 
 .rbc-event {
-  background-color: transparent;
+  border-radius: var(--unity-radius-base);
+  margin-bottom: var(--unity-spacer-4);
+  padding-bottom: var(--unity-spacer-0);
+  padding-top: var(--unity-spacer-0);
 }
 
 .rbc-event.rbc-selected {
@@ -226,22 +229,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.rbc-event-content .title.blue {
-  background-color: var(--unity-b-blue-base);
-}
-
-.rbc-event-content .title.orange {
-  background-color: var(--unity-b-orange-base);
-}
-
-.rbc-event-content .title.green {
-  background-color: var(--unity-b-green-base);
-}
-
-.rbc-event-content .title.red {
-  background-color: var(--unity-b-red-base);
 }
 
 .rbc-show-more {
