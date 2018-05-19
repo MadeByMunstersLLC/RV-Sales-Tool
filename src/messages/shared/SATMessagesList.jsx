@@ -6,6 +6,7 @@ import messageStyles from 'css/pages/messages.module.css';
 
 export const SATMessagesList = ({
     messageRoute,
+    archiveMessage,
     removeMessage,
     items,
   }) => (
@@ -16,6 +17,7 @@ export const SATMessagesList = ({
       <SATMessagesItem
         messageRoute={messageRoute}
         removeMessage={removeMessage}
+        archiveMessage={archiveMessage}
         item={item}
         key={index}
       />

@@ -13,6 +13,39 @@ import messageStyles from 'css/pages/messages.module.css';
 
 class SATBroadcastIndex extends Component {
 
+  state = {
+    messages: mockBroadcastsItems,
+    deleteAlert: false,
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    if (this.state.deleteAlert !== prevState.deleteAlert) {
+      this.removeDeleteAlert = setTimeout(() => {
+        this.setState({
+          deleteAlert: false
+        });
+      }, 6000);
+    }
+  };
+
+  removeMessage(id) {
+    const newState = this.state;
+    const index = newState.messages.findIndex(m => m.id === id);
+
+    if (index === -1) return;
+    newState.messages.splice(index, 1);
+
+    this.setState({
+      newState,
+      deleteAlert: true
+    });
+  };
+
+  archiveMessage(id) {
+    console.log(id);
+  }
+
   render() {
 
     return (
@@ -23,7 +56,10 @@ class SATBroadcastIndex extends Component {
           </SATMessagesAsideHeader>
           <SATMessagesList
             messageRoute="broadcasts"
-            items={mockBroadcastsItems} />
+            removeMessage={this.removeMessage.bind(this)}
+            archiveMessage={this.archiveMessage.bind(this)}
+            items={mockBroadcastsItems}
+          />
         </SATMessagesAside>
         <SATMessagesContent>
           <Switch>
@@ -33,7 +69,8 @@ class SATBroadcastIndex extends Component {
               render={ () =>
                 <PageBlankState
                   blankStateIcon="warning"
-                  blankStateText="Your broadcast messages" />
+                  blankStateText="Your broadcast messages"
+                />
               }
             />
             <Route
@@ -41,7 +78,11 @@ class SATBroadcastIndex extends Component {
               render={ (props) =>
                 <SATMessagesMessage
                   messagesReadOnly={true}
-                  data={mockBroadcastsItems} {...props} />
+                  removeMessage={this.removeMessage.bind(this)}
+                  archiveMessage={this.archiveMessage.bind(this)}
+                  data={mockBroadcastsItems}
+                  {...props}
+                />
               }
             />
           </Switch>
@@ -61,6 +102,8 @@ const mockBroadcastsItems = [
     broadcast: true,
     broadcastCategory: 'Contest',
     broadcastColor: 0,
+    unread: false,
+    archived: false,
     messages: [
       {
         created_at: '22 mins ago',
@@ -75,6 +118,8 @@ const mockBroadcastsItems = [
     broadcast: true,
     broadcastCategory: 'Contest',
     broadcastColor: 0,
+    unread: false,
+    archived: false,
     messages: [
       {
         created_at: '3 day ago',
@@ -89,6 +134,8 @@ const mockBroadcastsItems = [
     broadcast: true,
     broadcastCategory: 'Meeting request',
     broadcastColor: 3,
+    unread: false,
+    archived: false,
     messages: [
       {
         created_at: '4 days ago',
