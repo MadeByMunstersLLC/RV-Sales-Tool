@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, Redirect, Switch } from "react-router-dom";
+import { NavLink, Route, Redirect, Switch } from "react-router-dom";
 
 import PageBlankState from 'shared/layout/PageBlankState';
 import PageContent from 'shared/layout/PageContent';
@@ -14,28 +14,35 @@ class SATSupportIndex extends Component {
         <PageHeader
           pageTitleLeft="Support Documents"
           pageTitleIconLeft="folder"
-          />
+        />
         <PageContent
           pageContentTabs="true">
           <Switch>
             <Route
               exact
-              path="/reports">
+              path="/support">
               <Redirect
-                to="/support_documents"
+                to="/support/all"
               />
             </Route>
             <Route
-              path="/support_documents/all"
+              path="/support/all"
               render={ () =>
-                <PageBlankState
-                  blankStateIcon="assessment"
-                  blankStateText="Compensation Report"
-                />
+                <ul>
+                  {mockSupportItems.map((item, index) =>
+                    <li key={index}>
+                      <NavLink
+                        to={'/support/' + `${item.id}`}
+                      >
+                        {item.id}
+                      </NavLink>
+                    </li>
+                  )}
+                </ul>
               }
             />
             <Route
-              path="/support_documents/:id"
+              path="/support/:id"
               render={ () =>
                 <PageBlankState
                   blankStateIcon="assessment"
@@ -51,3 +58,51 @@ class SATSupportIndex extends Component {
 }
 
 export default SATSupportIndex;
+
+const mockSupportItems = [
+  {
+    id: 1,
+    created_on: '',
+    updated_last: '',
+    title: '',
+    body: '',
+    category: '',
+
+  },
+  {
+    id: 2,
+    created_on: '',
+    updated_last: '',
+    title: '',
+    body: '',
+    category: '',
+
+  },
+  {
+    id: 3,
+    created_on: '',
+    updated_last: '',
+    title: '',
+    body: '',
+    category: '',
+
+  },
+  {
+    id: 4,
+    created_on: '',
+    updated_last: '',
+    title: '',
+    body: '',
+    category: '',
+
+  },
+  {
+    id: 5,
+    created_on: '',
+    updated_last: '',
+    title: '',
+    body: '',
+    category: '',
+
+  },
+]

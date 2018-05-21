@@ -3,61 +3,14 @@ import React, { Component, Fragment } from 'react';
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
-import { Popout } from 'shared/popout';
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
+import SATCalendarEvent from 'calendar/shared/SATCalendarEvent';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'css/pages/calendar.css';
 
-// TODO:
-  // • Needs cleanup on event start and stop times to indicate if event
-    // is all day, spans multiple days or is one day long.
-  // Move Event Popout to own component
-
 Calendar.momentLocalizer(moment);
-
-const Event = ({
-    event
-  }) => {
-  return (
-    <Fragment>
-      <p className="title">{event.title}</p>
-      <EventPopout
-        event={event}
-      />
-    </Fragment>
-  )
-};
-
-const EventPopout = ({
-    event
-  }) => {
-  return (
-    <Fragment>
-      <Popout classes={`calendar__popout`}>
-        <header className="header">
-          <h6 className="header__title">Event Details</h6>
-        </header>
-        <div className="body">
-          <div className="body__group">
-            <label>Event Date & Time</label>
-            <p>{moment(event.start).format('ll')} to {moment(event.end).format('LL')}</p>
-            <p>{moment(event.start).format('LT')} to {moment(event.end).format('LT')}</p>
-          </div>
-          {event.body ?
-            <div className="body__group">
-              <label>Event Notes</label>
-              <p>{event.body}</p>
-            </div>
-          :
-            ''
-          }
-        </div>
-      </Popout>
-    </Fragment>
-  );
-};
 
 class SATCalendarIndex extends Component {
 
@@ -102,7 +55,7 @@ class SATCalendarIndex extends Component {
             }}
             selected={stateEvent}
             components={{
-              event: Event
+              event: SATCalendarEvent
             }}
             views={[
               'month',

@@ -52,10 +52,10 @@ class SATMessagesMessage extends Component {
             {/* TODO:
               • Refactor actions to buttons */}
             <ul>
-              <li onClick={() => this.props.archiveMessage(message.id)}>
+              <li onClick={(e) => this.props.archiveMessage(e, message.id)}>
                 <MaterialIcon icon="archive" color="#D4D7DF" />
               </li>
-              <li onClick={() => this.props.removeMessage(message.id)}>
+              <li onClick={(e) => this.props.removeMessage(e, message.id)}>
                 <MaterialIcon icon="delete" color="#D4D7DF" />
               </li>
             </ul>

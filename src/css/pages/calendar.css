@@ -201,6 +201,10 @@
   display: none;
 }
 
+.rbc-day-slot .rbc-event {
+  overflow: visible !important;
+}
+
 .rbc-event {
   border-radius: var(--unity-radius-base);
   margin-bottom: var(--unity-spacer-4);
@@ -254,7 +258,7 @@
 }
 
 .rbc-selected .calendar__popout {
-  bottom: 120%;
+  bottom: calc(100% + 16px);
   opacity: 1;
   position: absolute;
   visibility: visible;
