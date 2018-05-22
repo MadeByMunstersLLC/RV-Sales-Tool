@@ -3,8 +3,18 @@ import { Route, Switch } from "react-router-dom";
 
 import { Alert } from 'shared/alert/';
 import PageBlankState from 'shared/layout/PageBlankState';
+import {
+  Popout,
+  PopoutBody,
+  PopoutContainer,
+  PopoutList,
+  PopoutItem,
+  PopoutTrigger } from '../../shared/popout/';
 import SATMessagesAside from 'messages/shared/SATMessagesAside';
 import SATMessagesAsideHeader from 'messages/shared/SATMessagesAsideHeader';
+import SATMessagesAsideHeaderActionButton from 'messages/shared/SATMessagesAsideHeaderActionButton';
+import SATMessagesAsideHeaderActionList from 'messages/shared/SATMessagesAsideHeaderActionList';
+import SATMessagesAsideHeaderActionItem from 'messages/shared/SATMessagesAsideHeaderActionItem';
 import SATMessagesContent from 'messages/shared/SATMessagesContent';
 import SATMessagesList from 'messages/shared/SATMessagesList';
 import SATMessagesMessage from 'messages/shared/SATMessagesMessage';
@@ -50,6 +60,11 @@ class SATBroadcastIndex extends Component {
     e.stopPropagation();
     e.preventDefault();
 
+    // TODO:
+      // • Update opbject on data model for message to hide archived message from:
+      // • Unread List
+      // • All Message List
+
     console.log(id);
   }
 
@@ -67,7 +82,38 @@ class SATBroadcastIndex extends Component {
         <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
           <SATMessagesAside>
             <SATMessagesAsideHeader>
-              <input type="search" placeholder="Search for a message" />
+              <SATMessagesAsideHeaderActionList>
+                <li className={`${messageStyles.action__item} ${messageStyles.broadcast__main}`}>
+                  <input type="search" placeholder="Search for a message" />
+                </li>
+                <SATMessagesAsideHeaderActionItem>
+                  <PopoutContainer>
+                    <PopoutTrigger
+                      popoutId="mail-filter">
+                      <SATMessagesAsideHeaderActionButton
+                        actionItemIcon="filter_list"
+                        actionItemIconColor="#20CD8E"
+                      />
+                    </PopoutTrigger>
+                    <Popout>
+                      <PopoutBody>
+                        <PopoutList>
+                          <PopoutItem
+                            itemText="All Messages"
+                          />
+                          <PopoutItem
+                            itemText="Unread Messages"
+                          />
+                          <PopoutItem
+                            itemText="Archived Messages"
+                          />
+                        </PopoutList>
+                      </PopoutBody>
+                    </Popout>
+                  </PopoutContainer>
+                </SATMessagesAsideHeaderActionItem>
+              </SATMessagesAsideHeaderActionList>
+
             </SATMessagesAsideHeader>
             <SATMessagesList
               messageRoute="broadcasts"

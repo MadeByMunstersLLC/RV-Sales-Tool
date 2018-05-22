@@ -13,13 +13,9 @@ import messageStyles from 'css/pages/messages.module.css';
 
 class SATMessagesMessage extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      match: props.match,
-      data: props.data
-    }
+  state = {
+    match: this.props.math,
+    data: this.props.data
   }
 
   render() {

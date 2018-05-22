@@ -19,7 +19,7 @@ export const SATMessagesItem = ({
 }) => (
   <li className={`${messageStyles.item__container}`}>
     <NavLink
-      to={/messages/`${messageRoute}` + '/'`${item.id}`}
+      to={`/messages/${messageRoute}/${item.id}`}
       activeClassName={`${messageStyles.active}`}>
       <div
         className={`${messageStyles.item}`}>

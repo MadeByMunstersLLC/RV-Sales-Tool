@@ -13,7 +13,7 @@
 /* Structure */
 .popout {
   composes: card from "../components/card.module.css";
-  margin-top: var(--unity-spacer-24);
+  margin-top: var(--unity-spacer-32);
   opacity: 0;
   position: absolute;
   right: 0;
@@ -24,7 +24,7 @@
 
 /* Popout Active */
 input[type=checkbox]:checked ~ .popout {
-  margin-top: var(--unity-spacer-0);
+  margin-top: var(--unity-spacer-8);
   opacity: 1;
   visibility: visible;
 }
@@ -38,6 +38,7 @@ input[type=checkbox]:checked ~ .popout {
 .popout__trigger {
   cursor: pointer;
   display: block;
+  margin-bottom: var(--unity-spacer-0);
 }
 
 /* Header */
@@ -64,6 +65,7 @@ input[type=checkbox]:checked ~ .popout {
   cursor: pointer;
   padding: var(--unity-spacer-8) var(--unity-spacer-0);
   position: relative;
+  white-space: nowrap;
 }
 
 .popout__item .icon::before {
@@ -87,6 +89,7 @@ input[type=checkbox]:checked ~ .popout {
 
 .popout__text {
   padding: var(--unity-spacer-4);
+  display: block;
   transition: all 0.35s ease;
 }
 
