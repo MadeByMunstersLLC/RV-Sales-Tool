@@ -32,7 +32,7 @@ class SATSupportIndex extends Component {
                   {mockSupportItems.map((item, index) =>
                     <li key={index}>
                       <NavLink
-                        to={/support/ + `${item.id}`}
+                        to={`/support/${item.id}`}
                       >
                         <p>{item.title}</p>
                       </NavLink>

@@ -3,16 +3,20 @@ import React, { Fragment } from 'react';
 import popoutStyles from 'css/components/popout.module.css';
 
 export const PopoutTrigger = ({
-    children
+    children,
+    popoutId
   }) => (
   <Fragment>
     <label
-      htmlFor="popout"
-      className={`${popoutStyles.popout__trigger}`}>{children}</label>
+      htmlFor={popoutId}
+      className={`${popoutStyles.popout__trigger}`}>
+      {children}
+    </label>
     <input
       type="checkbox"
-      id="popout"
-      className={`${popoutStyles.input}`} />
+      id={popoutId}
+      className={`${popoutStyles.input}`}
+    />
   </Fragment>
 )
 

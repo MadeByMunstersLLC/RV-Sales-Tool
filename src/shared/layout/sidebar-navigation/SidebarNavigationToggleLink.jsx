@@ -6,15 +6,8 @@ import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
 
 export class SidebarNavigationToggleLink extends Component {
 
-  constructor(props) {
-
-    super(props);
-
-    this.state = {
-      open: false
-    };
-
-    this.menuToggle = this.menuToggle.bind(this);
+  state = {
+    open: false
   }
 
   menuToggle = () => this.setState({

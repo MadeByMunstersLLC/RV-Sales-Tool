@@ -1,11 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import { NavLink, Route, Switch } from "react-router-dom";
 
-import { Alert } from 'shared/alert/';
+import { Alert } from 'shared/alert/'
 import PageBlankState from 'shared/layout/PageBlankState';
+import {
+  Popout,
+  PopoutBody,
+  PopoutContainer,
+  PopoutList,
+  PopoutItem,
+  PopoutTrigger } from '../../shared/popout/';
 import SATMailCreate from 'messages/mail/SATMailCreate';
 import SATMessagesAside from 'messages/shared/SATMessagesAside';
 import SATMessagesAsideHeader from 'messages/shared/SATMessagesAsideHeader';
+import SATMessagesAsideHeaderActionButton from 'messages/shared/SATMessagesAsideHeaderActionButton';
+import SATMessagesAsideHeaderActionList from 'messages/shared/SATMessagesAsideHeaderActionList';
+import SATMessagesAsideHeaderActionItem from 'messages/shared/SATMessagesAsideHeaderActionItem';
 import SATMessagesContent from 'messages/shared/SATMessagesContent';
 import SATMessagesList from 'messages/shared/SATMessagesList';
 import SATMessagesMessage from 'messages/shared/SATMessagesMessage';
@@ -24,6 +34,7 @@ class SATMailIndex extends Component {
   state = {
     messages: mockMessageItems,
     deleteAlert: false,
+    messageSearchInput: false,
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -57,7 +68,19 @@ class SATMailIndex extends Component {
     e.stopPropagation();
     e.preventDefault();
 
+    // TODO:
+      // • Update opbject on data model for message to hide archived message from:
+      // • Unread List
+      // • All Message List
+
     console.log(item);
+  }
+
+  toggleMessageSearchInput() {
+
+    this.setState({
+      messageSearchInput: !this.state.messageSearchInput,
+    });
   }
 
   render() {
@@ -76,10 +99,58 @@ class SATMailIndex extends Component {
         <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
           <SATMessagesAside>
             <SATMessagesAsideHeader>
-              <NavLink
-                to="/messages/mail/create">
-                <button>New Message</button>
-              </NavLink>
+              <SATMessagesAsideHeaderActionList>
+                <li className={`${messageStyles.action__item} ${messageStyles.mail__main}`}>
+                  <NavLink
+                    to="/messages/mail/create">
+                    <button className={`${messageStyles.button}`}>New Message</button>
+                  </NavLink>
+                </li>
+                <SATMessagesAsideHeaderActionItem>
+                  <SATMessagesAsideHeaderActionButton
+                    actionItemIcon="search"
+                    actionItemIconColor="#20CD8E"
+                    handleClick={this.toggleMessageSearchInput.bind(this)}
+                  />
+                </SATMessagesAsideHeaderActionItem>
+                <SATMessagesAsideHeaderActionItem>
+                  <PopoutContainer>
+                    <PopoutTrigger
+                      popoutId="mail-filter">
+                      <SATMessagesAsideHeaderActionButton
+                        actionItemIcon="filter_list"
+                        actionItemIconColor="#20CD8E"
+                      />
+                    </PopoutTrigger>
+                    <Popout>
+                      <PopoutBody>
+                        <PopoutList>
+                          <PopoutItem
+                            itemText="All Messages"
+                          />
+                          <PopoutItem
+                            itemText="Unread Messages"
+                          />
+                          <PopoutItem
+                            itemText="Archived Messages"
+                          />
+                        </PopoutList>
+                      </PopoutBody>
+                    </Popout>
+                  </PopoutContainer>
+                </SATMessagesAsideHeaderActionItem>
+              </SATMessagesAsideHeaderActionList>
+              <div
+                className={`
+                  ${messageStyles.header__search}
+                  ${this.state.messageSearchInput ? 'open' : 'closed'}
+                `}
+              >
+                <input
+                  type="search"
+                  placeholder="Find a message …"
+                />
+              </div>
             </SATMessagesAsideHeader>
             <SATMessagesList
               messageRoute="mail"

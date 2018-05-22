@@ -42,7 +42,8 @@ export const TopbarNavigation = ({items = []}) => (
       <ul className={`${topbarStyles.topbar__list}`}>
         <li className={`${topbarStyles.topbar__item}`}>
           <PopoutContainer>
-            <PopoutTrigger>
+            <PopoutTrigger
+              popoutId="topbar-notifications">
               <MaterialIcon icon="notifications_none" color="#20CD8E" />
             </PopoutTrigger>
             <Popout>
