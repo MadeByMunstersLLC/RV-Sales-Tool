@@ -86,8 +86,6 @@ class SATMessagesMessage extends Component {
             )}
           </ul>
         </div>
-        {/* TODO:
-          • Consider making this its own component */}
         {!this.props.messagesReadOnly ? (
           <SATMessagesMessageFooter />
         ) : ( '' )}

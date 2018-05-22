@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { NavLink, Route, Redirect, Switch } from "react-router-dom";
 
-import PageBlankState from 'shared/layout/PageBlankState';
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
+import SATSupportShow from './SATSupportShow';
 
 class SATSupportIndex extends Component {
 
@@ -32,9 +32,9 @@ class SATSupportIndex extends Component {
                   {mockSupportItems.map((item, index) =>
                     <li key={index}>
                       <NavLink
-                        to={'/support/' + `${item.id}`}
+                        to={/support/ + `${item.id}`}
                       >
-                        {item.id}
+                        <p>{item.title}</p>
                       </NavLink>
                     </li>
                   )}
@@ -43,10 +43,10 @@ class SATSupportIndex extends Component {
             />
             <Route
               path="/support/:id"
-              render={ () =>
-                <PageBlankState
-                  blankStateIcon="assessment"
-                  blankStateText="Performance Report"
+              render={ (props) =>
+                <SATSupportShow
+                  data={mockSupportItems}
+                  {...props}
                 />
               }
             />
@@ -61,46 +61,46 @@ export default SATSupportIndex;
 
 const mockSupportItems = [
   {
-    id: 1,
+    id: '0',
     created_on: '',
     updated_last: '',
-    title: '',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 1',
     body: '',
     category: '',
 
   },
   {
-    id: 2,
+    id: '1',
     created_on: '',
     updated_last: '',
-    title: '',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 2',
     body: '',
     category: '',
 
   },
   {
-    id: 3,
+    id: '2',
     created_on: '',
     updated_last: '',
-    title: '',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 3',
     body: '',
     category: '',
 
   },
   {
-    id: 4,
+    id: '3',
     created_on: '',
     updated_last: '',
-    title: '',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 4',
     body: '',
     category: '',
 
   },
   {
-    id: 5,
+    id: '4',
     created_on: '',
     updated_last: '',
-    title: '',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 5',
     body: '',
     category: '',
 
