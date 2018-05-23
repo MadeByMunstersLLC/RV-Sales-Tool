@@ -13,11 +13,6 @@ import messageStyles from 'css/pages/messages.module.css';
 
 class SATMessagesMessage extends Component {
 
-  state = {
-    match: this.props.math,
-    data: this.props.data
-  }
-
   componentDidMount() {
     this.scrollToBottom();
   }

@@ -23,6 +23,9 @@
 
 .sidebar__header .title {
   color: var(--unity-t-white-base);
+  min-width: 14px;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* Link List */

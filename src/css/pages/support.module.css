@@ -1,0 +1,64 @@
+/* // Support Page Stylesheet
+// ======================================== */
+
+/* TODO:
+  • Consider refactoring in favor of more global component styles
+*/
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.article {
+  height: 100%;
+  overflow: auto;
+}
+
+.article__header {
+  border-bottom: var(--unity-border-base);
+  margin-bottom: var(--unity-spacer-24);
+  padding-bottom: var(--unity-spacer-24);
+}
+
+.article__header .title {
+  margin-bottom: var(--unity-spacer-8);
+}
+
+.article__body,
+.article__aside {
+  float: left;
+}
+
+.article__body {
+  margin-right: var(--unity-spacer-24);
+  width: 70%;
+  white-space: pre-wrap;
+}
+
+.article__aside {
+  width: calc(30% - 24px);
+}
+
+.article__aside .title,
+.article__aside .text {
+  margin-bottom: var(--unity-spacer-8);
+}
+
+.article__footer {
+  border-top: var(--unity-border-base);
+  margin-top: var(--unity-spacer-24);
+  padding-top: var(--unity-spacer-24);
+}
+
+.article__footer .title {
+  margin-bottom: var(--unity-spacer-16);
+}
+
+.article__footer .attachment {
+  font-size: var(--unity-font-14);
+  font-weight: var(--unity-font-base);
+  margin-left: var(--unity-spacer-8);
+}

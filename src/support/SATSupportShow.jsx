@@ -1,17 +1,11 @@
 import React, { Component, Fragment } from 'react';
 
 import PageBlankState from 'shared/layout/PageBlankState';
+import SATSupportArticle from 'support/shared/SATSupportArticle';
+
+import cardStyles from 'css/components/card.module.css';
 
 class SATSupportShow extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      match: props.match,
-      data: props.data
-    }
-  }
 
   render() {
     var item = this.props.data.find(i => i.id === this.props.match.params.id);
@@ -19,15 +13,19 @@ class SATSupportShow extends Component {
 
     if(item) {
       itemData =
-        <div>
-          {item.title}
+        <div className={`${cardStyles.card} ${cardStyles.md}`}>
+          <SATSupportArticle
+            data={item}
+          />
         </div>
     } else {
       itemData =
-        <PageBlankState
-          blankStateIcon="help"
-          blankStateText="Hmmm? We can't find that document thread."
-        />
+        <div className={`${cardStyles.card} ${cardStyles.md}`}>
+          <PageBlankState
+            blankStateIcon="help"
+            blankStateText="Hmmm? We can't find that document thread."
+          />
+        </div>
     }
 
     return (
