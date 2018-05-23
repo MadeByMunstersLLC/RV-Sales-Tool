@@ -13,6 +13,7 @@ import {
 import SATAgentProfileIndex from 'profile/SATAgentProfileIndex';
 import SATCalendarIndex from 'calendar/SATCalendarIndex';
 import SATDashboardIndex from 'dashboard/SATDashboardIndex';
+import SATMarketplaceIndex from 'marketplace/SATMarketplaceIndex';
 import SATMessagesIndex from 'messages/SATMessagesIndex';
 import SATReportsIndex from 'reports/SATReportsIndex';
 import SATSupportIndex from 'support/SATSupportIndex';
@@ -28,23 +29,33 @@ const App = () => (
           <SidebarNavigationLink
             sidebarNavLinkText="Dashboard"
             sidebarNavLinkUrl="/dashboard"
-            sidebarNavLinkIcon="dashboard" />
+            sidebarNavLinkIcon="dashboard"
+          />
           <SidebarNavigationLink
             sidebarNavLinkText="Messages"
             sidebarNavLinkUrl="/messages"
-            sidebarNavLinkIcon="mail" />
+            sidebarNavLinkIcon="mail"
+          />
           <SidebarNavigationLink
             sidebarNavLinkText="Calendar"
             sidebarNavLinkUrl="/calendar"
-            sidebarNavLinkIcon="event" />
+            sidebarNavLinkIcon="event"
+          />
           <SidebarNavigationLink
             sidebarNavLinkText="Reports"
             sidebarNavLinkUrl="/reports"
-            sidebarNavLinkIcon="assessment" />
+            sidebarNavLinkIcon="assessment"
+          />
           <SidebarNavigationLink
             sidebarNavLinkText="Support Documents"
             sidebarNavLinkUrl="/support"
-            sidebarNavLinkIcon="folder" />
+            sidebarNavLinkIcon="folder"
+          />
+          <SidebarNavigationLink
+            sidebarNavLinkText="Marketplace"
+            sidebarNavLinkUrl="/marketplace"
+            sidebarNavLinkIcon="assignment"
+          />
           <SidebarNavigationLink
             sidebarNavLinkText="Agent Profile"
             sidebarNavLinkUrl="/agent_profile"
@@ -95,6 +106,9 @@ const App = () => (
           <Route
             path="/support"
             component={SATSupportIndex} />
+          <Route
+            path="/marketplace"
+            component={SATMarketplaceIndex} />
           <Route
             path="/agent_profile"
             component={SATAgentProfileIndex} />
