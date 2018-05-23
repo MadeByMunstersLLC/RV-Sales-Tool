@@ -5,7 +5,6 @@ import layout from 'css/global/layout.module.css';
 
 import {
   SidebarNavigation,
-  SidebarNavigationFooter,
   SidebarNavigationHeader,
   SidebarNavigationList,
   SidebarNavigationLink,
@@ -22,9 +21,9 @@ import TopbarNavigation from 'shared/layout/TopbarNavigation';
 const App = () => (
   <Router>
     <Fragment>
-      <SidebarNavigation>
-        <SidebarNavigationHeader
-          sidebarNavTitle="Sales Tool" />
+      <SidebarNavigation
+        sidebarHeaderTitle="Sales Tool"
+      >
         <SidebarNavigationList>
           <SidebarNavigationLink
             sidebarNavLinkText="Dashboard"
@@ -70,10 +69,10 @@ const App = () => (
               submenuLinkUrl="http://google.com "/>
           </SidebarNavigationToggleLink>
         </SidebarNavigationList>
-        <SidebarNavigationFooter />
       </SidebarNavigation>
       <TopbarNavigation
-        items={mockNotificationItems} />
+        items={mockNotificationItems}
+      />
       <section className={`${layout.page__body}`}>
         <Switch>
           <Route

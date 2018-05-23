@@ -18,6 +18,21 @@ class SATMessagesMessage extends Component {
     data: this.props.data
   }
 
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
+    const scrollHeight = this.messageList.scrollHeight;
+    const height = this.messageList.clientHeight;
+    const maxScrollTop = scrollHeight - height;
+    this.messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+  }
+
   render() {
     var message = this.props.data.find(m => m.id === this.props.match.params.id);
     var messageData;
@@ -57,12 +72,17 @@ class SATMessagesMessage extends Component {
             </ul>
           </div>
         </SATMessagesMessageHeader>
-        <div className={`${messageStyles.content__body} ${message.broadcast ? `${messageStyles.no_form}` : ''}`}>
+        <div className={`
+          ${messageStyles.content__body} ${message.broadcast ? `${messageStyles.no_form}` : ''}`}
+          ref={(ul) => { this.messageList = ul; }}
+        >
           <ul className={`${messageStyles.message__list}`}>
             {message.messages.map((message, index) =>
               <li
+                id="message"
                 className={`${messageStyles.message__item} ${message.currrent_user ? `${messageStyles.right}` : `${messageStyles.left}`}`}
-                key={index}>
+                key={index}
+              >
                 {!message.currrent_user && message.author ? (
                   <Avatar
                     avatarText={message.author}

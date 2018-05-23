@@ -216,7 +216,9 @@
   border-bottom: var(--unity-border-base);
   display: flex;
   padding: var(--unity-spacer-16);
-  /* overflow: auto; */
+
+  /* TODO: Deteremine if this is needed */
+  height: 42px;
 }
 
 .content__header .left {

@@ -36,11 +36,9 @@ body {
 
 /* Page Layout */
 .page__body {
-  margin-left: var(--unity-sidebar-width);
   padding: var(--unity-spacer-16);
   position: relative;
   top: 73px;
-  width: calc(100% - (var(--unity-sidebar-width) + var(--unity-spacer-32)));
 }
 
 .page__content {
@@ -62,9 +60,10 @@ body {
 .page__sidebar {
   left: 0;
   height: 100vh;
+  overflow-x: hidden;
   position: absolute;
   top: 0;
-  width: var(--unity-sidebar-width);
+  white-space: nowrap;
 }
 
 .page__blank {
@@ -74,4 +73,27 @@ body {
 
 .page__blank .title {
   color: var(--unity-s-gray-medium);
+}
+
+/* Sidebar Toggle State */
+.page__sidebar.sidebar__open {
+  width: var(--unity-sidebar-width-open);
+  transition: width 0.35s ease;
+}
+
+.page__sidebar.sidebar__open ~ .page__body {
+  margin-left: var(--unity-sidebar-width-open);
+  width: calc(100% - (var(--unity-sidebar-width-open) + var(--unity-spacer-32)));
+  transition: margin 0.35s ease, width 0.35s ease;
+}
+
+.page__sidebar.sidebar__closed {
+  width: var(--unity-sidebar-width-closed);
+  transition: width 0.35s ease;
+}
+
+.page__sidebar.sidebar__closed ~ .page__body {
+  margin-left: var(--unity-sidebar-width-closed);
+  width: calc(100% - (var(--unity-sidebar-width-closed) + var(--unity-spacer-32)));
+  transition: margin 0.35s ease, width 0.35s ease;
 }
