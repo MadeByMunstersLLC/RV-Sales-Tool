@@ -9,7 +9,9 @@ import PageHeader from 'shared/layout/PageHeader';
 import dashboardStyles from 'css/pages/dashboard.module.css';
 
 const SortableItem = SortableElement(({value}) =>
-  <SATDashboardItem dashboardItemSize={value.size}>
+  <SATDashboardItem
+    dashboardItemSize={value.size}
+  >
     <p>Dashboard Widget</p>
   </SATDashboardItem>
 );
@@ -18,7 +20,11 @@ const SortableList = SortableContainer(({items}) => {
   return (
     <div className={`${dashboardStyles.list}`}>
       {items.map((value, index) => (
-        <SortableItem key={`item-${index}`} index={index} value={value} />
+        <SortableItem
+          key={`item-${index}`}
+          index={index}
+          value={value}
+        />
       ))}
     </div>
   );
@@ -67,10 +73,14 @@ class SATDashboardIndex extends Component {
         <PageHeader
           pageTitleLeft="Dashboard"
           pageTitleIconLeft="dashboard"
-          pageTitleIconRight="view_compact" />
+          pageTitleIconRight="settings" />
         <PageContent
           pageContentScroll={true}>
-          <SortableList items={this.state.items} onSortEnd={this.onSortEnd} axis="xy" />
+          <SortableList
+            items={this.state.items}
+            onSortEnd={this.onSortEnd}
+            axis="xy"
+          />
         </PageContent>
       </Fragment>
     );

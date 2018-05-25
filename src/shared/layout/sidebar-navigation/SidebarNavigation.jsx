@@ -26,7 +26,10 @@ class SidebarNavigation extends Component {
         ${this.state.sideNavClosed ? `${layout.sidebar__closed}` : `${layout.sidebar__open}`} `}>
         <SidebarNavigationHeader
           sidebarNavTitle={this.props.sidebarHeaderTitle} />
-        {this.props.children}
+        {this.props.children({
+          isSidebarExpanded: !this.state.sideNavClosed,
+          updateSidebarState: this.toggleSideNav,
+        })}
         <SidebarNavigationFooter
           toggleSideNavTrigger={() => this.toggleSideNav()}
         />

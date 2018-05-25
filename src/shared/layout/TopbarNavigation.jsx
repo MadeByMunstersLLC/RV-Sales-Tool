@@ -22,7 +22,8 @@ const NotificationList = ({items}) => {
       {items.map((item, index) =>
         <li
           key={index}
-          className={`${popoutStyles.popout__item}`}>
+          className={`${popoutStyles.popout__item}`}
+        >
           <NavLink
             to={item.route}>
             <div className={`${popoutStyles.popout__text}`}>

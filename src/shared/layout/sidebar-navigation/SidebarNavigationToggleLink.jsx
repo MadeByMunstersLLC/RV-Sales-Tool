@@ -10,9 +10,18 @@ export class SidebarNavigationToggleLink extends Component {
     open: false
   }
 
-  menuToggle = () => this.setState({
-    open: !this.state.open
-  });
+  menuToggle = () => {
+    this.setState(
+      {
+        open: !this.state.open
+      },
+      () => {
+        if (!this.props.isSidebarExpanded) {
+          this.props.updateSidebarState();
+        }
+      }
+    );
+  }
 
   render() {
     return (

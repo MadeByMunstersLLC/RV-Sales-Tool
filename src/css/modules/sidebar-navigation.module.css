@@ -13,7 +13,7 @@
 /* Header */
 .sidebar__header {
   background-color: var(--unity-s-blue-dark);
-  padding: var(--unity-spacer-24);
+  padding: var(--unity-spacer-24) var(--unity-spacer-16);
   text-align: center;
 
   /* Drag Window Around */
@@ -23,9 +23,7 @@
 
 .sidebar__header .title {
   color: var(--unity-t-white-base);
-  min-width: 14px;
   overflow: hidden;
-  width: 100%;
 }
 
 /* Link List */

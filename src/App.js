@@ -5,7 +5,6 @@ import layout from 'css/global/layout.module.css';
 
 import {
   SidebarNavigation,
-  SidebarNavigationHeader,
   SidebarNavigationList,
   SidebarNavigationLink,
   SidebarNavigationToggleLink,
@@ -13,10 +12,10 @@ import {
 import SATAgentProfileIndex from 'profile/SATAgentProfileIndex';
 import SATCalendarIndex from 'calendar/SATCalendarIndex';
 import SATDashboardIndex from 'dashboard/SATDashboardIndex';
-import SATMarketplaceIndex from 'marketplace/SATMarketplaceIndex';
 import SATMessagesIndex from 'messages/SATMessagesIndex';
 import SATReportsIndex from 'reports/SATReportsIndex';
 import SATSupportIndex from 'support/SATSupportIndex';
+import SATWorkforceIndex from 'workforce/SATWorkforceIndex';
 import TopbarNavigation from 'shared/layout/TopbarNavigation';
 
 const App = () => (
@@ -25,61 +24,72 @@ const App = () => (
       <SidebarNavigation
         sidebarHeaderTitle="Sales Tool"
       >
-        <SidebarNavigationList>
-          <SidebarNavigationLink
-            sidebarNavLinkText="Dashboard"
-            sidebarNavLinkUrl="/dashboard"
-            sidebarNavLinkIcon="dashboard"
-          />
-          <SidebarNavigationLink
-            sidebarNavLinkText="Messages"
-            sidebarNavLinkUrl="/messages"
-            sidebarNavLinkIcon="mail"
-          />
-          <SidebarNavigationLink
-            sidebarNavLinkText="Calendar"
-            sidebarNavLinkUrl="/calendar"
-            sidebarNavLinkIcon="event"
-          />
-          <SidebarNavigationLink
-            sidebarNavLinkText="Reports"
-            sidebarNavLinkUrl="/reports"
-            sidebarNavLinkIcon="assessment"
-          />
-          <SidebarNavigationLink
-            sidebarNavLinkText="Support Documents"
-            sidebarNavLinkUrl="/support"
-            sidebarNavLinkIcon="folder"
-          />
-          <SidebarNavigationLink
-            sidebarNavLinkText="Marketplace"
-            sidebarNavLinkUrl="/marketplace"
-            sidebarNavLinkIcon="assignment"
-          />
-          <SidebarNavigationLink
-            sidebarNavLinkText="Agent Profile"
-            sidebarNavLinkUrl="/agent_profile"
-            sidebarNavLinkIcon="headset_mic" />
-          <SidebarNavigationToggleLink
-            sidebarNavLinkText="Additional Resources"
-            sidebarNavLinkIcon="info">
-            <SidebarNavigationSubmenuLink
-              submenuLinkText="Workday"
-              submenuLinkUrl="http://google.com "/>
-            <SidebarNavigationSubmenuLink
-              submenuLinkText="Reactor"
-              submenuLinkUrl="http://google.com "/>
-            <SidebarNavigationSubmenuLink
-              submenuLinkText="Employee Profile"
-              submenuLinkUrl="http://google.com "/>
-            <SidebarNavigationSubmenuLink
-              submenuLinkText="RV System Status"
-              submenuLinkUrl="http://google.com "/>
-            <SidebarNavigationSubmenuLink
-              submenuLinkText="Points of Contact"
-              submenuLinkUrl="http://google.com "/>
-          </SidebarNavigationToggleLink>
-        </SidebarNavigationList>
+        {({isSidebarExpanded, updateSidebarState}) => (
+          <SidebarNavigationList>
+            <SidebarNavigationLink
+              sidebarNavLinkText="Dashboard"
+              sidebarNavLinkUrl="/dashboard"
+              sidebarNavLinkIcon="dashboard"
+            />
+            <SidebarNavigationLink
+              sidebarNavLinkText="Messages"
+              sidebarNavLinkUrl="/messages"
+              sidebarNavLinkIcon="mail"
+            />
+            <SidebarNavigationLink
+              sidebarNavLinkText="Calendar"
+              sidebarNavLinkUrl="/calendar"
+              sidebarNavLinkIcon="event"
+            />
+            <SidebarNavigationLink
+              sidebarNavLinkText="Reports"
+              sidebarNavLinkUrl="/reports"
+              sidebarNavLinkIcon="assessment"
+            />
+            <SidebarNavigationLink
+              sidebarNavLinkText="Support Documents"
+              sidebarNavLinkUrl="/support"
+              sidebarNavLinkIcon="folder"
+            />
+            <SidebarNavigationLink
+              sidebarNavLinkText="Workforce"
+              sidebarNavLinkUrl="/workforce"
+              sidebarNavLinkIcon="assignment"
+            />
+            <SidebarNavigationLink
+              sidebarNavLinkText="Agent Profile"
+              sidebarNavLinkUrl="/agent_profile"
+              sidebarNavLinkIcon="headset_mic"
+            />
+            <SidebarNavigationToggleLink
+              sidebarNavLinkText="Additional Resources"
+              sidebarNavLinkIcon="info"
+              isSidebarExpanded={isSidebarExpanded}
+              updateSidebarState={updateSidebarState}
+            >
+              <SidebarNavigationSubmenuLink
+                submenuLinkText="Workday"
+                submenuLinkUrl="http://google.com "
+              />
+              <SidebarNavigationSubmenuLink
+                submenuLinkText="Reactor"
+                submenuLinkUrl="http://google.com "
+              />
+              <SidebarNavigationSubmenuLink
+                submenuLinkText="Employee Profile"
+                submenuLinkUrl="http://google.com "
+              />
+              <SidebarNavigationSubmenuLink
+                submenuLinkText="RV System Status"
+                submenuLinkUrl="http://google.com "
+              />
+              <SidebarNavigationSubmenuLink
+                submenuLinkText="Points of Contact"
+                submenuLinkUrl="http://google.com "
+              />
+            </SidebarNavigationToggleLink>
+          </SidebarNavigationList>
+        )}
       </SidebarNavigation>
       <TopbarNavigation
         items={mockNotificationItems}
@@ -107,8 +117,8 @@ const App = () => (
             path="/support"
             component={SATSupportIndex} />
           <Route
-            path="/marketplace"
-            component={SATMarketplaceIndex} />
+            path="/workforce"
+            component={SATWorkforceIndex} />
           <Route
             path="/agent_profile"
             component={SATAgentProfileIndex} />

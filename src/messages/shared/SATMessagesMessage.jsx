@@ -22,6 +22,8 @@ class SATMessagesMessage extends Component {
   }
 
   scrollToBottom() {
+    if (!this.messageList) return;
+
     const scrollHeight = this.messageList.scrollHeight;
     const height = this.messageList.clientHeight;
     const maxScrollTop = scrollHeight - height;

@@ -4,6 +4,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import PageBlankState from 'shared/layout/PageBlankState';
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
+import { Tabs, Tab } from 'shared/tabs/';
 
 class SATMarketplaceIndex extends Component {
 
@@ -12,19 +13,29 @@ class SATMarketplaceIndex extends Component {
     return (
       <Fragment>
         <PageHeader
-          pageTitleLeft="Marketplace"
+          pageTitleLeft="Workforce"
           pageTitleIconLeft="assignment"
         />
+        <Tabs tabsPageHeader="true">
+          <Tab
+            tabText="Overview"
+            tabUrl="/workforce/overview" />
+          <Tab
+            tabText="Marketplaces"
+            tabUrl="/workforce/marketplaces" />
+        </Tabs>
         <PageContent
-          pageContentTabs="true">
+          pageContentTabs="true"
+        >
           <Switch>
             <Route
               exact
-              path="/marketplace">
-              <Redirect to="/marketplace/timeoff" />
+              path="/workforce">
+              <Redirect to="/workforce/overview"
+            />
             </Route>
             <Route
-              path="/marketplace/timeoff"
+              path="/workforce"
               render={ () =>
                 <PageBlankState
                   blankStateIcon="date"
@@ -32,7 +43,16 @@ class SATMarketplaceIndex extends Component {
                 />
               }
             />
-            </Switch>
+            <Route
+              path="/workforc/marketplaces"
+              render={ () =>
+                <PageBlankState
+                  blankStateIcon="assignment"
+                  blankStateText="Marketplaces"
+                />
+              }
+            />
+          </Switch>
         </PageContent>
       </Fragment>
     );
