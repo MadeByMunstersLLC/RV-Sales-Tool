@@ -2,6 +2,8 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
+import minimizeIcon from 'images/icons/expand.svg';
+
 import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
 
 export const SidebarNavigationFooter = ({
@@ -15,9 +17,11 @@ export const SidebarNavigationFooter = ({
           className={`${sidebarStyles.trigger}`}
           onClick={() => toggleSideNavTrigger()}
         >
-          <span className={`${sidebarStyles.icon}`}>
-            <MaterialIcon icon="unfold_less" color="#FFFFFF" />
-          </span>
+          <img
+            src={minimizeIcon}
+            className={`${sidebarStyles.icon}`}
+            alt="Collapse Sidebar Trigger"
+          />
           <span className={`${sidebarStyles.text}`}>
             Minimize
           </span>

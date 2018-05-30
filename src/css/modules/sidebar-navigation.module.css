@@ -115,7 +115,7 @@
   cursor: pointer;
 }
 
-.sidebar__footer .trigger i {
-  transform: rotate(90deg);
+.sidebar__footer .trigger img {
   vertical-align: middle;
+  height: 24px;
 }

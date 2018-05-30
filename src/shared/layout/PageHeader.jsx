@@ -7,7 +7,6 @@ import styles from 'css/modules/page-header.module.css';
 export const PageHeader = ({
     pageTitleLeft,
     pageTitleIconLeft,
-    pageTitleRight,
     pageTitleIconRight,
   }) => (
   <header className={`${styles.header}`}>
@@ -17,7 +16,6 @@ export const PageHeader = ({
     </div>
     <div className={`${styles.header__right}`}>
       <MaterialIcon icon={pageTitleIconRight} color="#0072FF" />
-      <span>{pageTitleRight}</span>
     </div>
   </header>
 )
