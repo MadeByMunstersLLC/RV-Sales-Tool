@@ -23,6 +23,7 @@
   box-sizing: border-box;
   font-family: var(--unity-font-base);
   font-size: var(--unity-font-14);
+  height: 42px;
   padding: var(--unity-spacer-16) var(--unity-spacer-8);
   transition: border 0.35s ease;
   width: 100%;
