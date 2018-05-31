@@ -1,7 +1,5 @@
 import React from 'react';
 
-import MaterialIcon from 'material-icons-react';
-
 import minimizeIcon from 'images/icons/expand.svg';
 
 import sidebarStyles from 'css/modules/sidebar-navigation.module.css';

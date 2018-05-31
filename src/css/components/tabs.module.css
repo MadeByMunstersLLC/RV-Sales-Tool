@@ -31,11 +31,22 @@
   display: block;
   font-size: var(--unity-font-14);
   padding: var(--unity-spacer-16) var(--unity-spacer-32);
+  position: relative;
   text-transform: uppercase;
 }
 
 .tab__link.tab__active {
-  border-top: var(--unity-tab-border);
   background-color: var(--unity-t-white-base);
   color: var(--unity-b-blue-base);
+}
+
+.tab__link.tab__active::before {
+  background-color: var(--unity-b-blue-base);
+  content: "";
+  display: block;
+  left: 0;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }

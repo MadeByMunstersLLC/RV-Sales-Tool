@@ -31,12 +31,14 @@ class SATReportsIndex extends Component {
           />
         </Tabs>
         <PageContent
-          pageContentTabs="true">
+          pageContentTabs="true"
+        >
           <Switch>
             <Route
               exact
               path="/reports">
-              <Redirect to="/reports/compensation" />
+              <Redirect to="/reports/compensation"
+            />
             </Route>
             <Route
               path="/reports/compensation"

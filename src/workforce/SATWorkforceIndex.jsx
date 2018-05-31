@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import PageBlankState from 'shared/layout/PageBlankState';
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
+import SATWorkforceMarketplaceIndex from 'workforce/marketplace/SATWorkforceMarketplaceIndex';
+import SATWorkforceOverviewIndex from 'workforce/overview/SATWorkforceOverviewIndex';
+import SATWorkforceShiftMgmtIndex from 'workforce/shift-mgmt/SATWorkforceShiftMgmtIndex';
 import { Tabs, Tab } from 'shared/tabs/';
 
 class SATMarketplaceIndex extends Component {
@@ -16,13 +18,21 @@ class SATMarketplaceIndex extends Component {
           pageTitleLeft="Workforce"
           pageTitleIconLeft="assignment"
         />
-        <Tabs tabsPageHeader="true">
+        <Tabs
+          tabsPageHeader={true}
+        >
           <Tab
             tabText="Overview"
-            tabUrl="/workforce/overview" />
+            tabUrl="/workforce/overview"
+          />
           <Tab
-            tabText="Marketplaces"
-            tabUrl="/workforce/marketplaces" />
+            tabText="Marketplace"
+            tabUrl="/workforce/marketplace"
+          />
+          <Tab
+            tabText="Shift Management"
+            tabUrl="/workforce/shift_management"
+          />
         </Tabs>
         <PageContent
           pageContentTabs="true"
@@ -35,22 +45,16 @@ class SATMarketplaceIndex extends Component {
             />
             </Route>
             <Route
-              path="/workforce"
-              render={ () =>
-                <PageBlankState
-                  blankStateIcon="date"
-                  blankStateText="Timeoff"
-                />
-              }
+              path="/workforce/overview"
+              component={SATWorkforceOverviewIndex}
             />
             <Route
-              path="/workforc/marketplaces"
-              render={ () =>
-                <PageBlankState
-                  blankStateIcon="assignment"
-                  blankStateText="Marketplaces"
-                />
-              }
+              path="/workforce/marketplace"
+              component={SATWorkforceMarketplaceIndex}
+            />
+            <Route
+              path="/workforce/shift_management"
+              component={SATWorkforceShiftMgmtIndex}
             />
           </Switch>
         </PageContent>

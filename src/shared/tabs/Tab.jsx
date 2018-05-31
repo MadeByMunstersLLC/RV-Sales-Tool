@@ -8,7 +8,8 @@ export const Tab = ({
     tabUrl
   }) => (
   <li
-    className={`${tabStyles.tab}`}>
+    className={`${tabStyles.tab}`}
+  >
     <NavLink
       to={tabUrl}
       className={`${tabStyles.tab__link}`}
