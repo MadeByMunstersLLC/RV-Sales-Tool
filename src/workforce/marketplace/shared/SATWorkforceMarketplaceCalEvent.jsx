@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-export const SATWorkforceMarketplaceEvent = ({
+export const SATWorkforceMarketplaceCalEvent = ({
     event
   }) => {
   return (
@@ -10,4 +10,4 @@ export const SATWorkforceMarketplaceEvent = ({
   )
 };
 
-export default SATWorkforceMarketplaceEvent
+export default SATWorkforceMarketplaceCalEvent

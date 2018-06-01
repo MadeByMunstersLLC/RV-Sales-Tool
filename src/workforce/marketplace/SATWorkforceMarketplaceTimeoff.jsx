@@ -3,12 +3,23 @@ import React, { Component } from 'react';
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
-import SATWorkforceMarketplaceEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceEvent';
+import SATWorkforceMarketplaceCalEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalEvent';
+import SATWorkforceMarketplaceCalTopbar from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalTopbar';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'css/pages/calendar.css';
 
 Calendar.momentLocalizer(moment);
+
+const CalendarTopbar = ({label, onNavigate}) => {
+  return (
+    <SATWorkforceMarketplaceCalTopbar
+      label={label}
+      onNavigate={onNavigate}
+      topbarBtnTitle="REQUEST PTO"
+    />
+  )
+};
 
 class SATWorkforceMarketplaceTimeoff extends Component {
 
@@ -27,7 +38,8 @@ class SATWorkforceMarketplaceTimeoff extends Component {
         scrollToTime={new Date()}
         views={[ 'month' ]}
         components={{
-          event: SATWorkforceMarketplaceEvent
+          event: SATWorkforceMarketplaceCalEvent,
+          toolbar: CalendarTopbar
         }}
       />
     );

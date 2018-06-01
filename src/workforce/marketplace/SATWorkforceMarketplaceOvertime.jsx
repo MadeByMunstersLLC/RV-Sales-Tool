@@ -3,27 +3,22 @@ import React, { Component } from 'react';
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
-import SATWorkforceMarketplaceEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceEvent';
+import SATWorkforceMarketplaceCalEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalEvent';
+import SATWorkforceMarketplaceCalTopbar from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalTopbar';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'css/pages/calendar.css';
 
 Calendar.momentLocalizer(moment);
 
-const HeaderToolbar = ({label, onNavigate}) => {
+const CalendarTopbar = ({label, onNavigate}) => {
   return (
-    <div className="rbc-toolbar">
-      <span className="rbc-btn-group">
-        <button onClick={() => onNavigate("TODAY")} type="button">today</button>
-        <button onClick={() => onNavigate("PREV")} type="button">back</button>
-        <button onClick={() => onNavigate("NEXT")} type="button">next</button>
-      </span>
-      <span className="rbc-toolbar-label">{label}</span>
-      <span>
-        <button type="button">Action Title</button>
-      </span>
-    </div>
-  );
+    <SATWorkforceMarketplaceCalTopbar
+      label={label}
+      onNavigate={onNavigate}
+      topbarBtnTitle="REQUEST OT"
+    />
+  )
 };
 
 class SATWorkforceMarketplaceOvertime extends Component {
@@ -43,8 +38,8 @@ class SATWorkforceMarketplaceOvertime extends Component {
         scrollToTime={new Date()}
         views={[ 'month' ]}
         components={{
-          event: SATWorkforceMarketplaceEvent,
-          toolbar: HeaderToolbar
+          event: SATWorkforceMarketplaceCalEvent,
+          toolbar: CalendarTopbar,
         }}
       />
     );
