@@ -54,6 +54,23 @@
   outline: none;
 }
 
+.rbc-toolbar-workforce .rbc-toolbar-label {
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.rbc-toolbar-workforce .rbc-btn-group {
+  position: relative;
+  z-index: 1;
+}
+
+.rbc-toolbar-workforce .rbc-toolbar-action {
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+}
+
 .rbc-toolbar-label {
   font-weight: var(--unity-font-bold);
 }
@@ -209,9 +226,9 @@
   border-radius: var(--unity-radius-base);
   margin-bottom: var(--unity-spacer-4);
   margin-left: var(--unity-spacer-4);
-  margin-right: var(--unity-spacer-4);
   padding-bottom: var(--unity-spacer-0);
   padding-top: var(--unity-spacer-0);
+  width: calc(100% - 8px) !important;
 }
 
 .rbc-event.rbc-selected {
@@ -304,4 +321,9 @@
 .workforce__event .title {
   color: var(--unity-b-blue-base);
   font-weight: var(--unity-font-bold);
+}
+
+/* Hide Past Events */
+.workforce__event__hidden {
+  display: none;
 }
