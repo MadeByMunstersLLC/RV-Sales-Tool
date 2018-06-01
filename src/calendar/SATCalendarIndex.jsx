@@ -37,7 +37,7 @@ class SATCalendarIndex extends Component {
         <PageHeader
           pageTitleLeft="Calendar"
           pageTitleIconLeft="event"
-          pageTitleIconRight="add"
+          pageTitleIconRight="settings"
         />
         <PageContent>
           <Calendar

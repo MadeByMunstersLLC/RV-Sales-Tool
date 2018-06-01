@@ -1,0 +1,38 @@
+/* // Card Tabs Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.card__tabs__container {
+  background-color: var(--unity-t-white-base);
+  border-radius: 2px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__tabs__container > div {
+  height: calc(100% - 47px);
+}
+
+.card__tabs {
+  border: var(--unity-border-base);
+  bottom: 0;
+  box-shadow: 0 -3px 8px 0 rgba(0, 0, 0, 0.05);
+  width: calc(100% - 2px);
+  top: auto;
+}
+
+.card__tabs li {
+  box-sizing: border-box;
+  text-align: center;
+  width: calc(100%/3);
+}
+
+.card__tabs li:last-child {
+  border-right: none;
+}

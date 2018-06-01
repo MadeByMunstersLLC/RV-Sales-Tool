@@ -17,7 +17,9 @@ class SATMessagesIndex extends Component {
         <PageHeader
           pageTitleLeft="Messages"
           pageTitleIconLeft="email" />
-        <Tabs tabsPageHeader="true">
+        <Tabs
+          tabsPageHeader={true}
+        >
           <Tab
             tabText="Messages"
             tabUrl="/messages/mail" />
