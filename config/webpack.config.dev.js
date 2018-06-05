@@ -11,6 +11,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const fs = require('fs');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -84,7 +85,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -95,8 +96,9 @@ module.exports = {
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+      // new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
     ],
+    symlinks: true,
   },
   module: {
     strictExportPresence: true,
@@ -115,7 +117,7 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -141,10 +143,17 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            // include: paths.appSrc,
+            include: [
+              paths.appSrc,
+              // path.resolve(__dirname, 'node_modules/rv-unity-react'),
+              // 'node_modules/rv-unity-react',
+
+              fs.realpathSync('node_modules/rv-unity-react'),
+            ],
             loader: require.resolve('babel-loader'),
             options: {
-              
+
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
@@ -165,7 +174,9 @@ module.exports = {
                 options: {
                   importLoaders: 1,
                   modules: true,
-                  localIdentName: '[path]__[name]___[local]',
+                  // camelCase: 'only',
+                  // localIdentName: '[name]__[local]',
+                  // localIdentName: '[path]__[name]___[local]',
                 },
               },
               {
@@ -193,33 +204,49 @@ module.exports = {
           {
             test: /\.css$/,
             exclude: /\.module\.css$/,
+            // include: [
+            //   paths.appSrc,
+            //   // path.resolve(__dirname, 'node_modules/rv-unity-react'),
+            //   // 'node_modules/rv-unity-react',
+            //
+            //   fs.realpathSync('node_modules/rv-unity-react'),
+            //   fs.realpathSync('node_modules/rv-unity'),
+            // ],
             use: [
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  camelCase: 'only',
+                  localIdentName: '[name]__[local]',
                 },
               },
               {
                 loader: require.resolve('postcss-loader'),
                 options: {
-                  // Necessary for external CSS imports to work
-                  // https://github.com/facebookincubator/create-react-app/issues/2677
-                  ident: 'postcss',
-                  plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                      ],
-                      flexbox: 'no-2009',
-                    }),
-                  ],
+                  config: {
+                    path: '.', // Postcss can't find it's own config file...
+                  },
                 },
+                // options: {
+                //   // Necessary for external CSS imports to work
+                //   // https://github.com/facebookincubator/create-react-app/issues/2677
+                //   ident: 'postcss',
+                //   plugins: () => [
+                //     require('postcss-flexbugs-fixes'),
+                //     autoprefixer({
+                //       browsers: [
+                //         '>1%',
+                //         'last 4 versions',
+                //         'Firefox ESR',
+                //         'not ie < 9', // React doesn't support IE8 anyway
+                //       ],
+                //       flexbox: 'no-2009',
+                //     }),
+                //   ],
+                // },
               },
             ],
           },
