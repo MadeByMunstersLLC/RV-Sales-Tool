@@ -8,6 +8,15 @@ import PageHeader from 'shared/layout/PageHeader';
 
 import dashboardStyles from 'css/pages/dashboard.module.css';
 
+// Full import
+// import 'rv-unity/src/css/unity.css';
+
+// Selective import, avoids Unity's base styles.
+import 'rv-unity/src/css/base/variables.css';
+import 'rv-unity/src/css/components/buttons.css';
+
+import { Button } from 'rv-unity-react';
+
 const SortableItem = SortableElement(({value}) =>
   <SATDashboardItem
     dashboardItemSize={value.size}
@@ -73,9 +82,10 @@ class SATDashboardIndex extends Component {
         <PageHeader
           pageTitleLeft="Dashboard"
           pageTitleIconLeft="dashboard"
-          pageTitleIconRight="settings" />
-        <PageContent
-          pageContentScroll={true}>
+          pageTitleIconRight="settings"
+        />
+        <PageContent pageContentScroll={true}>
+          <Button label="label" onPress={() => (undefined)}/>
           <SortableList
             items={this.state.items}
             onSortEnd={this.onSortEnd}
