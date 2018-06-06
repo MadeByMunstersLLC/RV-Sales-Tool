@@ -160,6 +160,7 @@ module.exports = {
               cacheDirectory: true,
             },
           },
+
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.
@@ -175,14 +176,7 @@ module.exports = {
                   importLoaders: 1,
                   modules: true,
                   localIdentName: '[path]__[name]___[local]',
-                  // camelCase: 'only',
-                  // localIdentName: '[name]__[local]',
                 },
-                // options: {
-                //   importLoaders: 1,
-                //   modules: true,
-                //   localIdentName: '[path]__[name]___[local]',
-                // },
               },
               {
                 loader: require.resolve('postcss-loader'),
@@ -206,8 +200,6 @@ module.exports = {
               },
             ],
           },
-
-
 
           // Works for Unity loading, but munges this project's class names
           {

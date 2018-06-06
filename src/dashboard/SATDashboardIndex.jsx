@@ -8,12 +8,14 @@ import PageHeader from 'shared/layout/PageHeader';
 
 import dashboardStyles from 'css/pages/dashboard.module.css';
 
-import 'rv-unity/src/css/unity.css';
-import unityButtons from 'rv-unity/src/css/components/buttons.css';
+// Full import
+// import 'rv-unity/src/css/unity.css';
+
+// Selective import, avoids Unity's base styles.
+import 'rv-unity/src/css/base/variables.css';
+import 'rv-unity/src/css/components/buttons.css';
 
 import { Button } from 'rv-unity-react';
-
-console.log(`unityButtons:`, unityButtons);
 
 const SortableItem = SortableElement(({value}) =>
   <SATDashboardItem
