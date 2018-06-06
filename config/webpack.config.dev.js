@@ -174,10 +174,15 @@ module.exports = {
                 options: {
                   importLoaders: 1,
                   modules: true,
+                  localIdentName: '[path]__[name]___[local]',
                   // camelCase: 'only',
                   // localIdentName: '[name]__[local]',
-                  // localIdentName: '[path]__[name]___[local]',
                 },
+                // options: {
+                //   importLoaders: 1,
+                //   modules: true,
+                //   localIdentName: '[path]__[name]___[local]',
+                // },
               },
               {
                 loader: require.resolve('postcss-loader'),
@@ -201,17 +206,13 @@ module.exports = {
               },
             ],
           },
+
+
+
+          // Works for Unity loading, but munges this project's class names
           {
             test: /\.css$/,
             exclude: /\.module\.css$/,
-            // include: [
-            //   paths.appSrc,
-            //   // path.resolve(__dirname, 'node_modules/rv-unity-react'),
-            //   // 'node_modules/rv-unity-react',
-            //
-            //   fs.realpathSync('node_modules/rv-unity-react'),
-            //   fs.realpathSync('node_modules/rv-unity'),
-            // ],
             use: [
               require.resolve('style-loader'),
               {
@@ -230,26 +231,45 @@ module.exports = {
                     path: '.', // Postcss can't find it's own config file...
                   },
                 },
-                // options: {
-                //   // Necessary for external CSS imports to work
-                //   // https://github.com/facebookincubator/create-react-app/issues/2677
-                //   ident: 'postcss',
-                //   plugins: () => [
-                //     require('postcss-flexbugs-fixes'),
-                //     autoprefixer({
-                //       browsers: [
-                //         '>1%',
-                //         'last 4 versions',
-                //         'Firefox ESR',
-                //         'not ie < 9', // React doesn't support IE8 anyway
-                //       ],
-                //       flexbox: 'no-2009',
-                //     }),
-                //   ],
-                // },
               },
             ],
           },
+
+          // Default loader (immediately after CRA ejection)
+          // {
+          //   test: /\.css$/,
+          //   exclude: /\.module\.css$/,
+          //   use: [
+          //     require.resolve('style-loader'),
+          //     {
+          //       loader: require.resolve('css-loader'),
+          //       options: {
+          //         importLoaders: 1,
+          //       },
+          //     },
+          //     {
+          //       loader: require.resolve('postcss-loader'),
+          //       options: {
+          //         // Necessary for external CSS imports to work
+          //         // https://github.com/facebookincubator/create-react-app/issues/2677
+          //         ident: 'postcss',
+          //         plugins: () => [
+          //           require('postcss-flexbugs-fixes'),
+          //           autoprefixer({
+          //             browsers: [
+          //               '>1%',
+          //               'last 4 versions',
+          //               'Firefox ESR',
+          //               'not ie < 9', // React doesn't support IE8 anyway
+          //             ],
+          //             flexbox: 'no-2009',
+          //           }),
+          //         ],
+          //       },
+          //     },
+          //   ],
+          // },
+
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
