@@ -10,14 +10,10 @@ import dashboardStyles from 'css/pages/dashboard.module.css';
 
 import 'rv-unity/src/css/unity.css';
 import unityButtons from 'rv-unity/src/css/components/buttons.css';
-// import localButtons from 'css/buttons.css';
-import {unityButtonSmall} from 'css/buttons.css';
 
 import { Button } from 'rv-unity-react';
 
 console.log(`unityButtons:`, unityButtons);
-// console.log(`localButtons:`, localButtons);
-console.log(`unityButtonSmall:`, unityButtonSmall);
 
 const SortableItem = SortableElement(({value}) =>
   <SATDashboardItem
