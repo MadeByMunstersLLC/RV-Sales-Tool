@@ -201,10 +201,51 @@ module.exports = {
             ],
           },
 
+          // Default loader (immediately after CRA ejection)
+          {
+            test: [
+              /react\-big\-calendar\/.*\.css$/,
+              /\/pages\/.*\.css$/,
+            ],
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+            ],
+          },
+
           // Works for Unity loading, but munges this project's class names
           {
             test: /\.css$/,
-            exclude: /\.module\.css$/,
+            exclude: [
+              /\.module\.css$/,
+              /react\-big\-calendar\/.*\.css$/,
+              /\/pages\/.*\.css$/,
+            ],
             use: [
               require.resolve('style-loader'),
               {
@@ -230,7 +271,6 @@ module.exports = {
           // Default loader (immediately after CRA ejection)
           // {
           //   test: /\.css$/,
-          //   exclude: /\.module\.css$/,
           //   use: [
           //     require.resolve('style-loader'),
           //     {
