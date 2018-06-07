@@ -11,16 +11,16 @@ import 'rv-unity/src/css/components/buttons.css';
 export const SATSupportItem = ({
     post
   }) => (
-    <CardBody>
-      <ul>
-        <li><p>{post.title}</p></li>
-        <li><p>{post.created_on}</p></li>
-        <li><p>{post.updated_last}</p></li>
-        <li>
-          <Button label="label" onPress={`/support/${post.id}`}/>
+    // <CardBody>
+      <ul className="tables__unity-table__row">
+        <li className="tables__unity-table__cell"><p>{post.title}</p></li>
+        <li className="tables__unity-table__cell"><p>{post.created_on}</p></li>
+        <li className="tables__unity-table__cell"><p>{post.updated_last}</p></li>
+        <li className="tables__unity-table__cell">
+          <Button label="Read More" onPress={() => (undefined)}/>
         </li>
       </ul>
-    </CardBody>
+    // </CardBody>
 )
 
 export default SATSupportItem;
