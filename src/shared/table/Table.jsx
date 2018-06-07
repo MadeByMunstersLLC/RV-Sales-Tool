@@ -9,7 +9,7 @@ import 'rv-unity/src/css/components/tables.css';
 export const Table = ({
     children
   }) => (
-  <table className="table">
+  <table className={`${tableStyles.table}`}>
     {children}
   </table>
 )
