@@ -37,4 +37,4 @@ export const SATCalendarEventPopout = ({
   );
 };
 
-export default SATCalendarEventPopout
+export default SATCalendarEventPopout;
