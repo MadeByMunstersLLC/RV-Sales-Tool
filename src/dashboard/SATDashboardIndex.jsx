@@ -2,20 +2,21 @@ import React, { Component, Fragment } from 'react';
 
 import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
 
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader } from 'rv-unity-react';
 import SATDashboardItem from 'dashboard/SATDashboardItem';
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
 
 import dashboardStyles from 'css/pages/dashboard.module.css';
 
-// Full import
-// import 'rv-unity/src/css/unity.css';
-
-// Selective import, avoids Unity's base styles.
-import 'rv-unity/src/css/base/variables.css';
 import 'rv-unity/src/css/components/buttons.css';
+import 'rv-unity/src/css/components/modals.css';
 
-import { Button } from 'rv-unity-react';
 
 const SortableItem = SortableElement(({value}) =>
   <SATDashboardItem
@@ -67,6 +68,7 @@ class SATDashboardIndex extends Component {
         size: 'sm'
       },
     ],
+    modalVisibility: false,
   };
 
   onSortEnd = ({oldIndex, newIndex}) => {
@@ -75,17 +77,39 @@ class SATDashboardIndex extends Component {
     });
   };
 
+  CustomizeDashboardToggle = () => {
+    this.setState({
+      modalVisibility: !this.state.modalVisibility
+    })
+  }
+
   render() {
 
     return (
       <Fragment>
+        <Modal
+          visible={this.state.modalVisibility}
+        >
+          <ModalHeader
+            title="Customize Dashboard"
+            description="Set the visibility of a widget by toggling it on or off"
+            onClose={this.CustomizeDashboardToggle}
+          />
+          <ModalFooter>
+            <Button
+              label="Submit"
+              size={0}
+              onPress={() => undefined}
+            />
+          </ModalFooter>
+        </Modal>
         <PageHeader
           pageTitleLeft="Dashboard"
           pageTitleIconLeft="dashboard"
           pageTitleIconRight="settings"
+          pageTitleRightOnPress={this.CustomizeDashboardToggle}
         />
         <PageContent pageContentScroll={true}>
-          <Button label="label" onPress={() => (undefined)}/>
           <SortableList
             items={this.state.items}
             onSortEnd={this.onSortEnd}

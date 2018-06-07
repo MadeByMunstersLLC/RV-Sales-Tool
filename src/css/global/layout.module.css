@@ -27,6 +27,11 @@ body {
   padding: var(--unity-spacer-0);
 }
 
+/* Button Rest */
+.clickable {
+  cursor: pointer;
+}
+
 /* Clearfix */
 .clearfix::after {
   content: " ";
