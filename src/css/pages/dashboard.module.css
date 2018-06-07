@@ -10,14 +10,17 @@
 /* Structure */
 .list {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--unity-spacer-24);
+  grid-auto-flow: row dense;
 }
 
 .item {
-  display: inline-flex;
-  height: 300px;
-  padding: var(--unity-spacer-16);
+  height: 300px; /* Default height for all items */
+}
+
+.item > div {
+  height: 100%;
 }
 
 /* Item Sizes */
@@ -36,4 +39,28 @@
   grid-column-end: span 3;
   grid-row-end: span 3;
   height: 624px;
+}
+
+/* Filler Item */
+.item__filler {
+  composes: clickable from '../global/layout.module.css';
+  background-color: var(--unity-s-gray-alt-1);
+  border: 1px dashed var(--unity-s-gray-medium);
+}
+
+.filler__body {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+}
+
+.filler__body .title,
+.filler__body .description,
+.filler__body i {
+  display: inline-block;
+  width: 100%;
 }

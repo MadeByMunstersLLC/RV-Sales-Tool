@@ -1,0 +1,39 @@
+/* // Modal Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/spacers.module.css);
+@import url(../settings/typography.module.css);
+
+
+/* Structure */
+.list {
+
+}
+
+.item {
+  display: block;
+  padding: var(--unity-spacer-16) var(--unity-spacer-0) ;
+}
+
+.item:first-child {
+  padding-top: var(--unity-spacer-0);
+}
+
+.item:last-child {
+  padding-bottom: var(--unity-spacer-0);
+}
+
+.item:not(:last-child) {
+  border-bottom: var(--unity-border-base);
+}
+
+.item__action {
+  float: right;
+}
+
+/* Item State */
+.active .item__title {
+  font-weight: var(--unity-font-bold);
+}
