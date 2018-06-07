@@ -14,6 +14,10 @@ import 'css/pages/calendar.css';
 
 Calendar.momentLocalizer(moment);
 
+// TODO:
+  // • Editing an event is most likely needed, though we need to deteremine what events
+  //   can be edited by an employee first.
+
 class SATCalendarIndex extends Component {
 
   state = {
