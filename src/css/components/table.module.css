@@ -1,0 +1,10 @@
+/* // Popout Component Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/spacers.module.css);
+
+.table {
+  width: 100%;
+}

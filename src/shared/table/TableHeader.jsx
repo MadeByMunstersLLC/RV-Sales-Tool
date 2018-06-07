@@ -7,9 +7,9 @@ import 'rv-unity/src/css/components/tables.css';
 export const TableHeader = ({
     children
   }) => (
-  <th className="tables__unity-table__header">
+  <tr className="tables__unity-table__header">
     {children}
-  </th>
+  </tr>
 )
 
 export default TableHeader;

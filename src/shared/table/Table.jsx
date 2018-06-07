@@ -1,5 +1,7 @@
 import React from 'react';
 
+import tableStyles from 'css/components/table.module.css';
+
 // Unity Styles
 import 'rv-unity/src/css/base/variables.css';
 import 'rv-unity/src/css/components/tables.css';
@@ -7,7 +9,7 @@ import 'rv-unity/src/css/components/tables.css';
 export const Table = ({
     children
   }) => (
-  <table className="tables__unity-table">
+  <table className="table">
     {children}
   </table>
 )

@@ -28,11 +28,9 @@ export const SATSupportSection = ({
         <CardBody>
           <Table>
             <TableHeader>
-              <TableRow>
-                <td>Title</td>
-                <td>Created On</td>
-                <td colSpan="2">Updated On</td>
-              </TableRow>
+                <th>Title</th>
+                <th>Created On</th>
+                <th colSpan="2">Updated On</th>
             </TableHeader>
           </Table>
             <ul className="tables__unity-table__header">
