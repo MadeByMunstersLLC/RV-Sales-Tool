@@ -5,7 +5,9 @@ import moment from 'moment';
 
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
+import SATCalendarCustomizeModal from 'calendar/shared/SATCalendarCustomizeModal';
 import SATCalendarEvent from 'calendar/shared/SATCalendarEvent';
+import SATCalendarEventAddModal from 'calendar/shared/SATCalendarEventAddModal';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'css/pages/calendar.css';
@@ -16,6 +18,8 @@ class SATCalendarIndex extends Component {
 
   state = {
     event: null,
+    addEventModal: false,
+    customizeCalendarModal: false,
   };
 
   eventStyleGetter(event, start, end, isSelected) {
@@ -29,15 +33,39 @@ class SATCalendarIndex extends Component {
     };
   };
 
+  // TODO: The two functions below should be refactored to one global function
+  AddEventModalToggle = () => {
+    this.setState({
+      addEventModal: !this.state.addEventModal
+    })
+  };
+
+  CustomizeModalToggle = () => {
+    this.setState({
+      customizeCalendarModal: !this.state.customizeCalendarModal
+    })
+  };
+
   render() {
     const { event: stateEvent } = this.state;
 
     return (
       <Fragment>
+        <SATCalendarCustomizeModal
+          customizeModalVisibility={this.state.customizeCalendarModal}
+          customizeModalOnClose={this.CustomizeModalToggle}
+          data={mockCalendars}
+        />
+        <SATCalendarEventAddModal
+          addModalVisibility={this.state.addEventModal}
+          addModalOnClose={this.AddEventModalToggle}
+          calendarData={mockCalendars}
+        />
         <PageHeader
           pageTitleLeft="Calendar"
           pageTitleIconLeft="event"
           pageTitleIconRight="settings"
+          pageTitleRightOnPress={this.CustomizeModalToggle}
         />
         <PageContent>
           <Calendar
@@ -51,7 +79,14 @@ class SATCalendarIndex extends Component {
               if (stateEvent && stateEvent.id === event.id) {
                 newEvent = null;
               }
-              this.setState({event: newEvent});
+              this.setState({
+                event: newEvent
+              });
+            }}
+            onSelectSlot={() => {
+              this.setState({
+                addEventModal: !this.state.addEventModal,
+              })
             }}
             selected={stateEvent}
             components={{
@@ -200,4 +235,22 @@ const mockCalendarEvents = [
     start: new Date(new Date().setHours(new Date().getHours() - 3)),
     end: new Date(new Date().setHours(new Date().getHours() + 3)),
   }
-]
+];
+
+const mockCalendars = [
+  {
+    id: '0',
+    title: 'Personal',
+    visibility: true,
+  },
+  {
+    id: '1',
+    title: 'Work Schedule',
+    visibility: true,
+  },
+  {
+    id: '2',
+    title: 'Red Ventures\' Events',
+    visibility: true,
+  },
+];

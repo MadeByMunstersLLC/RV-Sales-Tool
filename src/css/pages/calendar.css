@@ -102,6 +102,16 @@
   overflow: visible !important;
 }
 
+
+.rbc-day-bg {
+  transition: background-color 0.35s ease;
+}
+
+.rbc-day-bg:hover {
+  background-color: var(--unity-s-gray-light);
+  cursor: pointer;
+}
+
 /* Body Week */
 .rbc-label {
   color: var(--unity-t-gray-dark);

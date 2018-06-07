@@ -15,4 +15,4 @@ export const SATCalendarEvent = ({
   )
 };
 
-export default SATCalendarEvent
+export default SATCalendarEvent;

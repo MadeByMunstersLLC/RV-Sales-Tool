@@ -112,7 +112,7 @@ class SATDashboardIndex extends Component {
         >
           <ModalHeader
             title="Customize Dashboard"
-            description="Set the visibility of a widget by toggling it on or off"
+            description="Set the visibility of a widget by toggling it on or off."
             onClose={this.CustomizeDashboardToggle}
           />
           <ModalBody>
