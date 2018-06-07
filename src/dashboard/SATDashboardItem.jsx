@@ -1,23 +1,30 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import cardStyles from 'css/components/card.module.css';
+import {
+  Card,
+  CardHeader,
+} from 'rv-unity-react';
+
 import dashboardStyles from 'css/pages/dashboard.module.css';
 
 export const DashboardItem = ({
+  value,
   dashboardItemSize = 'sm',
   children
 }: DashboardItemProps) => {
   const dashboardItemClasses: string = classNames({
     [`${dashboardStyles.item}`]: true,
     [`${dashboardStyles.item}-${dashboardItemSize}`]: true,
-    [`${cardStyles.card}`]: true
   });
 
   return (
     <div className={dashboardItemClasses}>
-      {/* TODO: Replace children with card component */}
-      {children}
+      <Card>
+        <CardHeader>
+          <h5>{value.title}</h5>
+        </CardHeader>
+      </Card>
     </div>
   );
 };
