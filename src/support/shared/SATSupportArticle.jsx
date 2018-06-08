@@ -2,8 +2,13 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
+import {
+  Button,
+} from 'rv-unity-react';
+
 import cardStyles from 'css/components/card.module.css';
 import supportStyles from 'css/pages/support.module.css';
+import layoutStyles from 'css/global/layout.module.css';
 
 export const SATSupportArticle = ({
   data,
@@ -28,7 +33,12 @@ export const SATSupportArticle = ({
     <aside className={`${supportStyles.article__aside} ${cardStyles.card} ${cardStyles.md} ${cardStyles.gray}`}>
       <h5 className={`${supportStyles.title}`}>Still have questions?</h5>
       <p className={`${supportStyles.text}`}>Did this post not address all of your questions? Please send us a message with your remaining questions so we can address them.</p>
-      <button>SUBMIT QUESTIONS</button>
+      <Button
+        label="Submit Question"
+        classes={`${layoutStyles.width__full}`}
+        onPress={() => undefined}
+        size={4}
+      />
     </aside>
   </article>
 )

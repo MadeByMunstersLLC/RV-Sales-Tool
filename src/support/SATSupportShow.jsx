@@ -1,5 +1,10 @@
 import React, { Component, Fragment } from 'react';
 
+import {
+  Card,
+  CardBody
+} from 'rv-unity-react';
+
 import PageBlankState from 'shared/layout/PageBlankState';
 import SATSupportArticle from 'support/shared/SATSupportArticle';
 
@@ -13,11 +18,13 @@ class SATSupportShow extends Component {
 
     if(item) {
       itemData =
-        <div className={`${cardStyles.card} ${cardStyles.md}`}>
-          <SATSupportArticle
-            data={item}
-          />
-        </div>
+        <Card>
+          <CardBody>
+            <SATSupportArticle
+              data={item}
+            />
+          </CardBody>
+        </Card>
     } else {
       itemData =
         <div className={`${cardStyles.card} ${cardStyles.md}`}>
