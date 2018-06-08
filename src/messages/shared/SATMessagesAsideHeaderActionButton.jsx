@@ -20,4 +20,4 @@ export const SATMessagesAsideHeaderActionButton = ({
   </a>
 )
 
-export default SATMessagesAsideHeaderActionButton
+export default SATMessagesAsideHeaderActionButton;

@@ -20,6 +20,10 @@ import SATMessagesContent from 'messages/shared/SATMessagesContent';
 import SATMessagesList from 'messages/shared/SATMessagesList';
 import SATMessagesMessage from 'messages/shared/SATMessagesMessage';
 
+import  {
+  Button
+} from 'rv-unity-react';
+
 import cardStyles from 'css/components/card.module.css';
 import messageStyles from 'css/pages/messages.module.css';
 
@@ -103,7 +107,12 @@ class SATMailIndex extends Component {
                 <li className={`${messageStyles.action__item} ${messageStyles.mail__main}`}>
                   <NavLink
                     to="/messages/mail/create">
-                    <button className={`${messageStyles.button}`}>New Message</button>
+                    <Button
+                      label="New Message"
+                      size={4}
+                      classes={`${messageStyles.button}`}
+                      onPress={() => undefined}
+                    />
                   </NavLink>
                 </li>
                 <SATMessagesAsideHeaderActionItem>

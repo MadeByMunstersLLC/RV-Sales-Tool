@@ -39,6 +39,11 @@ body {
   display: table;
 }
 
+/* Width */
+.width__full {
+  width: 100%;
+}
+
 /* Page Layout */
 .page__body {
   padding: var(--unity-spacer-16);

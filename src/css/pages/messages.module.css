@@ -41,7 +41,7 @@
 
 .aside__header .action__item {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .aside__header .action__item:not(:last-child) {
