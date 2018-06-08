@@ -10,4 +10,4 @@ export const SATMessagesAside = ({
   </aside>
 )
 
-export default SATMessagesAside
+export default SATMessagesAside;

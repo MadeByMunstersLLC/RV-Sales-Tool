@@ -245,16 +245,22 @@ const mockCalendars = [
   {
     id: '0',
     title: 'Personal',
+    value: 'Personal',
+    label: 'Personal',
     visibility: true,
   },
   {
     id: '1',
     title: 'Work Schedule',
+    value: 'Work Schedule',
+    label: 'Work Schedule',
     visibility: true,
   },
   {
     id: '2',
     title: 'Red Ventures\' Events',
+    value: 'Red Ventures\' Events',
+    label: 'Red Ventures\' Events',
     visibility: true,
   },
 ];

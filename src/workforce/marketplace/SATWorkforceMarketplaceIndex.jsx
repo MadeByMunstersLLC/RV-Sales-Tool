@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import SATWorkforceMarketplaceOvertime from 'workforce/marketplace/SATWorkforceMarketplaceOvertime';
+import SATWorkforceMarketplaceOvertime from 'workforce/marketplace/overtime/SATWorkforceMarketplaceOvertime';
 import SATWorkforceMarketplaceShiftSwap from 'workforce/marketplace/SATWorkforceMarketplaceShiftSwap';
 import SATWorkforceMarketplaceTimeoff from 'workforce/marketplace/SATWorkforceMarketplaceTimeoff';
 import { Tabs, Tab } from 'shared/tabs/';

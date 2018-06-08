@@ -10,4 +10,4 @@ export const SATMessagesAsideHeaderActionList = ({
   </ul>
 )
 
-export default SATMessagesAsideHeaderActionList
+export default SATMessagesAsideHeaderActionList;

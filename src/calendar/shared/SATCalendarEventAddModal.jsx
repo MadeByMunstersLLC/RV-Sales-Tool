@@ -15,7 +15,11 @@ export const SATCalendarEventAddModal = ({
     addModalOnClose,
     calendarData,
   }) => {
+
   return (
+
+    // TODO: Default start date should be the day selected from calendar
+
     <Modal
       visible={addModalVisibility}
     >
@@ -31,7 +35,6 @@ export const SATCalendarEventAddModal = ({
               <SingleInput
                 label="Event Title"
                 id="title"
-                value=""
                 onChange={() => undefined}
               />
             </div>
@@ -40,7 +43,6 @@ export const SATCalendarEventAddModal = ({
               <Select
                 label="Calendar"
                 id="calendar"
-                value=""
                 onChange={() => undefined}
                 placeholder="Select One"
                 options={calendarData}
@@ -51,7 +53,6 @@ export const SATCalendarEventAddModal = ({
             <SingleInput
               label="Event Description"
               id="desc"
-              value=""
               onChange={() => undefined}
             />
           </div>
@@ -60,7 +61,6 @@ export const SATCalendarEventAddModal = ({
               <SingleInput
                 label="State Date"
                 id="start_date"
-                value=""
                 type="date"
                 onChange={() => undefined}
               />
@@ -70,7 +70,6 @@ export const SATCalendarEventAddModal = ({
               <Select
                 label="Start Time"
                 id="start_time"
-                value=""
                 onChange={() => undefined}
                 placeholder="Select One"
                 options={mockCalendarTimes}
@@ -82,7 +81,6 @@ export const SATCalendarEventAddModal = ({
               <SingleInput
                 label="End Date"
                 id="end_date"
-                value=""
                 type="date"
                 onChange={() => undefined}
               />
@@ -92,7 +90,6 @@ export const SATCalendarEventAddModal = ({
               <Select
                 label="End Time"
                 id="end_time"
-                value=""
                 onChange={() => undefined}
                 placeholder="Select One"
                 options={mockCalendarTimes}
@@ -116,28 +113,28 @@ export const SATCalendarEventAddModal = ({
 export default SATCalendarEventAddModal;
 
 const mockCalendarTimes = [
-  { time: '12:00 AM' },
-  { time: '1:00 AM' },
-  { time: '2:00 AM' },
-  { time: '3:00 AM' },
-  { time: '4:00 AM' },
-  { time: '5:00 AM' },
-  { time: '6:00 AM' },
-  { time: '7:00 AM' },
-  { time: '8:00 AM' },
-  { time: '9:00 AM' },
-  { time: '10:00 AM' },
-  { time: '11:00 AM' },
-  { time: '12:00 PM' },
-  { time: '1:00 PM' },
-  { time: '2:00 PM' },
-  { time: '3:00 PM' },
-  { time: '4:00 PM' },
-  { time: '5:00 PM' },
-  { time: '6:00 PM' },
-  { time: '7:00 PM' },
-  { time: '8:00 PM' },
-  { time: '9:00 PM' },
-  { time: '10:00 PM' },
-  { time: '11:00 PM' },
+  { value: '12:00 AM', label: '12:00 AM' },
+  { value: '1:00 AM', label: '1:00 AM' },
+  { value: '2:00 AM', label: '2:00 AM' },
+  { value: '3:00 AM', label: '3:00 AM' },
+  { value: '4:00 AM', label: '4:00 AM' },
+  { value: '5:00 AM', label: '5:00 AM' },
+  { value: '6:00 AM', label: '6:00 AM' },
+  { value: '7:00 AM', label: '7:00 AM' },
+  { value: '8:00 AM', label: '8:00 AM' },
+  { value: '9:00 AM', label: '9:00 AM' },
+  { value: '10:00 AM', label: '10:00 AM' },
+  { value: '11:00 AM', label: '11:00 AM' },
+  { value: '12:00 PM', label: '12:00 PM' },
+  { value: '1:00 PM', label: '1:00 PM' },
+  { value: '2:00 PM', label: '2:00 PM' },
+  { value: '3:00 PM', label: '3:00 PM' },
+  { value: '4:00 PM', label: '4:00 PM' },
+  { value: '5:00 PM', label: '5:00 PM' },
+  { value: '6:00 PM', label: '6:00 PM' },
+  { value: '7:00 PM', label: '7:00 PM' },
+  { value: '8:00 PM', label: '8:00 PM' },
+  { value: '9:00 PM', label: '9:00 PM' },
+  { value: '10:00 PM', label: '10:00 PM' },
+  { value: '11:00 PM', label: '11:00 PM' },
 ];
