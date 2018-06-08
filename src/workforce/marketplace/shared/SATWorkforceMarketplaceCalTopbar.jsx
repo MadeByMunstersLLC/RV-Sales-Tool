@@ -1,10 +1,15 @@
 import React from 'react';
 
+import  {
+  Button
+} from 'rv-unity-react';
+
 export const SATWorkforceMarketplaceCalTopbar = ({
     label,
     onNavigate,
     topbarBtn = true,
-    topbarBtnTitle
+    topbarBtnTitle,
+    topbarBtnEvent,
   }) => {
   return (
     <div className="rbc-toolbar rbc-toolbar-workforce">
@@ -16,7 +21,12 @@ export const SATWorkforceMarketplaceCalTopbar = ({
       <span className="rbc-toolbar-label">{label}</span>
       <span className="rbc-toolbar-action">
         {topbarBtn &&
-          <button type="button">{topbarBtnTitle}</button>
+          <Button
+            type={0}
+            label={topbarBtnTitle}
+            size={2}
+            onPress={() => topbarBtnEvent()}
+          />
         }
       </span>
     </div>

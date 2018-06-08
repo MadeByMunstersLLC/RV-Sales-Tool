@@ -4,7 +4,10 @@ export const SATWorkforceMarketplaceCalEvent = ({
     event
   }) => (
     <Fragment>
-      <p className="title">{event.title}</p>
+      <p className="title">
+        {event.isSelected ? 'X ' : ''}
+        {event.title}
+      </p>
     </Fragment>
 );
 

@@ -1,27 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
 import SATWorkforceMarketplaceCalEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalEvent';
 import SATWorkforceMarketplaceCalTopbar from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalTopbar';
+import SATWorkforceMarketplaceShiftSwapBidModal from 'workforce/marketplace/shift-swap/SATWorkforceMarketplaceShiftSwapBidModal';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'css/pages/calendar.css';
 
 Calendar.momentLocalizer(moment);
 
-const CalendarTopbar = ({label, onNavigate}) => {
-  return (
-    <SATWorkforceMarketplaceCalTopbar
-      label={label}
-      onNavigate={onNavigate}
-      topbarBtnTitle="ADD SHIFT"
-    />
-  )
-};
 
 class SATWorkforceMarketplaceShiftSwap extends Component {
+
+  // TODO:
+    // • After selecting a data to swap for, we need to disable the shift select until the user has selected a date. This way we can determine what shifts they have available.
+    // • Need to update the data being returned under shift details in modal once data model has been created.
+
+  state = {
+    event: null,
+    eventAddModal: false,
+    eventBidModal: false
+  };
 
   eventPropGetter(event, start, end, isSelected) {
     const PastEvent = moment(start).isBefore(new Date());
@@ -33,21 +35,82 @@ class SATWorkforceMarketplaceShiftSwap extends Component {
     }
   };
 
+  toggleBidModal = () => {
+    this.setState({
+      event: null,
+      eventBidModal: false
+    })
+  };
+
+  toggleAddModal = () => {
+    this.setState({
+      eventAddModal: !this.state.eventAddModal
+    })
+  };
+
   render() {
 
+    const { event: stateEvent } = this.state;
+
+    const CalendarTopbar = ({
+      label,
+      onNavigate,
+    }) => {
+
+      return (
+        <SATWorkforceMarketplaceCalTopbar
+          label={label}
+          onNavigate={onNavigate}
+          topbarBtnTitle="ADD SHIFT"
+          topbarBtnEvent={this.toggleAddModal}
+        />
+      )
+    };
+
     return (
-      <Calendar
-        selectable
-        events={mockCalendarShiftSwapEvents}
-        eventPropGetter={(this.eventPropGetter)}
-        defaultDate={new Date()}
-        scrollToTime={new Date()}
-        views={[ 'month' ]}
-        components={{
-          event: SATWorkforceMarketplaceCalEvent,
-          toolbar: CalendarTopbar
-        }}
-      />
+      <Fragment>
+        <Calendar
+          selectable
+          events={mockCalendarShiftSwapEvents}
+          eventPropGetter={(this.eventPropGetter)}
+          defaultDate={new Date()}
+          scrollToTime={new Date()}
+          views={[ 'month' ]}
+          components={{
+            event: SATWorkforceMarketplaceCalEvent,
+            toolbar: CalendarTopbar
+          }}
+          onSelectEvent={(event) => {
+            let newEvent = event;
+            let newEventModal = true;
+
+            if (stateEvent && stateEvent.id === event.id) {
+              newEvent = null;
+            }
+
+            this.setState({
+              event: newEvent,
+              eventBidModal: newEventModal
+            });
+          }}
+          selected={stateEvent}
+        />
+        {this.state.event && this.state.eventBidModal &&
+          <SATWorkforceMarketplaceShiftSwapBidModal
+            event={this.state.event}
+            eventModalVisibility={this.state.eventBidModal}
+            eventModalToggle={this.toggleBidModal}
+            eventAddModal={false}
+          />
+        }
+        {this.state.eventAddModal &&
+          <SATWorkforceMarketplaceShiftSwapBidModal
+            eventModalVisibility={this.state.eventAddModal}
+            eventModalToggle={this.toggleAddModal}
+            eventAddModal={true}
+          />
+        }
+      </Fragment>
     );
   }
 }
@@ -200,4 +263,4 @@ const mockCalendarShiftSwapEvents = [
     start: new Date(2018, 5, 19),
     end: new Date(2018, 5, 19),
   },
-]
+];
