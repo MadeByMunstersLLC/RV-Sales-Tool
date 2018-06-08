@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // Unity Components
 import { CardBody, Button } from 'rv-unity-react';
@@ -11,14 +11,16 @@ import 'rv-unity/src/css/components/buttons.css';
 export const SATSupportItem = ({
     post
   }) => (
-      <Fragment>
-        <td width="40%"><p>{post.title}</p></td>
-        <td width="20%"><p>{post.created_on}</p></td>
-        <td width="20%"><p>{post.updated_last}</p></td>
-        <td width="20%">
-          <Button label="Read More" onPress={() => (undefined)}/>
-        </td>
-      </Fragment>
+    <CardBody>
+      <ul>
+        <li><p>{post.title}</p></li>
+        <li><p>{post.created_on}</p></li>
+        <li><p>{post.created_on}</p></li>
+        <li>
+          <Button label="label" onPress={`/support/${post.id}`}/>
+        </li>
+      </ul>
+    </CardBody>
 )
 
 export default SATSupportItem;
