@@ -10,7 +10,7 @@
 /* Structure */
 .alert {
   display: block;
-  margin: -32px 0 24px -16px;
+  margin: -16px 0 16px -16px;
   padding: var(--unity-spacer-8);
   width: calc(100% + 16px);
 }

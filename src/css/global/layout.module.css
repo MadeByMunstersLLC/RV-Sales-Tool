@@ -47,9 +47,9 @@ body {
 }
 
 .page__content {
-  height: calc(100vh - 184px);
-  padding-top: 70px;
-  padding-bottom: var(--unity-spacer-24);
+  height: calc(100vh - 159px);
+  padding-top: 56px;
+  padding-bottom: var(--unity-spacer-16);
 }
 
 .page__content__scroll {
@@ -58,8 +58,8 @@ body {
 }
 
 .tabs__offset {
-  height: calc(100vh - 234px);
-  padding-top: 120px;
+  height: calc(100vh - 206px);
+  padding-top: 103px;
 }
 
 .page__sidebar {

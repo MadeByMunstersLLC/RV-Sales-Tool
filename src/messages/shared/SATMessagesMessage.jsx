@@ -9,6 +9,7 @@ import PageBlankState from 'shared/layout/PageBlankState';
 import SATMessagesMessageFooter from 'messages/shared/SATMessagesMessageFooter';
 import SATMessagesMessageHeader from 'messages/shared/SATMessagesMessageHeader';
 
+import layoutStyles from 'css/global/layout.module.css';
 import messageStyles from 'css/pages/messages.module.css';
 
 class SATMessagesMessage extends Component {
@@ -60,10 +61,16 @@ class SATMessagesMessage extends Component {
             {/* TODO:
               • Refactor actions to buttons */}
             <ul>
-              <li onClick={(e) => this.props.archiveMessage(e, message.id)}>
+              <li
+                className={`${layoutStyles.clickable}`}
+                onClick={(e) => this.props.archiveMessage(e, message.id)}
+              >
                 <MaterialIcon icon="archive" color="#D4D7DF" />
               </li>
-              <li onClick={(e) => this.props.removeMessage(e, message.id)}>
+              <li
+                className={`${layoutStyles.clickable}`}
+                onClick={(e) => this.props.removeMessage(e, message.id)}
+              >
                 <MaterialIcon icon="delete" color="#D4D7DF" />
               </li>
             </ul>
