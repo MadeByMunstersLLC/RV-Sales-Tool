@@ -10,31 +10,45 @@ import {
   ModalHeader,
 } from 'rv-unity-react';
 
+import modalStyles from 'css/components/modal.module.css';
+
 export const SATWorkforceMarketplaceTimeoffModal = ({
     modalVisibility,
     modalToggle,
     events = [],
-  }) => (
+  }) => {
 
+  return(
     <Modal
       visible={modalVisibility}
     >
       <ModalHeader
-        title="Make An Offer"
-        description="Fill out the form below to make an offer for this shift"
+        title="PTO Request"
+        description="Please confirm your selected dates below."
         onClose={() => modalToggle()}
       />
       <ModalBody>
         <ul>
-        {events.map(event => (
-          <li>{event.title}</li>
-        ))}
+          {events.length > 0 ?
+              events.map(event => (
+                <li className={`${modalStyles.item}`} key={event.id}>
+                  <span>{moment(event.start).format('ll')} - {event.title}</span>
+                  <a className={`${modalStyles.item__action}`}>Remove</a>
+                </li>
+              ))
+            :
+              <li className={`${modalStyles.item}`}>No events selected</li>
+          }
         </ul>
       </ModalBody>
       <ModalFooter>
-
+        <Button
+          label="Submit Request"
+          onPress={() => undefined}
+        />
       </ModalFooter>
     </Modal>
-)
+  )
+}
 
 export default SATWorkforceMarketplaceTimeoffModal;

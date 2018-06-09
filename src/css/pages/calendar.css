@@ -56,6 +56,11 @@
   text-transform: uppercase;
 }
 
+.rbc-btn-group button:active:focus {
+  background-color: var(--unity-b-blue-base);
+  border-color: var(--unity-b-blue-base);
+}
+
 .rbc-btn-group button.rbc-active,
 .rbc-btn-group button.rbc-active:hover,
 .rbc-btn-group button:hover,
@@ -252,8 +257,7 @@
   border-radius: var(--unity-radius-base);
   margin-bottom: var(--unity-spacer-4);
   margin-left: var(--unity-spacer-4);
-  padding-bottom: var(--unity-spacer-0);
-  padding-top: var(--unity-spacer-0);
+  padding: var(--unity-spacer-0);
   width: calc(100% - 8px) !important;
 }
 
@@ -347,6 +351,15 @@
 .workforce__event .title {
   color: var(--unity-b-blue-base);
   font-weight: var(--unity-font-bold);
+}
+
+/* Selected Event */
+.workforce__event .selected {
+  background-color: var(--unity-b-orange-light);
+}
+
+.workforce__event .title.selected {
+  color: var(--unity-b-orange-base);
 }
 
 /* Hide Past Events */

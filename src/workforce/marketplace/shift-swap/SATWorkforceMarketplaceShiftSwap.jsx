@@ -26,9 +26,9 @@ class SATWorkforceMarketplaceShiftSwap extends Component {
   };
 
   eventPropGetter(event, start, end, isSelected) {
-    const PastEvent = moment(start).isBefore(new Date());
+    const pastEvent = moment(start).isBefore(new Date());
 
-    if(PastEvent) {
+    if(pastEvent) {
       return { className: 'workforce__event__hidden' }
     } else {
       return { className: 'workforce__event' }

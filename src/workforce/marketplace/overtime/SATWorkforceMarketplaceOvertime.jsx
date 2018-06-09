@@ -7,15 +7,6 @@ import SATWorkforceMarketplaceOvertimeModal from 'workforce/marketplace/overtime
 import SATWorkforceMarketplaceCalEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalEvent';
 import SATWorkforceMarketplaceCalTopbar from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalTopbar';
 
-import {
-  Button,
-  Modal,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  Select,
-} from 'rv-unity-react';
-
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'css/pages/calendar.css';
 
@@ -39,9 +30,9 @@ class SATWorkforceMarketplaceOvertime extends Component {
   };
 
   eventPropGetter(event, start, end, isSelected) {
-    const PastEvent = moment(start).isBefore(new Date());
+    const pastEvent = moment(start).isBefore(new Date());
 
-    if(PastEvent) {
+    if(pastEvent) {
       return { className: 'workforce__event__hidden' }
     } else {
       return { className: 'workforce__event' }
@@ -87,7 +78,6 @@ class SATWorkforceMarketplaceOvertime extends Component {
           }}
           selected={stateEvent}
         />
-        {/* TODO: Consider making component */}
         {this.state.event &&
           <SATWorkforceMarketplaceOvertimeModal
             event={this.state.event}
