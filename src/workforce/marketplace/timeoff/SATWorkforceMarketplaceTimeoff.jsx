@@ -1,61 +1,105 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
 import SATWorkforceMarketplaceCalEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalEvent';
 import SATWorkforceMarketplaceCalTopbar from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalTopbar';
+import SATWorkforceMarketplaceTimeoffModal from 'workforce/marketplace/timeoff/SATWorkforceMarketplaceTimeoffModal';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'css/pages/calendar.css';
 
 Calendar.momentLocalizer(moment);
 
-
-const CalendarTopbar = ({label, onNavigate}) => {
-  return (
-    <SATWorkforceMarketplaceCalTopbar
-      label={label}
-      onNavigate={onNavigate}
-      topbarBtnTitle="REQUEST PTO"
-    />
-  )
-};
-
 class SATWorkforceMarketplaceTimeoff extends Component {
 
-  eventPropGetter(event, start, end, isSelected) {
-    const PastEvent = moment(start).isBefore(new Date());
+  // TODO:
+    // • Once submitted label should of date/time should say pending
+    // • Once approved label should of date/time should say approved while label is green
+    // • Make sure availability markers stay sorted by time
 
-    if(PastEvent) {
+  state = {
+    events: mockCalendarTimeoffEvents,
+    modalVisible: false,
+  };
+
+  eventPropGetter(event, start, end, isSelected) {
+    const pastEvent = moment(start).isBefore(new Date());
+
+    if(pastEvent) {
       return { className: 'workforce__event__hidden' }
     } else {
-      return { className: 'workforce__event' }
+      return { className: 'workforce__event workforce__timeoff' }
     }
   };
 
-  render() {
+  toggleEventSelection = (event) => {
+    this.setState((prevState) => {
+      const matchingEvent = prevState.events
+        .find(candidateEvent => candidateEvent.id === event.id);
 
+      const newState = {...prevState};
+      const updatedEvent = {
+        ...event,
+        isSelected: !event.isSelected,
+      };
+
+      newState.events = newState.events
+        .filter(candidateEvent => candidateEvent.id !== matchingEvent.id);
+      newState.events = newState.events.concat([updatedEvent]);
+
+      return newState;
+    })
+  }
+
+  toggleModal = () => {
+    this.setState({
+      modalVisible: !this.state.modalVisible
+    })
+  };
+
+  render() {
+    const selectedEvents = this.state.events
+      .filter(candidateEvent => candidateEvent.isSelected === true);
+
+    const CalendarTopbar = ({label, onNavigate}) => {
+      return (
+        <SATWorkforceMarketplaceCalTopbar
+          label={label}
+          onNavigate={onNavigate}
+          topbarBtnTitle="REQUEST PTO"
+          topbarBtnEvent={this.toggleModal}
+        />
+      )
+    };
 
     return (
-      <Calendar
-        selectable
-        events={mockCalendarTimeoffEvents}
-        eventPropGetter={(this.eventPropGetter)}
-        defaultDate={new Date()}
-        scrollToTime={new Date()}
-        views={[ 'month' ]}
-        components={{
-          event: SATWorkforceMarketplaceCalEvent,
-          toolbar: CalendarTopbar
-        }}
-      />
+      <Fragment>
+        <Calendar
+          selectable
+          events={this.state.events}
+          eventPropGetter={(this.eventPropGetter)}
+          defaultDate={new Date()}
+          scrollToTime={new Date()}
+          views={[ 'month' ]}
+          onSelectEvent={this.toggleEventSelection}
+          components={{
+            event: SATWorkforceMarketplaceCalEvent,
+            toolbar: CalendarTopbar
+          }}
+        />
+        <SATWorkforceMarketplaceTimeoffModal
+          modalVisibility={this.state.modalVisible}
+          modalToggle={this.toggleModal}
+          events={selectedEvents}
+        />
+      </Fragment>
     );
   }
 }
 
 export default SATWorkforceMarketplaceTimeoff;
-
 
 const mockCalendarTimeoffEvents = [
   {
@@ -275,4 +319,4 @@ const mockCalendarTimeoffEvents = [
     start: new Date(2018, 5, 29),
     end: new Date(2018, 5, 29),
   },
-]
+];

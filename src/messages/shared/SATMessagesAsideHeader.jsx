@@ -10,4 +10,4 @@ export const SATMessagesAsideHeader = ({
   </header>
 )
 
-export default SATMessagesAsideHeader
+export default SATMessagesAsideHeader;

@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
+import SATWorkforceMarketplaceOvertimeModal from 'workforce/marketplace/overtime/SATWorkforceMarketplaceOvertimeModal';
 import SATWorkforceMarketplaceCalEvent from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalEvent';
 import SATWorkforceMarketplaceCalTopbar from 'workforce/marketplace/shared/SATWorkforceMarketplaceCalTopbar';
 
@@ -23,31 +24,68 @@ const CalendarTopbar = ({label, onNavigate}) => {
 
 class SATWorkforceMarketplaceOvertime extends Component {
 
-  eventPropGetter(event, start, end, isSelected) {
-    const PastEvent = moment(start).isBefore(new Date());
+  state = {
+    event: null,
+    eventModal: false
+  };
 
-    if(PastEvent) {
+  eventPropGetter(event, start, end, isSelected) {
+    const pastEvent = moment(start).isBefore(new Date());
+
+    if(pastEvent) {
       return { className: 'workforce__event__hidden' }
     } else {
       return { className: 'workforce__event' }
     }
   };
 
+  toggleModal = () => {
+    this.setState({
+      event: null,
+      eventModal: false
+    })
+  };
+
   render() {
 
+    const { event: stateEvent } = this.state;
+
     return (
-      <Calendar
-        selectable
-        events={mockCalendarOvertimeEvents}
-        eventPropGetter={(this.eventPropGetter)}
-        defaultDate={new Date()}
-        scrollToTime={new Date()}
-        views={[ 'month' ]}
-        components={{
-          event: SATWorkforceMarketplaceCalEvent,
-          toolbar: CalendarTopbar,
-        }}
-      />
+      <Fragment>
+        <Calendar
+          selectable
+          events={mockCalendarOvertimeEvents}
+          eventPropGetter={(this.eventPropGetter)}
+          defaultDate={new Date()}
+          scrollToTime={new Date()}
+          views={[ 'month' ]}
+          components={{
+            event: SATWorkforceMarketplaceCalEvent,
+            toolbar: CalendarTopbar,
+          }}
+          onSelectEvent={(event) => {
+            let newEvent = event;
+            let newEventModal = true;
+
+            if (stateEvent && stateEvent.id === event.id) {
+              newEvent = null;
+            }
+
+            this.setState({
+              event: newEvent,
+              eventModal: newEventModal
+            });
+          }}
+          selected={stateEvent}
+        />
+        {this.state.event &&
+          <SATWorkforceMarketplaceOvertimeModal
+            event={this.state.event}
+            eventModalVisibility={this.state.eventModal}
+            eventModalToggle={this.toggleModal}
+          />
+        }
+      </Fragment>
     );
   }
 }
@@ -200,4 +238,4 @@ const mockCalendarOvertimeEvents = [
     start: new Date(2018, 5, 19),
     end: new Date(2018, 5, 19),
   },
-]
+];

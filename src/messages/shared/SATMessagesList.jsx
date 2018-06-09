@@ -25,4 +25,4 @@ export const SATMessagesList = ({
   </ul>
 )
 
-export default SATMessagesList
+export default SATMessagesList;

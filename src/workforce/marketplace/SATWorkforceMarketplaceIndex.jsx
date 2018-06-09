@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import SATWorkforceMarketplaceOvertime from 'workforce/marketplace/SATWorkforceMarketplaceOvertime';
-import SATWorkforceMarketplaceShiftSwap from 'workforce/marketplace/SATWorkforceMarketplaceShiftSwap';
-import SATWorkforceMarketplaceTimeoff from 'workforce/marketplace/SATWorkforceMarketplaceTimeoff';
+import SATWorkforceMarketplaceOvertime from 'workforce/marketplace/overtime/SATWorkforceMarketplaceOvertime';
+import SATWorkforceMarketplaceShiftSwap from 'workforce/marketplace/shift-swap/SATWorkforceMarketplaceShiftSwap';
+import SATWorkforceMarketplaceTimeoff from 'workforce/marketplace/timeoff/SATWorkforceMarketplaceTimeoff';
 import { Tabs, Tab } from 'shared/tabs/';
 
 import cardTabstyles from 'css/components/card-tabs.module.css';

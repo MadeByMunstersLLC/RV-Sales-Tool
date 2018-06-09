@@ -59,4 +59,4 @@ export const SATMessagesItem = ({
   </li>
 )
 
-export default SATMessagesItem
+export default SATMessagesItem;
