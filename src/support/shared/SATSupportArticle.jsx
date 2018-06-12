@@ -43,4 +43,4 @@ export const SATSupportArticle = ({
   </article>
 )
 
-export default SATSupportArticle
+export default SATSupportArticle;

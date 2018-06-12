@@ -1,9 +1,37 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import PageBlankState from 'shared/layout/PageBlankState';
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
+import SATAgentProfileCoachingIndex from 'profile/SATAgentProfileCoachingIndex';
+import SATAgentProfileCoachingsWidget from 'profile/shared/SATAgentProfileCoachingsWidget';
+import SATAgentProfileScheduleWidget from 'profile/shared/SATAgentProfileScheduleWidget';
+import SATAgentProfileStatsWidget from 'profile/shared/SATAgentProfileStatsWidget';
+
+const SATAgentProfileWidgets = () => {
+
+  return(
+    <Fragment>
+      <div className="grid__unity-grid">
+        <div className="grid__unity-grid__span-columns-6">
+          <SATAgentProfileScheduleWidget
+            data={mockUserData}
+          />
+        </div>
+        <div className="grid__unity-grid__span-columns-6">
+          <SATAgentProfileStatsWidget
+            data={mockUserData}
+          />
+        </div>
+      </div>
+      <div className="grid__unity-grid">
+        <SATAgentProfileCoachingsWidget
+          data={mockCoachingsData}
+        />
+      </div>
+    </Fragment>
+  )
+}
 
 class SATAgentProfileIndex extends Component {
 
@@ -16,7 +44,7 @@ class SATAgentProfileIndex extends Component {
           pageTitleIconLeft="headset_mic"
         />
         <PageContent
-          pageContentTabs="true">
+          pageContentTabs={false}>
           <Switch>
             <Route
               exact
@@ -25,10 +53,14 @@ class SATAgentProfileIndex extends Component {
             </Route>
             <Route
               path="/agent_profile/profile"
-              render={ () =>
-                <PageBlankState
-                  blankStateIcon="headset_mic"
-                  blankStateText="Agent Profile"
+              component={SATAgentProfileWidgets}
+            />
+            <Route
+              path="/agent_profile/coaching/:id"
+              render={(props) =>
+                <SATAgentProfileCoachingIndex
+                  data={mockCoachingsData}
+                  {...props}
                 />
               }
             />
@@ -40,3 +72,151 @@ class SATAgentProfileIndex extends Component {
 }
 
 export default SATAgentProfileIndex;
+
+
+const mockUserData = {
+  id: '1',
+  name: 'Kurt Cunningham',
+  avatar: 'https://avatars.io/twitter/kurtcunningham',
+  schedule: [
+    {
+      start_time: '2018-06-03 08:00',
+      end_time: '2018-06-03 05:00',
+    },
+    {
+      start_time: '2018-06-04 08:00',
+      end_time: '2018-06-04 05:00',
+    },
+    {
+      start_time: '2018-06-05 08:00',
+      end_time: '2018-06-05 05:00',
+    },
+    {
+      start_time: '2018-06-06 08:00',
+      end_time: '2018-06-06 05:00',
+    },
+    {
+      start_time: '2018-06-07 08:00',
+      end_time: '2018-06-07 05:00',
+    },
+    {
+      start_time: '2018-06-08 08:00',
+      end_time: '2018-06-08 05:00',
+    },
+    {
+      start_time: '2018-06-09 08:00',
+      end_time: '2018-06-09 05:00',
+    },
+    {
+      start_time: '2018-06-10 09:30',
+      end_time: '2018-06-10 06:30',
+    },
+  ],
+  stats: [
+    {
+      label: 'Attendance Points (Current/Avg.)',
+      value: '04/02',
+    },
+    {
+      label: 'Coachings (Total/Min. per week)',
+      value: '3/45',
+    },
+    {
+      label: 'Days Since Last Coaching',
+      value: '4',
+    },
+    {
+      label: 'Compliance Points (Current/Avg/)',
+      value: '03/01',
+    },
+    {
+      label: 'MTD Commissions',
+      value: '$2,397',
+    },
+    {
+      label: 'Promotion Eligible',
+      value: 'Yes',
+    },
+    {
+      label: 'Fun Five',
+      value: '01',
+    },
+    {
+      label: 'Last Month Comp.',
+      value: '$3,100',
+    },
+    {
+      label: 'Active DA',
+      value: '01',
+    },
+  ],
+};
+
+const mockCoachingsData = [
+  {
+    id: '0',
+    date: '03/25/18',
+    call_id: '1132',
+    coaching_by: 'Bonnie Adams',
+    coaching_category: 'Overcoming hesitation / 4-step Process',
+    coaching_report: [
+      {
+        label: 'What',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'Why',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'How/Role Play',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'Expectation',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'Follow-up',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'SPC/SD Notes',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+    ],
+  },
+  {
+    id: '1',
+    date: '03/23/18',
+    call_id: '1122',
+    coaching_by: 'Bonnie Adams',
+    coaching_category: 'Overcoming hesitation / 4-step Process',
+    coaching_report: [
+      {
+        label: 'What',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'Why',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'How/Role Play',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'Expectation',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'Follow-up',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+      {
+        label: 'SPC/SD Notes',
+        value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales leo euismod felis dignissim, ut hendrerit tortor pellentesque. Sed ipsum sapien, congue eu lacinia non, dignissim sed nisl. Proin sem diam, porttitor et feugiat a, iaculis vitae orci. Donec arcu quam, ultricies laoreet mauris non, euismod sagittis felis. Nulla posuere facilisis ipsum lacinia tristique. Mauris quis dignissim sem, eu ultrices nibh. Ut posuere, ligula eleifend tincidunt eleifend, felis nulla feugiat purus, mollis interdum nulla turpis et eros.'
+      },
+    ],
+  },
+];

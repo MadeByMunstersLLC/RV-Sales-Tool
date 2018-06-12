@@ -28,7 +28,7 @@ class SATMessagesIndex extends Component {
             tabUrl="/messages/broadcasts" />
         </Tabs>
         <PageContent
-          pageContentTabs="true">
+          pageContentTabs={true}>
           <Switch>
             <Route
               exact

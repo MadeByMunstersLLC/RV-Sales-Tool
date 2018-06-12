@@ -1,0 +1,70 @@
+/* // Dashboard Page Stylesheet
+// ======================================== */
+
+/* TODO
+  • Need to adjust avatar height to line up with schedule once table styles added
+*/
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/typography.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Schedule Module */
+.schedule__avatar {
+  align-items: center;
+  background-color: var(--unity-s-blue-light);
+  display: flex;
+  height: 171px;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.schedule__avatar img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Stats Module */
+.card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card__stat {
+  border-bottom: 1px solid var(--unity-t-white-base);
+  border-left: 1px solid var(--unity-t-white-base);
+  width: 100%;
+}
+
+.card__stat__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card__stat__label,
+.card__stat__number {
+  padding: var(--unity-spacer-8);
+  overflow: hidden;
+}
+
+.card__stat__label {
+  background-color: var(--unity-s-gray-light);
+  color: var(--unity-t-gray-dark);
+  font-size: var(--unity-font-10);
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+.card__stat__number {
+  align-items: center;
+  background-color: var(--unity-s-gray-dark);
+  color: var(--unity-t-white-base);
+  display: grid;
+  font-size: var(--unity-font-24);
+  padding: var(--unity-spacer-16);
+  text-align: center;
+}
