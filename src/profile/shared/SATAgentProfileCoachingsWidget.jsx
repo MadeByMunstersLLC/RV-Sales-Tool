@@ -8,8 +8,6 @@ import {
   CardBody,
 } from 'rv-unity-react';
 
-import profileStyles from 'css/pages/agent-profile.module.css';
-
 export const SATAgentProfileCoachingsWidget = ({
   data
 }) => (

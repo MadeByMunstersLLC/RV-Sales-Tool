@@ -1,11 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import {
-  Card,
-  CardHeader,
-} from 'rv-unity-react';
-
 import dashboardStyles from 'css/pages/dashboard.module.css';
 
 export const DashboardItem = ({
@@ -20,11 +15,7 @@ export const DashboardItem = ({
 
   return (
     <div className={dashboardItemClasses}>
-      <Card>
-        <CardHeader>
-          <h5>{value.title}</h5>
-        </CardHeader>
-      </Card>
+      {children}
     </div>
   );
 };

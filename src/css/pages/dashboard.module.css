@@ -16,7 +16,7 @@
 }
 
 .item {
-  height: 300px; /* Default height for all items */
+  height: 273px; /* Default height for all items */
 }
 
 .item > div {
@@ -32,13 +32,13 @@
 .item-md {
   grid-column-end: span 2;
   grid-row-end: span 2;
-  height: 624px;
+  height: 570px;
 }
 
 .item-lg {
   grid-column-end: span 3;
   grid-row-end: span 3;
-  height: 624px;
+  height: 570px;
 }
 
 /* Filler Item */
