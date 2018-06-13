@@ -1,0 +1,31 @@
+/* // Popout Component Stylesheet
+// ======================================== */
+
+/* TODO: Do we need this page or can we use the styles from unity?*/
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/spacers.module.css);
+
+.table {
+  width: 100%;
+  text-align: left;
+}
+
+.table__body {
+  margin: 16px;
+  border: var(--unity-border-base);
+}
+
+.table__row {
+  display: block;
+  margin: var(--table-row-margin) 0;
+}
+
+.table__row:first-child {
+  padding-left: 24px;
+}
+
+.table__row:last-child {
+  padding-right: 24px;
+}
