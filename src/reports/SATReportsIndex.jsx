@@ -31,7 +31,7 @@ class SATReportsIndex extends Component {
           />
         </Tabs>
         <PageContent
-          pageContentTabs="true"
+          pageContentTabs={true}
         >
           <Switch>
             <Route

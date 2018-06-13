@@ -14,4 +14,4 @@ export const PageBlankState = ({
   </div>
 )
 
-export default PageBlankState
+export default PageBlankState;

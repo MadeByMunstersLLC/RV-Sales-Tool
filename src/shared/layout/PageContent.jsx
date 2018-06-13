@@ -16,4 +16,4 @@ export const PageContent = ({
   </div>
 )
 
-export default PageContent
+export default PageContent;
