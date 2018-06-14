@@ -10,7 +10,6 @@ import {
 // TODO:
   // • Wireup and remove hardcoded values
   // • Key should be update to an unique id not index per React Docs.
-  // • Create table
 
 export const SATWorkforceShiftMgmtSchedules = ({
     modalToggle,

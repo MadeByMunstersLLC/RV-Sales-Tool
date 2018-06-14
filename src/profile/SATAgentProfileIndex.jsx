@@ -8,30 +8,28 @@ import SATAgentProfileCoachingsWidget from 'profile/shared/SATAgentProfileCoachi
 import SATAgentProfileScheduleWidget from 'profile/shared/SATAgentProfileScheduleWidget';
 import SATAgentProfileStatsWidget from 'profile/shared/SATAgentProfileStatsWidget';
 
-const SATAgentProfileWidgets = () => {
+const SATAgentProfileWidgets = () => (
 
-  return(
-    <Fragment>
-      <div className="grid__unity-grid">
-        <div className="grid__unity-grid__span-columns-6">
-          <SATAgentProfileScheduleWidget
-            data={mockUserData}
-          />
-        </div>
-        <div className="grid__unity-grid__span-columns-6">
-          <SATAgentProfileStatsWidget
-            data={mockUserData}
-          />
-        </div>
-      </div>
-      <div className="grid__unity-grid">
-        <SATAgentProfileCoachingsWidget
-          data={mockCoachingsData}
+  <Fragment>
+    <div className="grid__unity-grid">
+      <div className="grid__unity-grid__span-columns-6">
+        <SATAgentProfileScheduleWidget
+          data={mockUserData}
         />
       </div>
-    </Fragment>
-  )
-}
+      <div className="grid__unity-grid__span-columns-6">
+        <SATAgentProfileStatsWidget
+          data={mockUserData}
+        />
+      </div>
+    </div>
+    <div className="grid__unity-grid">
+      <SATAgentProfileCoachingsWidget
+        data={mockCoachingsData}
+      />
+    </div>
+  </Fragment>
+);
 
 class SATAgentProfileIndex extends Component {
 
@@ -74,7 +72,6 @@ class SATAgentProfileIndex extends Component {
 }
 
 export default SATAgentProfileIndex;
-
 
 const mockUserData = {
   id: '1',
