@@ -9,7 +9,7 @@
 /* Structure */
 .label {
   color: var(--unity-t-gray-dark);
-  font-size: var(--unity-font-12);
+  font-size: var(--unity-font-10);
   font-weight: var(--unity-font-bold);
   text-transform: uppercase;
 }
@@ -46,12 +46,12 @@
   width: 1px;
 }
 
-.body li:not(:last-child) {
+.body .border_right:not(:last-child) {
   border-right: 1px solid var(--unity-t-white-base);
 }
 
-.body .box__left {
-  min-height: 60px;
+.body .border_bottom:not(:last-child) {
+  border-bottom: 1px solid var(--unity-t-white-base);
 }
 
 /* Box Styles */
@@ -59,8 +59,7 @@
 .box__right {
   align-items: center;
   display: flex;
-  padding: var(--unity-spacer-0) var(--unity-spacer-8);
-  justify-content: center;
+  padding: var(--unity-spacer-8);
   width: 100%;
 }
 
@@ -72,14 +71,57 @@
   background-color: var(--unity-s-gray-dark);
   color: var(--unity-t-white-base);
   font-size: var(--unity-font-24);
-  text-align: center;
+  justify-content: center;
   width: auto;
 }
 
+/* Box Color Modifiers */
 .box__base_blue {
   background-color: #515A6D;
 }
 
 .box__dark_blue {
   background-color: var(--unity-s-blue-dark);
+}
+
+/* Box Font Modifiers */
+.box__justifty__right {
+  justify-content: flex-end;
+}
+
+/* Box Size Modifiers */
+.box__large {
+  padding: var(--unity-spacer-16);
+}
+
+.box__full {
+  height: 100%;
+}
+
+.box__right__sm {
+  font-size: var(--unity-font-16);
+}
+
+/* Form Styles */
+.input,
+.button {
+  border: none;
+  border-radius: var(--unity-radius-base);
+  padding: var(--unity-spacer-8);
+}
+
+.input {
+  background-color: var(--unity-s-gray-light);
+  color: var(--unity-t-gray-dark);
+  width: calc(100% - 116px); /* Input = 100% Container (-) Button Width (+) Card Padding*/
+}
+
+.button {
+  background-color: var(--unity-b-blue-base);
+  color: var(--unity-t-white-base);
+  cursor: pointer;
+  font-weight: var(--unity-font-bold);
+  text-align: center;
+  text-transform: uppercase;
+  width: 100px;
 }

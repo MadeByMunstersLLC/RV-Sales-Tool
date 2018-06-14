@@ -9,7 +9,7 @@ import {
 } from 'rv-unity-react';
 import SATDashboardItem from 'dashboard/shared/SATDashboardItem';
 
-import widgetStyles from 'css/modules/dashboard-fun-five.module.css';
+import widgetStyles from 'css/modules/dashboard-widget.module.css';
 
 // TODO:
   // • Needs to be wired up and hard coded values removed
@@ -23,11 +23,11 @@ export const SATDashboardFunFiveWidget = SortableElement(({
         label,
         data
       }) => (
-        <li className="grid__unity-grid__span-columns-3">
+        <li className={`${widgetStyles.border_right} grid__unity-grid__span-columns-3`}>
           <label className={`${widgetStyles.label}`}>{label}</label>
           <div className="grid__unity-grid">
-            <div className={`${widgetStyles.box__left} ${widgetStyles.box__dark_blue} grid__unity-grid__span-columns-7`}></div>
-            <div className={`${widgetStyles.box__right} ${widgetStyles.box__base_blue} grid__unity-grid__span-columns-5`}>{data}</div>
+            <div className={`${widgetStyles.box__left} ${widgetStyles.box__dark_blue} ${widgetStyles.box__full} grid__unity-grid__span-columns-7`}></div>
+            <div className={`${widgetStyles.box__right} ${widgetStyles.box__base_blue} ${widgetStyles.box__full} grid__unity-grid__span-columns-5`}>{data}</div>
           </div>
         </li>
     );

@@ -9,8 +9,14 @@ import {
   ModalFooter,
   ModalHeader,
   Toggle } from 'rv-unity-react';
+import SATDashboardAttendanceWidget from 'dashboard/shared/SATDashboardAttendanceWidget';
+import SATDashboardBankWidget from 'dashboard/shared/SATDashboardBankWidget';
+import SATDashboardCompensationWidget from 'dashboard/shared/SATDashboardCompensationWidget';
+import SATDashboardComplianceWidget from 'dashboard/shared/SATDashboardComplianceWidget';
 import SATDashboardEventCalWidget from 'dashboard/shared/SATDashboardEventCalWidget';
 import SATDashboardFunFiveWidget from 'dashboard/shared/SATDashboardFunFiveWidget';
+import SATDashboardMsaWidget from 'dashboard/shared/SATDashboardMsaWidget';
+import SATDashboardRedCoinWidget from 'dashboard/shared/SATDashboardRedCoinWidget';
 import SATDashboardItemFiller from 'dashboard/shared/SATDashboardItemFiller'
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
@@ -21,20 +27,13 @@ import modalStyles from 'css/components/modal.module.css';
 // TODO:
   // • Need to map API dashbaord widget key to front end React component once API is created
 
-const GenericWidget = ({title, size}) => (
-  <div>
-    <h4>{title}</h4>
-    <p>size: {size}</p>
-  </div>
-);
-
 const AVAILABLE_WIDGETS = [
   {
     id: '0',
     title: 'Agent Attendance',
     visibility: true,
     size: 'sm',
-    component: GenericWidget,
+    component: SATDashboardAttendanceWidget,
   },
   {
     id: '1',
@@ -55,29 +54,36 @@ const AVAILABLE_WIDGETS = [
     title: 'Compensation Overview',
     visibility: true,
     size: 'md',
-    component: GenericWidget,
+    component: SATDashboardCompensationWidget,
   },
   {
     id: '4',
     title: 'Compliance',
     visibility: true,
     size: 'sm',
-    component: GenericWidget,
+    component: SATDashboardComplianceWidget,
   },
   {
     id: '5',
     title: 'MSA Program',
     visibility: true,
     size: 'sm',
-    component: GenericWidget,
+    component: SATDashboardMsaWidget,
   },
   {
     id: '6',
-    title: 'Bake Multiplier / Commission',
+    title: 'Bank Multiplier / Commission',
     visibility: true,
     size: 'sm',
-    component: GenericWidget,
-  }
+    component: SATDashboardBankWidget,
+  },
+  {
+    id: '7',
+    title: 'Red Coin',
+    visibility: true,
+    size: 'sm',
+    component: SATDashboardRedCoinWidget,
+  },
 ];
 
 const SortableList = SortableContainer(({
@@ -94,7 +100,7 @@ const SortableList = SortableContainer(({
             <WidgetComponent
               {...widget}
               key={index}
-              index={index + 1}
+              index={index}
             />
           )
         })}
