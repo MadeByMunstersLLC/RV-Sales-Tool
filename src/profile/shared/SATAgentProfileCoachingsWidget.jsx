@@ -34,10 +34,10 @@ export const SATAgentProfileCoachingsWidget = ({
               className="tables__unity-table__row"
               >
                 <li className="tables__unity-table__cell">
-                  {item.call_id}
+                  {item.date}
                 </li>
                 <li className="tables__unity-table__cell">
-                  {item.date}
+                  {item.call_id}
                 </li>
                 <li className="tables__unity-table__cell">
                   {item.coaching_by}

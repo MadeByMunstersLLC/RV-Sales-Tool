@@ -12,6 +12,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const fs = require('fs');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -94,7 +95,11 @@ module.exports = {
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    modules: ['node_modules', paths.appNodeModules].concat(
+    modules: [
+      path.resolve('src'),
+      'node_modules',
+      paths.appNodeModules,
+    ].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
@@ -106,7 +111,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -137,7 +142,7 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -162,10 +167,14 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            // include: paths.appSrc,
+            include: [
+              paths.appSrc,
+              fs.realpathSync('node_modules/rv-unity-react'),
+            ],
             loader: require.resolve('babel-loader'),
             options: {
-              
+
               compact: true,
             },
           },
@@ -226,8 +235,11 @@ module.exports = {
             // Note: this won't work without `ExtractTextPluginCSSModules` in `plugins`.
           },
           {
-            test: /\.css$/,
-            exclude: /\.module\.css$/,
+            test: [
+              /react\-big\-calendar\/.*\.css$/,
+              /\/pages\/.*\.css$/,
+            ],
+            // exclude: /\.module\.css$/,
             loader: ExtractTextPluginCSS.extract(
               Object.assign(
                 {
@@ -264,6 +276,48 @@ module.exports = {
                             flexbox: 'no-2009',
                           }),
                         ],
+                      },
+                    },
+                  ],
+                },
+                extractTextPluginCSSOptions
+              )
+            ),
+            // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+          {
+            test: /\.css$/,
+            exclude: [
+              /\.module\.css$/,
+              /react\-big\-calendar\/.*\.css$/,
+              /\/pages\/.*\.css$/,
+            ],
+            // exclude: /\.module\.css$/,
+            loader: ExtractTextPluginCSS.extract(
+              Object.assign(
+                {
+                  fallback: {
+                    loader: require.resolve('style-loader'),
+                    options: {
+                      hmr: false,
+                    },
+                  },
+                  use: [
+                    {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                        importLoaders: 1,
+                        modules: true,
+                        camelCase: 'only',
+                        localIdentName: '[name]__[local]',
+                      },
+                    },
+                    {
+                      loader: require.resolve('postcss-loader'),
+                      options: {
+                        config: {
+                          path: '.', // Postcss can't find it's own config file...
+                        },
                       },
                     },
                   ],
