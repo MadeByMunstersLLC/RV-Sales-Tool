@@ -66,7 +66,10 @@
     "test": "node scripts/test.js --env=jsdom",
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
-    "react-start": "node scripts/start.js"
+    "react-start": "node scripts/start.js",
+    "clean": "rm -rf build/*",
+    "release": "npm run clean && npm run build",
+    "deploy": "cd build && git add --all && git commit -m \"Release at $(date)\" && git push"
   },
   "devDependencies": {
     "electron": "^2.0.0",
