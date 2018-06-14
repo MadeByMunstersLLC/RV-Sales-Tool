@@ -3,8 +3,6 @@ import * as classNames from 'classnames';
 
 import MaterialIcon from 'material-icons-react';
 
-import SATDashboardItem from 'dashboard/shared/SATDashboardItem';
-
 import dashboardStyles from 'css/pages/dashboard.module.css';
 import typographstyles from 'css/global/typography.module.css';
 

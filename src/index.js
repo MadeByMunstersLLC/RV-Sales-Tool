@@ -9,6 +9,8 @@ import './css/global/typography.module.css';
 // Unity Styles
 import 'rv-unity/src/css/base/variables.css';
 import 'rv-unity/src/css/components/grid.css';
+import 'rv-unity/src/css/components/tables.css';
+import 'rv-unity/src/css/utility/helpers.css';
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';

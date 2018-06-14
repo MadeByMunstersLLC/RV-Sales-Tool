@@ -35,7 +35,8 @@ class SATMarketplaceIndex extends Component {
           />
         </Tabs>
         <PageContent
-          pageContentTabs="true"
+          pageContentTabs={true}
+          pageContentScroll={true}
         >
           <Switch>
             <Route
