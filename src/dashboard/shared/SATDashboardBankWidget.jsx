@@ -2,11 +2,6 @@ import * as React from 'react';
 
 import { SortableElement } from 'react-sortable-hoc';
 
-import {
-  Card,
-  CardBody,
-  CardHeader,
-} from 'rv-unity-react';
 import SATDashboardItem from 'dashboard/shared/SATDashboardItem';
 
 import widgetStyles from 'css/modules/dashboard-widget.module.css';
@@ -32,24 +27,24 @@ export const SATDashboardBankWidget = SortableElement(({
     return(
       <SATDashboardItem
         dashboardItemSize={size}
+        dashboardItemTitle={title}
       >
-        <Card>
-          <CardHeader>
-            <h5>{title}</h5>
-          </CardHeader>
-          <CardBody>
-            <div className={`${widgetStyles.header} grid__unity-grid`}>
-              <div className={`${widgetStyles.header__left}`}>
-                <span className={`${widgetStyles.box__left} ${widgetStyles.box__dark_blue} ${widgetStyles.label} ${widgetStyles.box__large}`}>Bank Multiplier</span>
-                <span className={`${widgetStyles.box__right} ${widgetStyles.box__base_blue} ${widgetStyles.box__large}`}>3.4</span>
-              </div>
-            </div>
-            <div className={`${widgetStyles.body}`}>
-              <BodyItem label="Yesterday's Commission" data="$279.34" />
-              <BodyItem label="MTD Commission" data="$2,567.24" />
-            </div>
-          </CardBody>
-        </Card>
+        <div className={`${widgetStyles.header} grid__unity-grid`}>
+          <div className={`${widgetStyles.header__left}`}>
+            <span className={`${widgetStyles.box__left} ${widgetStyles.box__dark_blue} ${widgetStyles.label} ${widgetStyles.box__large}`}>Bank Multiplier</span>
+            <span className={`${widgetStyles.box__right} ${widgetStyles.box__base_blue} ${widgetStyles.box__large}`}>3.4</span>
+          </div>
+        </div>
+        <div className={`${widgetStyles.body}`}>
+          <BodyItem
+            label="Yesterday's Commission"
+            data="$279.34"
+          />
+          <BodyItem
+            label="MTD Commission"
+            data="$2,567.24"
+          />
+        </div>
       </SATDashboardItem>
     )
   }

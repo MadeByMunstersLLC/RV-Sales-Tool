@@ -67,17 +67,11 @@ export const SATDashboardEventCalWidget = SortableElement(({
     return(
       <SATDashboardItem
         dashboardItemSize={size}
+        dashboardItemTitle={title}
       >
-        <Card>
-          <CardHeader>
-            <h5>{title}</h5>
-          </CardHeader>
-          <CardBody>
-            <EventList
-              events={mockCalendarEvents}
-            />
-          </CardBody>
-        </Card>
+        <EventList
+          events={mockCalendarEvents}
+        />
       </SATDashboardItem>
     )
   }

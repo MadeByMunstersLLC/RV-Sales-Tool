@@ -17,15 +17,11 @@ export const SATDashboardCompensationWidget = SortableElement(({
     return(
       <SATDashboardItem
         dashboardItemSize={size}
+        dashboardItemTitle={title}
       >
-        <Card>
-          <CardHeader>
-            <h5>{title}</h5>
-          </CardHeader>
-          <CardBody>
-            Graph
-          </CardBody>
-        </Card>
+        <div>
+          Graph
+        </div>
       </SATDashboardItem>
     )
   }

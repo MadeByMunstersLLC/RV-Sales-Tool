@@ -17,15 +17,11 @@ export const SATDashboardAttendanceWidget = SortableElement(({
     return(
       <SATDashboardItem
         dashboardItemSize={size}
+        dashboardItemTitle={title}
       >
-        <Card>
-          <CardHeader>
-            <h5>{title}</h5>
-          </CardHeader>
-          <CardBody>
-            Chart
-          </CardBody>
-        </Card>
+        <div>
+          Chart
+        </div>
       </SATDashboardItem>
     )
   }

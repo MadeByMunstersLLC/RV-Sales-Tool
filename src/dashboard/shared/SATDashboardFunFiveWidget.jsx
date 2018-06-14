@@ -35,47 +35,41 @@ export const SATDashboardFunFiveWidget = SortableElement(({
     return(
       <SATDashboardItem
         dashboardItemSize={size}
+        dashboardItemTitle={title}
       >
-        <Card>
-          <CardHeader>
-            <h5>{title}</h5>
-          </CardHeader>
-          <CardBody>
-            <div className={`${widgetStyles.header} grid__unity-grid`}>
-              <div className={`${widgetStyles.header__left} grid__unity-grid__span-columns-6`}>
-                <span className={`${widgetStyles.box__left} ${widgetStyles.label}`}>Total Strikes</span>
-                <span className={`${widgetStyles.box__right}`}>2</span>
-              </div>
-              <div className={`${widgetStyles.header__middle} grid__unity-grid__span-columns-2`}>
-                <div className={`${widgetStyles.header__divider}`} />
-              </div>
-              <div className={`${widgetStyles.header__right} grid__unity-grid__span-columns-4`}>
-                <p className={`${widgetStyles.label}`}>Next Roll Off:</p>
-                <p className={`${widgetStyles.label__alt}`}>Wed, Apr 11th, 2018</p>
-              </div>
-            </div>
-            <div className={`${widgetStyles.body}`}>
-              <ul className="grid__unity-grid">
-                <BodyItem
-                  label="TCPA"
-                  data="0"
-                />
-                <BodyItem
-                  label="REC LINE"
-                  data="0"
-                />
-                <BodyItem
-                  label="PCI"
-                  data="0"
-                />
-                <BodyItem
-                  label="ELV. RISJ"
-                  data="0"
-                />
-              </ul>
-            </div>
-          </CardBody>
-        </Card>
+        <div className={`${widgetStyles.header} grid__unity-grid`}>
+          <div className={`${widgetStyles.header__left} grid__unity-grid__span-columns-6`}>
+            <span className={`${widgetStyles.box__left} ${widgetStyles.label}`}>Total Strikes</span>
+            <span className={`${widgetStyles.box__right}`}>2</span>
+          </div>
+          <div className={`${widgetStyles.header__middle} grid__unity-grid__span-columns-2`}>
+            <div className={`${widgetStyles.header__divider}`} />
+          </div>
+          <div className={`${widgetStyles.header__right} grid__unity-grid__span-columns-4`}>
+            <p className={`${widgetStyles.label}`}>Next Roll Off:</p>
+            <p className={`${widgetStyles.label__alt}`}>Wed, Apr 11th, 2018</p>
+          </div>
+        </div>
+        <div className={`${widgetStyles.body}`}>
+          <ul className="grid__unity-grid">
+            <BodyItem
+              label="TCPA"
+              data="0"
+            />
+            <BodyItem
+              label="REC LINE"
+              data="0"
+            />
+            <BodyItem
+              label="PCI"
+              data="0"
+            />
+            <BodyItem
+              label="ELV. RISJ"
+              data="0"
+            />
+          </ul>
+        </div>
       </SATDashboardItem>
     )
   }
