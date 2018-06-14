@@ -44,7 +44,9 @@ class SATAgentProfileIndex extends Component {
           pageTitleIconLeft="headset_mic"
         />
         <PageContent
-          pageContentTabs={false}>
+          pageContentTabs={false}
+          pageContentScroll={true}
+        >
           <Switch>
             <Route
               exact
@@ -81,35 +83,35 @@ const mockUserData = {
   schedule: [
     {
       start_time: '2018-06-03 08:00',
-      end_time: '2018-06-03 05:00',
+      end_time: '2018-06-03 17:00',
     },
     {
       start_time: '2018-06-04 08:00',
-      end_time: '2018-06-04 05:00',
+      end_time: '2018-06-04 17:00',
     },
     {
       start_time: '2018-06-05 08:00',
-      end_time: '2018-06-05 05:00',
+      end_time: '2018-06-05 17:00',
     },
     {
       start_time: '2018-06-06 08:00',
-      end_time: '2018-06-06 05:00',
+      end_time: '2018-06-06 17:00',
     },
     {
       start_time: '2018-06-07 08:00',
-      end_time: '2018-06-07 05:00',
+      end_time: '2018-06-07 17:00',
     },
     {
       start_time: '2018-06-08 08:00',
-      end_time: '2018-06-08 05:00',
+      end_time: '2018-06-08 17:00',
     },
     {
       start_time: '2018-06-09 08:00',
-      end_time: '2018-06-09 05:00',
+      end_time: '2018-06-09 17:00',
     },
     {
       start_time: '2018-06-10 09:30',
-      end_time: '2018-06-10 06:30',
+      end_time: '2018-06-10 18:30',
     },
   ],
   stats: [

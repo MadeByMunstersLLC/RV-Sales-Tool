@@ -3,15 +3,8 @@ import { Route, Redirect, Switch } from "react-router-dom";
 
 import PageContent from 'shared/layout/PageContent';
 import PageHeader from 'shared/layout/PageHeader';
-import SATSupportShow from './SATSupportShow';
-import SATSupportSection from './SATSupportSection';
-
-// Unity Components
-import { Card } from 'rv-unity-react';
-
-// Unity Styles
-import 'rv-unity/src/css/base/variables.css';
-import 'rv-unity/src/css/components/cards.css';
+import SATSupportShow from 'support/SATSupportShow';
+import SATSupportSection from 'support/shared/SATSupportSection';
 
 class SATSupportIndex extends Component {
 
@@ -37,12 +30,10 @@ class SATSupportIndex extends Component {
             <Route
               path="/support/all"
               render={() =>
-                <Card>
-                  <SATSupportSection
-                    categories={mockSupportCategories}
-                    posts={mockSupportItems}
-                  />
-                </Card>
+                <SATSupportSection
+                  categories={mockSupportCategories}
+                  posts={mockSupportItems}
+                />
               }
             />
             <Route
@@ -82,7 +73,7 @@ const mockSupportItems = [
   {
     id: '0',
     created_on: '05/15/2018',
-    updated_last: '05/15/2018',
+    updated_on: '05/15/2018',
     category: 'Support A',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 1',
     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc. \n \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc.\n \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc',
@@ -91,7 +82,7 @@ const mockSupportItems = [
   {
     id: '1',
     created_on: '05/15/2018',
-    updated_last: '05/15/2018',
+    updated_on: '05/15/2018',
     category: 'Support A',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 2',
     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc.',
@@ -100,7 +91,7 @@ const mockSupportItems = [
   {
     id: '2',
     created_on: '05/15/2018',
-    updated_last: '05/15/2018',
+    updated_on: '05/15/2018',
     category: '',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 3',
     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc.',
@@ -109,7 +100,7 @@ const mockSupportItems = [
   {
     id: '3',
     created_on: '05/15/2018',
-    updated_last: '05/15/2018',
+    updated_on: '05/15/2018',
     category: 'Support B',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 4',
     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc.',
@@ -118,8 +109,17 @@ const mockSupportItems = [
   {
     id: '4',
     created_on: '05/15/2018',
-    updated_last: '05/19/2018',
+    updated_on: '05/19/2018',
     category: 'Support C',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 5',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc.',
+    attachment: null,
+  },
+  {
+    id: '5',
+    created_on: '05/15/2018',
+    updated_on: '05/19/2018',
+    category: 'Support A',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 5',
     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consectetur orci erat, vel scelerisque velit blandit vitae. Nam mi tellus, aliquam ut sapien et, bibendum consequat turpis. Maecenas malesuada enim id dolor scelerisque condimentum. Cras sed dictum mauris. Mauris ut finibus massa, nec porttitor neque. Sed sodales, sem nec vehicula congue, elit lacus condimentum quam, et placerat turpis neque et sem. Mauris sit amet risus nec massa viverra congue non ultrices turpis. Phasellus in ligula ante. Integer et vulputate erat, ut fringilla dui. Aenean venenatis cursus consectetur. Mauris ut metus ut sapien pulvinar interdum. Phasellus fringilla accumsan libero. Nam venenatis ante a dui facilisis lacinia at eget nunc.',
     attachment: null,
