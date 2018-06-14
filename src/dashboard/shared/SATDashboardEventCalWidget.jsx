@@ -4,11 +4,6 @@ import moment from 'moment';
 
 import { SortableElement } from 'react-sortable-hoc';
 
-import {
-  Card,
-  CardBody,
-  CardHeader,
-} from 'rv-unity-react';
 import SATDashboardItem from 'dashboard/shared/SATDashboardItem';
 
 import widgetStyles from 'css/modules/dashboard-event-cal.module.css';
