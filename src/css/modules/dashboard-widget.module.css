@@ -1,0 +1,127 @@
+/* // Fun Five Widget Module Stylesheet
+// ======================================== */
+
+/* Imports */
+@import url(../settings/borders.module.css);
+@import url(../settings/colors.module.css);
+@import url(../settings/spacers.module.css);
+
+/* Structure */
+.label {
+  color: var(--unity-t-gray-dark);
+  font-size: var(--unity-font-10);
+  font-weight: var(--unity-font-bold);
+  text-transform: uppercase;
+}
+
+.label__alt {
+  composes: label;
+  color: var(--unity-s-blue-dark);
+  text-transform: none;
+}
+
+.header {
+  display: flex;
+  margin-bottom: var(--unity-spacer-24);
+}
+
+.header__left {
+  border-radius: var(--unity-radius-base);
+  display: flex;
+  overflow: hidden;
+}
+
+.header__middle {
+  position: relative;
+}
+
+.header__divider::after {
+  background-color: var(--unity-s-gray-medium);
+  content: ' ';
+  left: 0;
+  height: 100%;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 1px;
+}
+
+.body .border_right:not(:last-child) {
+  border-right: 1px solid var(--unity-t-white-base);
+}
+
+.body .border_bottom:not(:last-child) {
+  border-bottom: 1px solid var(--unity-t-white-base);
+}
+
+/* Box Styles */
+.box__left,
+.box__right {
+  align-items: center;
+  display: flex;
+  padding: var(--unity-spacer-8);
+  width: 100%;
+}
+
+.box__left {
+  background-color: var(--unity-s-gray-light);
+}
+
+.box__right {
+  background-color: var(--unity-s-gray-dark);
+  color: var(--unity-t-white-base);
+  font-size: var(--unity-font-24);
+  justify-content: center;
+  width: auto;
+}
+
+/* Box Color Modifiers */
+.box__base_blue {
+  background-color: #515A6D;
+}
+
+.box__dark_blue {
+  background-color: var(--unity-s-blue-dark);
+}
+
+/* Box Font Modifiers */
+.box__justifty__right {
+  justify-content: flex-end;
+}
+
+/* Box Size Modifiers */
+.box__large {
+  padding: var(--unity-spacer-16);
+}
+
+.box__full {
+  height: 100%;
+}
+
+.box__right__sm {
+  font-size: var(--unity-font-16);
+}
+
+/* Form Styles */
+.input,
+.button {
+  border: none;
+  border-radius: var(--unity-radius-base);
+  padding: var(--unity-spacer-8);
+}
+
+.input {
+  background-color: var(--unity-s-gray-light);
+  color: var(--unity-t-gray-dark);
+  width: calc(100% - 116px); /* Input = 100% Container (-) Button Width (+) Card Padding*/
+}
+
+.button {
+  background-color: var(--unity-b-blue-base);
+  color: var(--unity-t-white-base);
+  cursor: pointer;
+  font-weight: var(--unity-font-bold);
+  text-align: center;
+  text-transform: uppercase;
+  width: 100px;
+}

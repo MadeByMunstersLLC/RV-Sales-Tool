@@ -7,6 +7,11 @@
 @import url(../settings/typography.module.css);
 @import url(../settings/spacers.module.css);
 
+:root {
+  --dashboard-item-sm:    260px;
+  --dashboard-item-md:    calc((var(--dashboard-item-sm) * 2) + 24px);
+}
+
 /* Structure */
 .list {
   display: grid;
@@ -16,7 +21,7 @@
 }
 
 .item {
-  height: 300px; /* Default height for all items */
+  height: var(--dashboard-item-sm); /* Default height for all items */
 }
 
 .item > div {
@@ -32,13 +37,13 @@
 .item-md {
   grid-column-end: span 2;
   grid-row-end: span 2;
-  height: 624px;
+  height: var(--dashboard-item-md);
 }
 
 .item-lg {
   grid-column-end: span 3;
   grid-row-end: span 3;
-  height: 624px;
+  height: var(--dashboard-item-md);
 }
 
 /* Filler Item */

@@ -27,7 +27,7 @@ export const SATAgentProfileScheduleWidget = ({
           {data.avatar ?
             (
               // TODO: Add Alt tag for name
-              <img src={data.avatar} />
+              <img src={data.avatar} alt="" />
             )
           :
             (
