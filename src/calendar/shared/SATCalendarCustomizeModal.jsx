@@ -9,12 +9,17 @@ import {
   Toggle,
 } from 'rv-unity-react';
 
+import SATCalendarNewCalForm from 'calendar/shared/SATCalendarNewCalForm';
+
 import modalStyles from 'css/components/modal.module.css';
 
 // TODO: Consider making list a component in unity
+
 const CalendarList = ({
-  data
-}) => {
+    formVisibility,
+    formVisibilityToggle,
+    data
+  }) => {
   return (
     <ul className={`${modalStyles.list}`}>
       {data.map((item, index) => (
@@ -40,13 +45,21 @@ const CalendarList = ({
           </span>
         </li>
       ))}
+      <li className={`${modalStyles.item}`}>
+        <SATCalendarNewCalForm
+          formVisibility={formVisibility}
+          formVisibilityToggle={formVisibilityToggle}
+        />
+      </li>
     </ul>
   )
-}
+};
 
 export const SATCalendarCustomizeModal = ({
     customizeModalVisibility,
     customizeModalOnClose,
+    customizeCalFormViz,
+    customizeCalFormToggle,
     data,
   }) => {
   return (
@@ -61,6 +74,8 @@ export const SATCalendarCustomizeModal = ({
       <ModalBody>
         <CalendarList
           data={data}
+          formVisibility={customizeCalFormViz}
+          formVisibilityToggle={customizeCalFormToggle}
         />
       </ModalBody>
       <ModalFooter>

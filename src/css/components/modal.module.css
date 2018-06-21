@@ -33,3 +33,17 @@
 .active .item__title {
   font-weight: var(--unity-font-bold);
 }
+
+/* Form Action */
+.form__action {
+  display: block;
+}
+
+.form.hidden {
+  display: none !important;
+}
+
+.form.active {
+  display: block;
+  margin-top: var(--unity-spacer-16);
+}

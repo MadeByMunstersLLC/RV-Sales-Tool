@@ -4,6 +4,7 @@ import {
   Card,
   CardBody
 } from 'rv-unity-react';
+import SATSupportQuestionModal from 'support/shared/SATSupportQuestionModal';
 
 import PageBlankState from 'shared/layout/PageBlankState';
 import SATSupportArticle from 'support/shared/SATSupportArticle';
@@ -11,6 +12,16 @@ import SATSupportArticle from 'support/shared/SATSupportArticle';
 import cardStyles from 'css/components/card.module.css';
 
 class SATSupportShow extends Component {
+
+  state = {
+    modalVisibility: false,
+  }
+
+  toggleVizValue = (visValProp) => {
+    this.setState({
+      [visValProp]: !this.state[visValProp],
+    });
+  };
 
   render() {
     var item = this.props.data.find(i => i.id === this.props.match.params.id);
@@ -21,6 +32,7 @@ class SATSupportShow extends Component {
         <Card>
           <CardBody>
             <SATSupportArticle
+              modalVisibilityToggle={() => this.toggleVizValue('modalVisibility')}
               data={item}
             />
           </CardBody>
@@ -37,6 +49,10 @@ class SATSupportShow extends Component {
 
     return (
       <Fragment>
+        <SATSupportQuestionModal
+          modalVisibility={this.state.modalVisibility}
+          modalVisibilityToggle={() => this.toggleVizValue('modalVisibility')}
+        />
         {itemData}
       </Fragment>
     );

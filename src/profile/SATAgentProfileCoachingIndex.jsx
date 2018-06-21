@@ -48,6 +48,7 @@ class SATAgentProfileCoachingIndex extends Component {
               <Textarea
                 label="Feedback"
                 id="feedback"
+                value=""
                 onChange={() => undefined}
               />
             </form>

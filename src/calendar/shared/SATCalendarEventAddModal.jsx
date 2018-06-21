@@ -35,6 +35,7 @@ export const SATCalendarEventAddModal = ({
               <SingleInput
                 label="Event Title"
                 id="title"
+                value=""
                 onChange={() => undefined}
               />
             </div>
@@ -43,6 +44,7 @@ export const SATCalendarEventAddModal = ({
               <Select
                 label="Calendar"
                 id="calendar"
+                value=""
                 onChange={() => undefined}
                 placeholder="Select One"
                 options={calendarData}
@@ -53,6 +55,7 @@ export const SATCalendarEventAddModal = ({
             <SingleInput
               label="Event Description"
               id="desc"
+              value=""
               onChange={() => undefined}
             />
           </div>
@@ -62,6 +65,7 @@ export const SATCalendarEventAddModal = ({
                 label="State Date"
                 id="start_date"
                 type="date"
+                value=""
                 onChange={() => undefined}
               />
             </div>
@@ -72,6 +76,7 @@ export const SATCalendarEventAddModal = ({
                 id="start_time"
                 onChange={() => undefined}
                 placeholder="Select One"
+                value=""
                 options={mockCalendarTimes}
               />
             </div>
@@ -82,6 +87,7 @@ export const SATCalendarEventAddModal = ({
                 label="End Date"
                 id="end_date"
                 type="date"
+                value=""
                 onChange={() => undefined}
               />
             </div>
@@ -92,6 +98,7 @@ export const SATCalendarEventAddModal = ({
                 id="end_time"
                 onChange={() => undefined}
                 placeholder="Select One"
+                value=""
                 options={mockCalendarTimes}
               />
             </div>

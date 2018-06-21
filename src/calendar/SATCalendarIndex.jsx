@@ -24,6 +24,7 @@ class SATCalendarIndex extends Component {
     event: null,
     addEventModal: false,
     customizeCalendarModal: false,
+    createCalendarFormViz: false,
   };
 
   eventStyleGetter(event, start, end, isSelected) {
@@ -37,17 +38,10 @@ class SATCalendarIndex extends Component {
     };
   };
 
-  // TODO: The two functions below should be refactored to one global function
-  AddEventModalToggle = () => {
+  toggleVizValue = (visValProp) => {
     this.setState({
-      addEventModal: !this.state.addEventModal
-    })
-  };
-
-  CustomizeModalToggle = () => {
-    this.setState({
-      customizeCalendarModal: !this.state.customizeCalendarModal
-    })
+      [visValProp]: !this.state[visValProp],
+    });
   };
 
   render() {
@@ -57,19 +51,21 @@ class SATCalendarIndex extends Component {
       <Fragment>
         <SATCalendarCustomizeModal
           customizeModalVisibility={this.state.customizeCalendarModal}
-          customizeModalOnClose={this.CustomizeModalToggle}
+          customizeModalOnClose={() => this.toggleVizValue('customizeCalendarModal')}
+          customizeCalFormViz={this.state.createCalendarFormViz}
+          customizeCalFormToggle={() => this.toggleVizValue('createCalendarFormViz')}
           data={mockCalendars}
         />
         <SATCalendarEventAddModal
           addModalVisibility={this.state.addEventModal}
-          addModalOnClose={this.AddEventModalToggle}
+          addModalOnClose={() => this.toggleVizValue('addEventModal')}
           calendarData={mockCalendars}
         />
         <PageHeader
           pageTitleLeft="Calendar"
           pageTitleIconLeft="event"
           pageTitleIconRight="settings"
-          pageTitleRightOnPress={this.CustomizeModalToggle}
+          pageTitleRightOnPress={() => this.toggleVizValue('customizeCalendarModal')}
         />
         <PageContent>
           <Calendar
