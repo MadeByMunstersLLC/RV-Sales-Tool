@@ -11,6 +11,7 @@ import supportStyles from 'css/pages/support.module.css';
 import layoutStyles from 'css/global/layout.module.css';
 
 export const SATSupportArticle = ({
+  modalVisibilityToggle,
   data,
 }) => (
   <article className={`${supportStyles.article}`}>
@@ -36,7 +37,7 @@ export const SATSupportArticle = ({
       <Button
         label="Submit Question"
         classes={`${layoutStyles.width__full}`}
-        onPress={() => undefined}
+        onPress={() => modalVisibilityToggle()}
         size={4}
       />
     </aside>
