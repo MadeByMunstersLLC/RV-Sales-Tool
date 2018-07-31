@@ -10,15 +10,15 @@ import {
   PopoutList,
   PopoutItem,
   PopoutTrigger } from '../../shared/popout/';
-import SATMailCreate from 'messages/mail/SATMailCreate';
-import SATMessagesAside from 'messages/shared/SATMessagesAside';
-import SATMessagesAsideHeader from 'messages/shared/SATMessagesAsideHeader';
-import SATMessagesAsideHeaderActionButton from 'messages/shared/SATMessagesAsideHeaderActionButton';
-import SATMessagesAsideHeaderActionList from 'messages/shared/SATMessagesAsideHeaderActionList';
-import SATMessagesAsideHeaderActionItem from 'messages/shared/SATMessagesAsideHeaderActionItem';
-import SATMessagesContent from 'messages/shared/SATMessagesContent';
-import SATMessagesList from 'messages/shared/SATMessagesList';
-import SATMessagesMessage from 'messages/shared/SATMessagesMessage';
+import MailCreate from 'messages/mail/MailCreate';
+import MessagesAside from 'messages/shared/MessagesAside';
+import MessagesAsideHeader from 'messages/shared/MessagesAsideHeader';
+import MessagesAsideHeaderActionButton from 'messages/shared/MessagesAsideHeaderActionButton';
+import MessagesAsideHeaderActionList from 'messages/shared/MessagesAsideHeaderActionList';
+import MessagesAsideHeaderActionItem from 'messages/shared/MessagesAsideHeaderActionItem';
+import MessagesContent from 'messages/shared/MessagesContent';
+import MessagesList from 'messages/shared/MessagesList';
+import MessagesMessage from 'messages/shared/MessagesMessage';
 
 import  {
   Button
@@ -33,7 +33,7 @@ import messageStyles from 'css/pages/messages.module.css';
     // probably fix so it can be used in other areas
   // • Redirect URL on delete to mail route
 
-class SATMailIndex extends Component {
+class MailIndex extends Component {
 
   state = {
     messages: mockMessageItems,
@@ -101,9 +101,9 @@ class SATMailIndex extends Component {
           />
         }
         <div className={`${cardStyles.card} ${cardStyles.full} ${messageStyles.container}`}>
-          <SATMessagesAside>
-            <SATMessagesAsideHeader>
-              <SATMessagesAsideHeaderActionList>
+          <MessagesAside>
+            <MessagesAsideHeader>
+              <MessagesAsideHeaderActionList>
                 <li className={`${messageStyles.action__item} ${messageStyles.mail__main}`}>
                   <NavLink
                     to="/messages/mail/create">
@@ -115,18 +115,18 @@ class SATMailIndex extends Component {
                     />
                   </NavLink>
                 </li>
-                <SATMessagesAsideHeaderActionItem>
-                  <SATMessagesAsideHeaderActionButton
+                <MessagesAsideHeaderActionItem>
+                  <MessagesAsideHeaderActionButton
                     actionItemIcon="search"
                     actionItemIconColor="#20CD8E"
                     handleClick={this.toggleMessageSearchInput.bind(this)}
                   />
-                </SATMessagesAsideHeaderActionItem>
-                <SATMessagesAsideHeaderActionItem>
+                </MessagesAsideHeaderActionItem>
+                <MessagesAsideHeaderActionItem>
                   <PopoutContainer>
                     <PopoutTrigger
                       popoutId="mail-filter">
-                      <SATMessagesAsideHeaderActionButton
+                      <MessagesAsideHeaderActionButton
                         actionItemIcon="filter_list"
                         actionItemIconColor="#20CD8E"
                       />
@@ -147,8 +147,8 @@ class SATMailIndex extends Component {
                       </PopoutBody>
                     </Popout>
                   </PopoutContainer>
-                </SATMessagesAsideHeaderActionItem>
-              </SATMessagesAsideHeaderActionList>
+                </MessagesAsideHeaderActionItem>
+              </MessagesAsideHeaderActionList>
               <div
                 className={`
                   ${messageStyles.header__search}
@@ -160,15 +160,15 @@ class SATMailIndex extends Component {
                   placeholder="Find a message …"
                 />
               </div>
-            </SATMessagesAsideHeader>
-            <SATMessagesList
+            </MessagesAsideHeader>
+            <MessagesList
               messageRoute="mail"
               removeMessage={this.removeMessage.bind(this)}
               archiveMessage={this.archiveMessage.bind(this)}
               items={messages}
             />
-          </SATMessagesAside>
-          <SATMessagesContent>
+          </MessagesAside>
+          <MessagesContent>
             <Switch>
               <Route
                 exact
@@ -182,12 +182,12 @@ class SATMailIndex extends Component {
               />
               <Route
                 path="/messages/mail/create"
-                component={SATMailCreate}
+                component={MailCreate}
               />
               <Route
                 path="/messages/mail/:id"
                 render={ (props) =>
-                  <SATMessagesMessage
+                  <MessagesMessage
                     messagesReadOnly={false}
                     data={mockMessageItems}
                     removeMessage={this.removeMessage.bind(this)}
@@ -197,14 +197,14 @@ class SATMailIndex extends Component {
                 }
               />
             </Switch>
-          </SATMessagesContent>
+          </MessagesContent>
         </div>
       </Fragment>
     );
   }
 }
 
-export default SATMailIndex;
+export default MailIndex;
 
 const mockMessageItems = [
   {
