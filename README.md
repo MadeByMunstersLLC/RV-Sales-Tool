@@ -9,3 +9,11 @@ In order to get started follow the following steps:
 1. Clone repo
 2. Run `npm install`
 3. Run `npm start` <-- This will start both a web-based view and Electron view
+
+
+#### Linking Unity
+
+1. npm install in unity
+2. npm link unity into unity-react
+3. npm link unity into sales-tool
+4. npm link unity-react into sales-tool
