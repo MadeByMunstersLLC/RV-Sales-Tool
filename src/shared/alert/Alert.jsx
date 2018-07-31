@@ -3,7 +3,7 @@ import * as classNames from 'classnames';
 
 import MaterialIcon from 'material-icons-react';
 
-import alertStyles from 'css/components/alert.module.css';
+import alertStyles from '../../css/components/alert.module.css';
 
 export const AlertTypes = {
   PRIMARY: 0,

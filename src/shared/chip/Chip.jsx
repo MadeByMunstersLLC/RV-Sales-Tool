@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Avatar } from 'shared/avatar';
+import { Avatar } from '../avatar/';
 
-import chipStyles from 'css/components/chip.module.css';
+import chipStyles from '../../css/components/chip.module.css';
 
 export const Chip = ({
   chipAvatarText,

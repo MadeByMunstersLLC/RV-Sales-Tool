@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
+import sidebarStyles from '../../../css/modules/sidebar-navigation.module.css';
 
 export class SidebarNavigationToggleLink extends Component {
 
