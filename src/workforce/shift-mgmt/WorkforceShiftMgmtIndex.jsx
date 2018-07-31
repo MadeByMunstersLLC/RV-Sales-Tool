@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 
-import WorkforceShiftMgmtSchedules from 'workforce/shift-mgmt/WorkforceShiftMgmtSchedules';
-import WorkforceShiftMgmtSplits from 'workforce/shift-mgmt/WorkforceShiftMgmtSplits';
-import WorkforceShiftScheduleModal from 'workforce/shift-mgmt/WorkforceShiftScheduleModal';
-import WorkforceShiftSplitModal from 'workforce/shift-mgmt/WorkforceShiftSplitModal';
+import WorkforceShiftMgmtSchedules from './WorkforceShiftMgmtSchedules';
+import WorkforceShiftMgmtSplits from './WorkforceShiftMgmtSplits';
+import WorkforceShiftScheduleModal from './WorkforceShiftScheduleModal';
+import WorkforceShiftSplitModal from './WorkforceShiftSplitModal';
 
 class WorkforceShiftMgmtIndex extends Component {
 

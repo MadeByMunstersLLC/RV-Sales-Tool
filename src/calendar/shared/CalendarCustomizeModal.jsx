@@ -9,9 +9,9 @@ import {
   Toggle,
 } from 'rv-unity-react';
 
-import CalendarNewCalForm from 'calendar/shared/CalendarNewCalForm';
+import CalendarNewCalForm from './CalendarNewCalForm';
 
-import modalStyles from 'css/components/modal.module.css';
+import modalStyles from '../../css/components/modal.module.css';
 
 // TODO: Consider making list a component in unity
 

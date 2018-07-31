@@ -5,7 +5,7 @@ import {
   Select,
 } from 'rv-unity-react';
 
-import modalStyles from 'css/components/modal.module.css';
+import modalStyles from '../../css/components/modal.module.css';
 
 // TODO:
   // • Wire up form

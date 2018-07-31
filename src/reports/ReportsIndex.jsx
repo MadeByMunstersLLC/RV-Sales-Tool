@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import PageBlankState from 'shared/layout/PageBlankState';
-import PageContent from 'shared/layout/PageContent';
-import PageHeader from 'shared/layout/PageHeader';
-import { Tabs, Tab } from 'shared/tabs/';
+import PageBlankState from '../shared/layout/PageBlankState';
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
+import { Tabs, Tab } from '../shared/tabs/';
 
 class ReportsIndex extends Component {
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { SortableElement } from 'react-sortable-hoc';
 
-import DashboardItem from 'dashboard/shared/DashboardItem';
+import DashboardItem from './DashboardItem';
 
 export const DashboardComplianceWidget = SortableElement(({
     size,

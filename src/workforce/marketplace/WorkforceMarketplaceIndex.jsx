@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import WorkforceMarketplaceOvertime from 'workforce/marketplace/overtime/WorkforceMarketplaceOvertime';
-import WorkforceMarketplaceShiftSwap from 'workforce/marketplace/shift-swap/WorkforceMarketplaceShiftSwap';
-import WorkforceMarketplaceTimeoff from 'workforce/marketplace/timeoff/WorkforceMarketplaceTimeoff';
-import { Tabs, Tab } from 'shared/tabs/';
+import WorkforceMarketplaceOvertime from './overtime/WorkforceMarketplaceOvertime';
+import WorkforceMarketplaceShiftSwap from './shift-swap/WorkforceMarketplaceShiftSwap';
+import WorkforceMarketplaceTimeoff from './timeoff/WorkforceMarketplaceTimeoff';
+import { Tabs, Tab } from '../../shared/tabs/';
 
-import cardTabstyles from 'css/components/card-tabs.module.css';
+import cardTabstyles from '../../css/components/card-tabs.module.css';
 
 class WorkforceMarketplaceIndex extends Component {
 

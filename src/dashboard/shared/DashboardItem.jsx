@@ -7,7 +7,7 @@ import {
   CardHeader,
 } from 'rv-unity-react';
 
-import dashboardStyles from 'css/pages/dashboard.module.css';
+import dashboardStyles from '../../css/pages/dashboard.module.css';
 
 export const DashboardItem = ({
   value,

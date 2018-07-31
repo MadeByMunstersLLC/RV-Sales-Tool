@@ -1,8 +1,8 @@
 import React from 'react';
 
-import MessagesItem from 'messages/shared/MessagesItem';
+import MessagesItem from './MessagesItem';
 
-import messageStyles from 'css/pages/messages.module.css';
+import messageStyles from '../../css/pages/messages.module.css';
 
 export const MessagesList = ({
     messageRoute,

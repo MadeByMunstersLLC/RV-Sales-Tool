@@ -9,20 +9,20 @@ import {
   ModalFooter,
   ModalHeader,
   Toggle } from 'rv-unity-react';
-import DashboardAttendanceWidget from 'dashboard/shared/DashboardAttendanceWidget';
-import DashboardBankWidget from 'dashboard/shared/DashboardBankWidget';
-import DashboardCompensationWidget from 'dashboard/shared/DashboardCompensationWidget';
-import DashboardComplianceWidget from 'dashboard/shared/DashboardComplianceWidget';
-import DashboardEventCalWidget from 'dashboard/shared/DashboardEventCalWidget';
-import DashboardFunFiveWidget from 'dashboard/shared/DashboardFunFiveWidget';
-import DashboardMsaWidget from 'dashboard/shared/DashboardMsaWidget';
-import DashboardRedCoinWidget from 'dashboard/shared/DashboardRedCoinWidget';
-import DashboardItemFiller from 'dashboard/shared/DashboardItemFiller'
-import PageContent from 'shared/layout/PageContent';
-import PageHeader from 'shared/layout/PageHeader';
+import DashboardAttendanceWidget from './shared/DashboardAttendanceWidget';
+import DashboardBankWidget from './shared/DashboardBankWidget';
+import DashboardCompensationWidget from './shared/DashboardCompensationWidget';
+import DashboardComplianceWidget from './shared/DashboardComplianceWidget';
+import DashboardEventCalWidget from './shared/DashboardEventCalWidget';
+import DashboardFunFiveWidget from './shared/DashboardFunFiveWidget';
+import DashboardMsaWidget from './shared/DashboardMsaWidget';
+import DashboardRedCoinWidget from './shared/DashboardRedCoinWidget';
+import DashboardItemFiller from './shared/DashboardItemFiller'
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
 
-import dashboardStyles from 'css/pages/dashboard.module.css';
-import modalStyles from 'css/components/modal.module.css';
+import dashboardStyles from '../css/pages/dashboard.module.css';
+import modalStyles from '../css/components/modal.module.css';
 
 // TODO:
   // • Need to map API dashbaord widget key to front end React component once API is created

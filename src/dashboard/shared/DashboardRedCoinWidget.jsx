@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { SortableElement } from 'react-sortable-hoc';
 
-import DashboardItem from 'dashboard/shared/DashboardItem';
+import DashboardItem from './DashboardItem';
 
-import widgetStyles from 'css/modules/dashboard-widget.module.css';
+import widgetStyles from '../../css/modules/dashboard-widget.module.css';
 
 // TODO:
   // • Needs to be wired up and hard coded values removed

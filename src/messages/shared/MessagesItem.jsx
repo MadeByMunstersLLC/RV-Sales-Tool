@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Chip } from 'shared/chip';
+import { Chip } from '../../shared/chip';
 import MaterialIcon from 'material-icons-react';
 
-import messageStyles from 'css/pages/messages.module.css';
+import messageStyles from '../../css/pages/messages.module.css';
 
 // TODO:
   // • Need to wire up actions

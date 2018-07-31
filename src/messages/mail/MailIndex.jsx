@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { NavLink, Route, Switch } from "react-router-dom";
 
-import { Alert } from 'shared/alert/'
-import PageBlankState from 'shared/layout/PageBlankState';
+import { Alert } from '../../shared/alert/'
+import PageBlankState from '../../shared/layout/PageBlankState';
 import {
   Popout,
   PopoutBody,
@@ -11,21 +11,21 @@ import {
   PopoutItem,
   PopoutTrigger } from '../../shared/popout/';
 import MailCreate from 'messages/mail/MailCreate';
-import MessagesAside from 'messages/shared/MessagesAside';
-import MessagesAsideHeader from 'messages/shared/MessagesAsideHeader';
-import MessagesAsideHeaderActionButton from 'messages/shared/MessagesAsideHeaderActionButton';
-import MessagesAsideHeaderActionList from 'messages/shared/MessagesAsideHeaderActionList';
-import MessagesAsideHeaderActionItem from 'messages/shared/MessagesAsideHeaderActionItem';
-import MessagesContent from 'messages/shared/MessagesContent';
-import MessagesList from 'messages/shared/MessagesList';
-import MessagesMessage from 'messages/shared/MessagesMessage';
+import MessagesAside from '../shared/MessagesAside';
+import MessagesAsideHeader from '../shared/MessagesAsideHeader';
+import MessagesAsideHeaderActionButton from '../shared/MessagesAsideHeaderActionButton';
+import MessagesAsideHeaderActionList from '../shared/MessagesAsideHeaderActionList';
+import MessagesAsideHeaderActionItem from '../shared/MessagesAsideHeaderActionItem';
+import MessagesContent from '../shared/MessagesContent';
+import MessagesList from '../shared/MessagesList';
+import MessagesMessage from '../shared/MessagesMessage';
 
 import  {
   Button
 } from 'rv-unity-react';
 
-import cardStyles from 'css/components/card.module.css';
-import messageStyles from 'css/pages/messages.module.css';
+import cardStyles from '../../css/components/card.module.css';
+import messageStyles from '../../css/pages/messages.module.css';
 
 // TODO:
   // • Alerts should probable have a default timeout in the component

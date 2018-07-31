@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import PageContent from 'shared/layout/PageContent';
-import PageHeader from 'shared/layout/PageHeader';
-import SupportShow from 'support/SupportShow';
-import SupportSection from 'support/shared/SupportSection';
+import SupportShow from './SupportShow';
+import SupportSection from './shared/SupportSection';
+
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
 
 class SupportIndex extends Component {
 

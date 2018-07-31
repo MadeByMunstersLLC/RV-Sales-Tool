@@ -10,7 +10,7 @@ import {
   ModalHeader,
 } from 'rv-unity-react';
 
-import modalStyles from 'css/components/modal.module.css';
+import modalStyles from '../../../css/components/modal.module.css';
 
 export const WorkforceMarketplaceTimeoffModal = ({
     modalVisibility,

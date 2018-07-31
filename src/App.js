@@ -8,15 +8,15 @@ import {
   SidebarNavigationList,
   SidebarNavigationLink,
   SidebarNavigationToggleLink,
-  SidebarNavigationSubmenuLink } from 'shared/layout/sidebar-navigation';
-import AgentProfileIndex from 'profile/AgentProfileIndex';
-import CalendarIndex from 'calendar/CalendarIndex';
-import DashboardIndex from 'dashboard/DashboardIndex';
-import MessagesIndex from 'messages/MessagesIndex';
-import ReportsIndex from 'reports/ReportsIndex';
-import SupportIndex from 'support/SupportIndex';
-import WorkforceIndex from 'workforce/WorkforceIndex';
-import TopbarNavigation from 'shared/layout/TopbarNavigation';
+  SidebarNavigationSubmenuLink } from './shared/layout/sidebar-navigation';
+import AgentProfileIndex from './profile/AgentProfileIndex';
+import CalendarIndex from './calendar/CalendarIndex';
+import DashboardIndex from './dashboard/DashboardIndex';
+import MessagesIndex from './messages/MessagesIndex';
+import ReportsIndex from './reports/ReportsIndex';
+import SupportIndex from './support/SupportIndex';
+import WorkforceIndex from './workforce/WorkforceIndex';
+import TopbarNavigation from './shared/layout/TopbarNavigation';
 
 const App = () => (
   <Router>

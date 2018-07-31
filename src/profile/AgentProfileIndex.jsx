@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import PageContent from 'shared/layout/PageContent';
-import PageHeader from 'shared/layout/PageHeader';
-import AgentProfileCoachingIndex from 'profile/AgentProfileCoachingIndex';
-import AgentProfileCoachingsWidget from 'profile/shared/AgentProfileCoachingsWidget';
-import AgentProfileScheduleWidget from 'profile/shared/AgentProfileScheduleWidget';
-import AgentProfileStatsWidget from 'profile/shared/AgentProfileStatsWidget';
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
+import AgentProfileCoachingIndex from './AgentProfileCoachingIndex';
+import AgentProfileCoachingsWidget from './shared/AgentProfileCoachingsWidget';
+import AgentProfileScheduleWidget from './shared/AgentProfileScheduleWidget';
+import AgentProfileStatsWidget from './shared/AgentProfileStatsWidget';
 
 const AgentProfileWidgets = () => (
 

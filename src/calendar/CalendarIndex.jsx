@@ -3,14 +3,14 @@ import React, { Component, Fragment } from 'react';
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
-import PageContent from 'shared/layout/PageContent';
-import PageHeader from 'shared/layout/PageHeader';
-import CalendarCustomizeModal from 'calendar/shared/CalendarCustomizeModal';
-import CalendarEvent from 'calendar/shared/CalendarEvent';
-import CalendarEventAddModal from 'calendar/shared/CalendarEventAddModal';
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
+import CalendarCustomizeModal from './shared/CalendarCustomizeModal';
+import CalendarEvent from './shared/CalendarEvent';
+import CalendarEventAddModal from './shared/CalendarEventAddModal';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import 'css/pages/calendar.css';
+import '../css/pages/calendar.css';
 
 Calendar.momentLocalizer(moment);
 

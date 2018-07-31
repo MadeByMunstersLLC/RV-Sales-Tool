@@ -2,7 +2,7 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import messageStyles from 'css/pages/messages.module.css';
+import messageStyles from '../../css/pages/messages.module.css';
 
 export const MessagesAsideHeaderActionButton = ({
   handleClick = () => undefined,

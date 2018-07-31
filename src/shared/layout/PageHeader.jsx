@@ -2,8 +2,8 @@ import React from 'react';
 
 import MaterialIcon from 'material-icons-react';
 
-import styles from 'css/modules/page-header.module.css';
-import layoutStyles from 'css/global/layout.module.css';
+import styles from '../../css/modules/page-header.module.css';
+import layoutStyles from '../../css/global/layout.module.css';
 
 export const PageHeader = ({
     pageTitleLeft,

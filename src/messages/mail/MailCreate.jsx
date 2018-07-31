@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import Autosuggest from 'react-autosuggest';
 
-import MessagesMessageFooter from 'messages/shared/MessagesMessageFooter';
-import MessagesMessageHeader from 'messages/shared/MessagesMessageHeader';
+import MessagesMessageFooter from '../shared/MessagesMessageFooter';
+import MessagesMessageHeader from '../shared/MessagesMessageHeader';
 
-import typeaheadStyles from 'css/components/typeahead.module.css';
+import typeaheadStyles from '../../css/components/typeahead.module.css';
 
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();

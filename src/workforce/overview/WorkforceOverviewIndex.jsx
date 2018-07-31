@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
-import WorkforceMarketplaceOverviewPendingCard from 'workforce/overview/WorkforceMarketplaceOverviewPendingCard';
-import WorkforceMarketplaceOverviewRequestsCard from 'workforce/overview/WorkforceMarketplaceOverviewRequestsCard';
+import WorkforceMarketplaceOverviewPendingCard from './WorkforceMarketplaceOverviewPendingCard';
+import WorkforceMarketplaceOverviewRequestsCard from './WorkforceMarketplaceOverviewRequestsCard';
 
 class WorkforceOverviewIndex extends Component {
 

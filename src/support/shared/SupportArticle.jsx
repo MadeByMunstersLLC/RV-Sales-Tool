@@ -6,9 +6,9 @@ import {
   Button,
 } from 'rv-unity-react';
 
-import cardStyles from 'css/components/card.module.css';
-import supportStyles from 'css/pages/support.module.css';
-import layoutStyles from 'css/global/layout.module.css';
+import cardStyles from '../../css/components/card.module.css';
+import supportStyles from '../../css/pages/support.module.css';
+import layoutStyles from '../../css/global/layout.module.css';
 
 export const SupportArticle = ({
   modalVisibilityToggle,

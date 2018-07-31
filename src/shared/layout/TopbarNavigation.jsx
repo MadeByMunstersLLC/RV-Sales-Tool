@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 
 import MaterialIcon from 'material-icons-react';
 
-import { Avatar } from 'shared/avatar';
+import { Avatar } from '../avatar';
 import {
   Popout,
   PopoutBody,
   PopoutContainer,
   PopoutHeader,
-  PopoutTrigger } from '../../shared/popout/';
+  PopoutTrigger } from '../popout';
 
 import layout from '../../css/global/layout.module.css';
 import typographyStyles from '../../css/global/typography.module.css';

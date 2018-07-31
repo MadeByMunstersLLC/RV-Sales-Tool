@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import PageContent from 'shared/layout/PageContent';
-import PageHeader from 'shared/layout/PageHeader';
-import { Tabs, Tab } from 'shared/tabs/';
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
+import { Tabs, Tab } from '../shared/tabs/';
 
-import BroadcastIndex from 'messages/broadcast/BroadcastIndex';
-import MailIndex from 'messages/mail/MailIndex';
+import BroadcastIndex from './broadcast/BroadcastIndex';
+import MailIndex from './mail/MailIndex';
 
 class MessagesIndex extends Component {
 

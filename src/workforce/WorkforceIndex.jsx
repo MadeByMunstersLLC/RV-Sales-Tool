@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import PageContent from 'shared/layout/PageContent';
-import PageHeader from 'shared/layout/PageHeader';
-import WorkforceMarketplaceIndex from 'workforce/marketplace/WorkforceMarketplaceIndex';
-import WorkforceOverviewIndex from 'workforce/overview/WorkforceOverviewIndex';
-import WorkforceShiftMgmtIndex from 'workforce/shift-mgmt/WorkforceShiftMgmtIndex';
-import { Tabs, Tab } from 'shared/tabs/';
+import PageContent from '../shared/layout/PageContent';
+import PageHeader from '../shared/layout/PageHeader';
+import WorkforceMarketplaceIndex from './marketplace/WorkforceMarketplaceIndex';
+import WorkforceOverviewIndex from './overview/WorkforceOverviewIndex';
+import WorkforceShiftMgmtIndex from './shift-mgmt/WorkforceShiftMgmtIndex';
+import { Tabs, Tab } from '../shared/tabs/';
 
 class MarketplaceIndex extends Component {
 

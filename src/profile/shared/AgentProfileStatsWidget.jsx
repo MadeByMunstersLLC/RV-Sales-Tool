@@ -6,7 +6,7 @@ import {
   CardBody,
 } from 'rv-unity-react';
 
-import profileStyles from 'css/pages/agent-profile.module.css';
+import profileStyles from '../../css/pages/agent-profile.module.css';
 
 export const AgentProfileStatsWidget = ({
   data,

@@ -3,8 +3,8 @@ import * as classNames from 'classnames';
 
 import MaterialIcon from 'material-icons-react';
 
-import dashboardStyles from 'css/pages/dashboard.module.css';
-import typographstyles from 'css/global/typography.module.css';
+import dashboardStyles from '../../css/pages/dashboard.module.css';
+import typographstyles from '../../css/global/typography.module.css';
 
 export const DashboardItemFiller = ({
   fillerTitle,

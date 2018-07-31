@@ -1,7 +1,7 @@
 import React from 'react';
 
-import tabStyles from 'css/components/tabs.module.css';
-import cardTabstyles from 'css/components/card-tabs.module.css';
+import tabStyles from '../../css/components/tabs.module.css';
+import cardTabstyles from '../../css/components/card-tabs.module.css';
 
 export const Tabs = ({
     tabsPageHeader = false,

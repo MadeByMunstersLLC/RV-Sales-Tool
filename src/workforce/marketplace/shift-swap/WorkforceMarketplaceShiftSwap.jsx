@@ -3,12 +3,12 @@ import React, { Component, Fragment } from 'react';
 import Calendar from 'react-big-calendar';
 import moment from 'moment';
 
-import WorkforceMarketplaceCalEvent from 'workforce/marketplace/shared/WorkforceMarketplaceCalEvent';
-import WorkforceMarketplaceCalTopbar from 'workforce/marketplace/shared/WorkforceMarketplaceCalTopbar';
-import WorkforceMarketplaceShiftSwapBidModal from 'workforce/marketplace/shift-swap/WorkforceMarketplaceShiftSwapBidModal';
+import WorkforceMarketplaceCalEvent from '../shared/WorkforceMarketplaceCalEvent';
+import WorkforceMarketplaceCalTopbar from '../shared/WorkforceMarketplaceCalTopbar';
+import WorkforceMarketplaceShiftSwapBidModal from './WorkforceMarketplaceShiftSwapBidModal';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import 'css/pages/calendar.css';
+import '../../../css/pages/calendar.css';
 
 Calendar.momentLocalizer(moment);
 

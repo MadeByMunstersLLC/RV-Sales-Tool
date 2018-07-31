@@ -4,10 +4,10 @@ import {
   Card,
   CardBody
 } from 'rv-unity-react';
-import SupportQuestionModal from 'support/shared/SupportQuestionModal';
+import SupportQuestionModal from './shared/SupportQuestionModal';
 
-import PageBlankState from 'shared/layout/PageBlankState';
-import SupportArticle from 'support/shared/SupportArticle';
+import PageBlankState from '../shared/layout/PageBlankState';
+import SupportArticle from '../support/shared/SupportArticle';
 
 import cardStyles from 'css/components/card.module.css';
 

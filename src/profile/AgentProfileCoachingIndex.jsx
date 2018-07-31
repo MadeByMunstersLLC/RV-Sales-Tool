@@ -12,9 +12,9 @@ import {
   ModalFooter,
   Textarea,
 } from 'rv-unity-react';
-import PageBlankState from 'shared/layout/PageBlankState';
+import PageBlankState from '../shared/layout/PageBlankState';
 
-import supportStyles from 'css/pages/support.module.css';
+import supportStyles from '../css/pages/support.module.css';
 
 class AgentProfileCoachingIndex extends Component {
 

@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from 'react';
 
-import { Avatar } from 'shared/avatar';
-import { Badge } from 'shared/badge';
-import { Chip } from 'shared/chip';
+import { Avatar } from '../../shared/avatar';
+import { Badge } from '../../shared/badge';
+import { Chip } from '../../shared/chip';
 import MaterialIcon from 'material-icons-react';
 
-import PageBlankState from 'shared/layout/PageBlankState';
-import MessagesMessageFooter from 'messages/shared/MessagesMessageFooter';
-import MessagesMessageHeader from 'messages/shared/MessagesMessageHeader';
+import PageBlankState from '../../shared/layout/PageBlankState';
+import MessagesMessageFooter from './MessagesMessageFooter';
+import MessagesMessageHeader from './MessagesMessageHeader';
 
-import layoutStyles from 'css/global/layout.module.css';
-import messageStyles from 'css/pages/messages.module.css';
+import layoutStyles from '../../css/global/layout.module.css';
+import messageStyles from '../../css/pages/messages.module.css';
 
 class MessagesMessage extends Component {
 

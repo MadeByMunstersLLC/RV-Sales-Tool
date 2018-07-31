@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import moment from 'moment';
 
-import { Popout } from 'shared/popout';
+import { Popout } from '../../shared/popout';
 
 export const CalendarEventPopout = ({
     event

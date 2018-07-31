@@ -4,9 +4,9 @@ import moment from 'moment';
 
 import { SortableElement } from 'react-sortable-hoc';
 
-import DashboardItem from 'dashboard/shared/DashboardItem';
+import DashboardItem from './DashboardItem';
 
-import widgetStyles from 'css/modules/dashboard-event-cal.module.css';
+import widgetStyles from '../../css/modules/dashboard-event-cal.module.css';
 
 // TODO:
   // • Need to add sort once data model figured out

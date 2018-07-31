@@ -1,6 +1,6 @@
 import React from 'react';
 
-import messageStyles from 'css/pages/messages.module.css';
+import messageStyles from '../../css/pages/messages.module.css';
 
 export const MessagesAsideHeaderActionList = ({
     children

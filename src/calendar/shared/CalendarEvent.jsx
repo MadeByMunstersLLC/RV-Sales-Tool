@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import CalendarEventPopout from 'calendar/shared/CalendarEventPopout';
+import CalendarEventPopout from './CalendarEventPopout';
 
 export const CalendarEvent = ({
     event
