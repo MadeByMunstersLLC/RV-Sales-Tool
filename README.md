@@ -17,3 +17,12 @@ In order to get started follow the following steps:
 2. npm link unity into unity-react
 3. npm link unity into sales-tool
 4. npm link unity-react into sales-tool
+
+
+#### Building and Packaging
+
+Building and packaging to create an Electron app.
+
+1. Link up the unity, unity-react dependencies
+2. Build the project using `npm run build`
+3. Create an Electron app package by running `npm run electron-dist`
