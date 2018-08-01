@@ -97,11 +97,6 @@ const App = () => (
       <section className={`${layout.page__body}`}>
         <Switch>
           <Route
-            exact
-            path="/">
-            <Redirect to="/dashboard" />
-          </Route>
-          <Route
             path="/dashboard"
             component={DashboardIndex} />
           <Route
@@ -122,6 +117,9 @@ const App = () => (
           <Route
             path="/agent_profile"
             component={AgentProfileIndex} />
+          <Route>
+            <Redirect to="/dashboard" />
+          </Route>
         </Switch>
       </section>
     </Fragment>
