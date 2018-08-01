@@ -15,9 +15,7 @@ export const AgentProfileCoachingsWidget = ({
     collapsible={false}
     visible={true}
   >
-    <CardHeader>
-      Coachings
-    </CardHeader>
+    <CardHeader title="Coachings" />
     <CardBody>
       <div className="tables__unity-table ">
         <ul className="tables__unity-table__header">

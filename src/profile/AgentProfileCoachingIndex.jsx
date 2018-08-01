@@ -56,13 +56,13 @@ class AgentProfileCoachingIndex extends Component {
           <ModalFooter>
             <Button
               label="Sumbit"
+              size={2}
               onPress={() => undefined}
             />
           </ModalFooter>
         </Modal>
         <Card>
-          <CardHeader>
-            Coaching // Call {coaching.call_id}
+          <CardHeader title={'Coaching // Call ' + coaching.call_id}>
             <Button
               label="Provide Feedback"
               onPress={() => this.toggleFeedbackModal()}

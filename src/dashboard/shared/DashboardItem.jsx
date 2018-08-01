@@ -23,9 +23,7 @@ export const DashboardItem = ({
   return (
     <div className={dashboardItemClasses}>
       <Card>
-        <CardHeader>
-          <h5>{dashboardItemTitle}</h5>
-        </CardHeader>
+        <CardHeader title={dashboardItemTitle} />
         <CardBody>
           {children}
         </CardBody>

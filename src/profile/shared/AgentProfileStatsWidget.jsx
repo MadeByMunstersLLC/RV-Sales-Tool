@@ -15,9 +15,7 @@ export const AgentProfileStatsWidget = ({
     collapsible={false}
     visible={true}
   >
-    <CardHeader>
-      Agent Stats
-    </CardHeader>
+    <CardHeader title="Agent Stats" />
     <CardBody>
       <ul className={`${profileStyles.card__stats}`}>
         {data.stats.map((stat, index) =>

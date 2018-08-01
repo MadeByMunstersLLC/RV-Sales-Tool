@@ -18,9 +18,7 @@ export const SupportSection = ({
       <CardHeader title="Support Topics" />
       {categories.map((category, index) =>
         <div key={index}>
-          <CardHeader>
-            {category.title}
-          </CardHeader>
+          <CardHeader title={category.title} />
           <CardBody>
             <div className="tables__unity-table">
               <ul className="tables__unity-table__header">
