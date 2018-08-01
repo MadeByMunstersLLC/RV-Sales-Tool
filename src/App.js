@@ -8,15 +8,15 @@ import {
   SidebarNavigationList,
   SidebarNavigationLink,
   SidebarNavigationToggleLink,
-  SidebarNavigationSubmenuLink } from 'shared/layout/sidebar-navigation';
-import SATAgentProfileIndex from 'profile/SATAgentProfileIndex';
-import SATCalendarIndex from 'calendar/SATCalendarIndex';
-import SATDashboardIndex from 'dashboard/SATDashboardIndex';
-import SATMessagesIndex from 'messages/SATMessagesIndex';
-import SATReportsIndex from 'reports/SATReportsIndex';
-import SATSupportIndex from 'support/SATSupportIndex';
-import SATWorkforceIndex from 'workforce/SATWorkforceIndex';
-import TopbarNavigation from 'shared/layout/TopbarNavigation';
+  SidebarNavigationSubmenuLink } from './shared/layout/sidebar-navigation';
+import AgentProfileIndex from './profile/AgentProfileIndex';
+import CalendarIndex from './calendar/CalendarIndex';
+import DashboardIndex from './dashboard/DashboardIndex';
+import MessagesIndex from './messages/MessagesIndex';
+import ReportsIndex from './reports/ReportsIndex';
+import SupportIndex from './support/SupportIndex';
+import WorkforceIndex from './workforce/WorkforceIndex';
+import TopbarNavigation from './shared/layout/TopbarNavigation';
 
 const App = () => (
   <Router>
@@ -97,31 +97,29 @@ const App = () => (
       <section className={`${layout.page__body}`}>
         <Switch>
           <Route
-            exact
-            path="/">
-            <Redirect to="/dashboard" />
-          </Route>
-          <Route
             path="/dashboard"
-            component={SATDashboardIndex} />
+            component={DashboardIndex} />
           <Route
             path="/messages"
-            component={SATMessagesIndex} />
+            component={MessagesIndex} />
           <Route
             path="/calendar"
-            component={SATCalendarIndex} />
+            component={CalendarIndex} />
           <Route
             path="/reports"
-            component={SATReportsIndex} />
+            component={ReportsIndex} />
           <Route
             path="/support"
-            component={SATSupportIndex} />
+            component={SupportIndex} />
           <Route
             path="/workforce"
-            component={SATWorkforceIndex} />
+            component={WorkforceIndex} />
           <Route
             path="/agent_profile"
-            component={SATAgentProfileIndex} />
+            component={AgentProfileIndex} />
+          <Route>
+            <Redirect to="/dashboard" />
+          </Route>
         </Switch>
       </section>
     </Fragment>

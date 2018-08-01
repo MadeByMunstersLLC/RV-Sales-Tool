@@ -1,6 +1,6 @@
 import React from 'react';
 
-import layoutStyles from 'css/global/layout.module.css';
+import layoutStyles from '../../css/global/layout.module.css';
 
 export const PageContent = ({
     pageContentScroll = false,

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import minimizeIcon from 'images/icons/expand.svg';
+import minimizeIcon from '../../../images/icons/expand.svg';
 
-import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
+import sidebarStyles from '../../../css/modules/sidebar-navigation.module.css';
 
 export const SidebarNavigationFooter = ({
     toggleSideNavTrigger,

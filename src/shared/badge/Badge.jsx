@@ -1,7 +1,7 @@
 import React from 'react';
 import * as classNames from 'classnames';
 
-import badgeStyles from 'css/components/badge.module.css';
+import badgeStyles from '../../css/components/badge.module.css';
 
 export const BadgeTypes = {
   PRIMARY: 0,

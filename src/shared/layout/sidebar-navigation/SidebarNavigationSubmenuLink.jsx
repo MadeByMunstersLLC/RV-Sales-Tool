@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ExternalAppLink } from 'shared/misc';
+import { ExternalAppLink } from '../../misc';
 
-import sidebarStyles from 'css/modules/sidebar-navigation.module.css';
+import sidebarStyles from '../../../css/modules/sidebar-navigation.module.css';
 
 export const SidebarNavigationSubmenuLink = ({
     submenuLinkText,

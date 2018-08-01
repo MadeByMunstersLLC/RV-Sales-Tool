@@ -1,6 +1,6 @@
 import React from 'react';
 
-import popoutStyles from 'css/components/popout.module.css';
+import popoutStyles from '../../css/components/popout.module.css';
 
 export const Popout = ({
     classes,
