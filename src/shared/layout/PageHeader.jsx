@@ -16,18 +16,20 @@ export const PageHeader = ({
       <MaterialIcon icon={pageTitleIconLeft} color="#9496A2" />
       <p>{pageTitleLeft}</p>
     </div>
-    <div className={`${styles.header__right}`}>
-      <span
-        role="button"
-        className={`${layoutStyles.clickable}`}
-        onClick={() => pageTitleRightOnPress()}
-      >
-        <MaterialIcon
-          icon={pageTitleIconRight}
-          color="#0072FF"
-        />
-      </span>
-    </div>
+    {pageTitleIconRight ? (
+      <div className={`${styles.header__right}`}>
+        <span
+          role="button"
+          className={`${layoutStyles.clickable}`}
+          onClick={() => pageTitleRightOnPress()}
+        >
+            <MaterialIcon
+              icon={pageTitleIconRight}
+              color="#0072FF"
+            />
+        </span>
+      </div>
+    ) : ''}
   </header>
 )
 
