@@ -18,9 +18,7 @@ export const AgentProfileScheduleWidget = ({
     collapsible={false}
     visible={true}
   >
-    <CardHeader>
-      Schedule
-    </CardHeader>
+    <CardHeader title="Schedule" />
     <CardBody>
       <div className="grid__unity-grid">
         <div className={`${profileStyles.schedule__avatar} grid__unity-grid__span-columns-4`}>

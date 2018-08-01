@@ -15,11 +15,7 @@ export const WorkforceMarketplaceOverviewPendingCard = () => (
     collapsible={true}
     visible={true}
   >
-    <CardHeader
-      onPress={() => undefined}
-    >
-      Pending Shift Swap Proposals
-    </CardHeader>
+    <CardHeader title="Pending Shift Swap Proposals" />
     <CardBody>
       <div className="tables__unity-table">
         <ul className="tables__unity-table__header">

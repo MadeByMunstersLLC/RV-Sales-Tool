@@ -18,14 +18,8 @@ export const WorkforceShiftMgmtSplits = ({
       collapsible={true}
       visible={true}
     >
-      <CardHeader
-        onPress={() => undefined}
-      >
-        Split Shift
-      </CardHeader>
-      <CardHeader>
-        Requested Splits
-      </CardHeader>
+      <CardHeader title="Split Shift" />
+      <CardHeader title="Requested Splits" />
       <CardBody>
         <div className="tables__unity-table">
           <ul className="tables__unity-table__header">
@@ -58,9 +52,7 @@ export const WorkforceShiftMgmtSplits = ({
           </div>
         </div>
       </CardBody>
-      <CardHeader>
-        Available Splits
-      </CardHeader>
+      <CardHeader title="Available Splits" />
       <CardBody>
         <div className="tables__unity-table">
           <ul className="tables__unity-table__header">

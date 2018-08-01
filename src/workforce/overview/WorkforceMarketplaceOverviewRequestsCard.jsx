@@ -13,14 +13,8 @@ export const WorkforceMarketplaceOverviewRequestsCard = () => (
     collapsible={true}
     visible={true}
   >
-    <CardHeader
-      onPress={() => undefined}
-    >
-      MarketPlace Requests
-    </CardHeader>
-    <CardHeader>
-      Timeoff
-    </CardHeader>
+    <CardHeader title="MarketPlace Requests" />
+    <CardHeader title="Timeoff" />
     <CardBody>
       <div className="tables__unity-table">
         <ul className="tables__unity-table__header">
@@ -50,9 +44,7 @@ export const WorkforceMarketplaceOverviewRequestsCard = () => (
         </div>
       </div>
     </CardBody>
-    <CardHeader>
-      Shift Swap
-    </CardHeader>
+    <CardHeader title="Shift Swap" />
     <CardBody>
       <div className="tables__unity-table">
         <ul className="tables__unity-table__header">
@@ -84,9 +76,7 @@ export const WorkforceMarketplaceOverviewRequestsCard = () => (
         </div>
       </div>
     </CardBody>
-    <CardHeader>
-      Overtime
-    </CardHeader>
+    <CardHeader title="Overtime" />
     <CardBody>
       <div className="tables__unity-table">
         <ul className="tables__unity-table__header">

@@ -18,14 +18,8 @@ export const WorkforceShiftMgmtSchedules = ({
       collapsible={true}
       visible={true}
     >
-      <CardHeader
-        onPress={() => undefined}
-      >
-        Schedule Change
-      </CardHeader>
-      <CardHeader>
-        Requested Schedules
-      </CardHeader>
+      <CardHeader title="Schedule Change" />
+      <CardHeader title="Requested Schedules" />
       <CardBody>
         <div className="tables__unity-table">
           <ul className="tables__unity-table__header">
@@ -62,9 +56,7 @@ export const WorkforceShiftMgmtSchedules = ({
           </div>
         </div>
       </CardBody>
-      <CardHeader>
-        Available Schedules
-      </CardHeader>
+      <CardHeader title="Available Schedules" />
       <CardBody>
         <div className="tables__unity-table">
           <ul className="tables__unity-table__header">
