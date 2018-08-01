@@ -3,6 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+  },
+  "homepage": "./",
+  "main": "src/electron-starter.js",
+  "scripts": {
+    "start": "nf start -p 3000",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "react-start": "node scripts/start.js",
+    "clean": "rm -rf build/*",
+    "release": "npm run clean && npm run build",
+    "electron": "electron .",
+    "electron-start": "node src/electron-wait-react",
+    "electron-pack": "electron-builder --dir",
+    "electron-dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-builder": "^20.26.1",
+    "foreman": "^2.0.0",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -59,22 +78,6 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "homepage": "./",
-  "main": "src/electron-starter.js",
-  "scripts": {
-    "start": "nf start -p 3000",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "electron": "electron .",
-    "electron-start": "node src/electron-wait-react",
-    "react-start": "node scripts/start.js",
-    "clean": "rm -rf build/*",
-    "release": "npm run clean && npm run build"
-  },
-  "devDependencies": {
-    "electron": "^2.0.0",
-    "foreman": "^2.0.0"
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
@@ -117,5 +120,21 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "build": {
+    "appId": "com.redventures.sales-tool",
+    "extends": null,
+    "mac": {
+      "category": "com.redventures.sales-tool"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "src/electron-starter.js"
+    ],
+    "directories":{
+      "buildResources": "assets",
+      "output": "dist"
+    }
   }
 }
